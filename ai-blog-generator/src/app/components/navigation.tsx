@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { SignInButton, UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export const Navigation = () => {
   const pathname = usePathname();
@@ -17,8 +18,14 @@ export const Navigation = () => {
         View Saved Blogs
       </Link>
       <Link href="/create-blog" className={pathname === "/create-blog" ? "font-bold mr-8" : "mr-8 text-blue-500"}>
-        Create a New Blog
+        Create New Blog
       </Link>
+      <SignedOut>
+        <SignInButton mode="modal" />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
     </nav>
   );
 }
