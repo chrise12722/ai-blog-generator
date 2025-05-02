@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "./components/Navigation";
+import { Navigation } from "../components/Navigation";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/sonner"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,10 @@ export default function RootLayout({
           <header className="bg-slate-900 text-white p-4 text-center">
             <Navigation />
           </header>
-          {children}
+          <main>
+            {children}
+          </main>
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
