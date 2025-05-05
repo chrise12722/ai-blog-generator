@@ -8,6 +8,7 @@ import { useFormStatus } from "react-dom";
 import { useActionState } from "react";
 import { FormSubmitButton } from "@/components/FormSubmitButton";
 
+
 export default function CreateBlog() {
   const [blogContent, setBlogContent] = useState<string>("");
   const [blogImage, setBlogImage] = useState<string>("");
@@ -21,7 +22,7 @@ export default function CreateBlog() {
     const length = formData.get("blog-length")
     //call server action
     const result = await createCompletion(topic as string, keywords as string, length as string)
-    if (result?.error) {
+    if (result && 'error' in result) {
       toast.error(result.error)
     }
     console.log(result)
@@ -29,6 +30,7 @@ export default function CreateBlog() {
     if (result && Array.isArray(result)) {
       setBlogContent(result[0]?.content || '')
       setBlogImage(result[0].imageUrl || '')
+      toast("Blog has been generated and saved")
     }
 
     return {}

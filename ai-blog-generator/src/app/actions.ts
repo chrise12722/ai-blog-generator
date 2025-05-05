@@ -1,7 +1,6 @@
 'use server'
 import openai from "../utils/openai";
 import { supabase } from "../lib/supabase";
-import { decode } from 'base64-arraybuffer';
 import { auth, currentUser } from '@clerk/nextjs/server'
 
 
@@ -18,7 +17,7 @@ const completion: any = await openai.chat.completions.create({
                 and include any information that a blog post about the topic would have. These are the keywords that 
                 should be included and discussed(ignore if empty): ${keywords}. The length provided, ${length}, 
                 indicates how long the blog post should be: "Short" should be at or under 300 words, "Medium" should be between 
-                301 words and 600 words, "Long" should be between 601 words and 1000 words.`,
+                301 words and 600 words, "Long" should be between 601 words and 1000 words. Return the blog post in a markdown format.`,
     }
   ],
 });
