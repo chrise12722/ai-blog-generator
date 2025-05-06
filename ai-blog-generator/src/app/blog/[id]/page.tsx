@@ -6,13 +6,17 @@ import { ChevronLeft } from 'lucide-react'
 import { auth, currentUser } from '@clerk/nextjs/server'
 
 export default async function Blog({ params }: { params: { id: string } }) {
-
   const user = await currentUser()
   if (!user) {
-    return { error: 'User not authenticated' }
+    return <div>User not authenticated</div>
   }
-  const { content, imageUrl } = await getBlogById(Number(params.id), user.id)
-  console.log(imageUrl)
+
+  const blogId = Number(params.id)
+  const { content, imageUrl } = await getBlogById(blogId, user.id)
+
+  if (!content || !imageUrl) {
+    return <div>Blog not found</div>
+  }
 
   return (
     <section>
@@ -24,8 +28,8 @@ export default async function Blog({ params }: { params: { id: string } }) {
         <span>Go Back</span>
       </Link>
 
-      <section className='prose mt-6'>
-        <Image src={imageUrl} width={1792} height={1024} alt='' />
+      <section className='prose mt-6 ml-6 mr-6 flex flex-col'>
+        <Image className='self-center' src={imageUrl} width={1000} height={500} alt='' />
         <Markdown>{content}</Markdown>
       </section>
     </section>

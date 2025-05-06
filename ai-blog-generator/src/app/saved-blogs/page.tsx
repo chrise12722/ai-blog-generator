@@ -1,4 +1,4 @@
-import Form from '@/components/form'
+//import Form from '@/components/form'
 import { Card, CardContent } from '@/components/ui/card'
 import { getAllBlogs } from '@/lib/supabase'
 import { auth, currentUser } from '@clerk/nextjs/server'

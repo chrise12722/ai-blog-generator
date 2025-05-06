@@ -3,6 +3,7 @@ import openai from "../utils/openai";
 import { supabase } from "../lib/supabase";
 import { auth, currentUser } from '@clerk/nextjs/server'
 
+const user = await currentUser()
 
 export async function createCompletion(topic: string, keywords: string, length: string){
 
@@ -59,7 +60,7 @@ const path = data?.path
 const permanentImageUrl = `${process.env.SUPABASE_URL}/storage/v1/object/public/aiimage/${path}`
 
 // Create a new blog post in supabase
-const user = await currentUser()
+// const user = await currentUser()
 if (!user) {
   return { error: 'User not authenticated' }
 }
@@ -75,4 +76,77 @@ if (blogError) {
 }
 
 return blog;
+}
+
+//Make blog publicly available
+interface Blog {
+  id: number;
+  created_at: EpochTimeStamp;
+  title: string;
+  content: string;
+  imageUrl: string;
+  userId: string;
+}
+export async function shareBlog(blog: Blog) {
+  const {data: sharedBlog, error: blogError} = await supabase
+    .from('shared-blogs')
+    .insert([{ title: blog.title, content: blog.content, imageUrl: blog.imageUrl, userId: blog.userId }])
+  
+  if(blogError) {
+    console.log(blogError)
+    return {error: 'Unable to create blog post.'}
+  }
+  return sharedBlog;
+}
+
+//Make blog private
+export async function unshareBlog(blog: Blog) {
+  const { error: unshareError } = await supabase
+    .from('shared-blogs')
+    .delete()
+    .eq('id', blog.id)
+    .eq('userId', user?.id)
+  
+  if (unshareError) {
+    console.log(unshareError)
+    return { error: 'Unable to private blog post. Please try again' }
+  }
+  
+  return { success: true }
+}
+
+//Delete blog post
+export async function deleteBlog(blog: Blog) {
+  const { error: deleteError } = await supabase
+    .from('blogs')
+    .delete()
+    .eq('id', blog.id)
+    .eq('userId', user?.id)
+  
+  if (deleteError) {
+    console.log(deleteError)
+    return { error: 'Unable to delete blog post. Please try again'}
+  }
+  
+  const { data: sharedBlog} = await supabase
+    .from('shared-blogs')
+    .select()
+    .eq('id', blog.id)
+    .eq('userId', user?.id)
+    .single()
+
+  if (sharedBlog) {
+    const { error: deleteError } = await supabase
+      .from('shared-blogs')
+      .delete()
+      .eq('id', blog.id)
+  
+
+  if (deleteError) {
+    console.log(deleteError)
+    return {error: 'Blog deleted but failed to remove from the shared blogs. Please try again'}
+    }
+  }
+
+  return { success: true }
 }
