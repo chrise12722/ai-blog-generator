@@ -29,3 +29,12 @@ export async function getAllBlogs(userId: string) {
 
   return data
 }
+
+export async function isBlogShared(id: number) {
+  const { data } = await supabase
+    .from('shared-blogs')
+    .select()
+    .eq('id', id)
+
+  return data && data.length > 0
+}

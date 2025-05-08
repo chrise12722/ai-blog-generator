@@ -2,95 +2,85 @@
 import openai from "../utils/openai";
 import { supabase } from "../lib/supabase";
 import { auth, currentUser } from '@clerk/nextjs/server'
-
-const user = await currentUser()
+import { BlogStructure } from "@/interfaces";
 
 export async function createCompletion(topic: string, keywords: string, length: string){
+  const user = await currentUser()
+  if (!user) {
+    return { error: 'User not authenticated' }
+  }
 
+  // Generate blog post using openai
+  const completion: any = await openai.chat.completions.create({
+    model: 'gpt-4o-mini',
+    messages: [
+      {
+        role: 'user',
+        content: `Create a blog post about the following topic: ${topic}. The blog should properly explain the topic 
+                  and include any information that a blog post about the topic would have. These are the keywords that 
+                  should be included and discussed(ignore if empty): ${keywords}. The length provided, ${length}, 
+                  indicates how long the blog post should be: "Short" should be at or under 300 words, "Medium" should be between 
+                  301 words and 600 words, "Long" should be between 601 words and 1000 words. Return the blog post in a markdown format with only the title being in bold letters.`,
+      }
+    ],
+  });
 
-// Generate blog post using openai
-const completion: any = await openai.chat.completions.create({
-  model: 'gpt-4o-mini',
-  messages: [
-    {
-      role: 'user',
-      content: `Create a blog post about the following topic: ${topic}. The blog should properly explain the topic 
-                and include any information that a blog post about the topic would have. These are the keywords that 
-                should be included and discussed(ignore if empty): ${keywords}. The length provided, ${length}, 
-                indicates how long the blog post should be: "Short" should be at or under 300 words, "Medium" should be between 
-                301 words and 600 words, "Long" should be between 601 words and 1000 words. Return the blog post in a markdown format.`,
-    }
-  ],
-});
+  const response = completion.choices[0].message.content;
+  console.log(response)
 
-const response = completion.choices[0].message.content;
-console.log(response)
-
-// Generate image using openai
-const image = await openai.images.generate({
-  model: "dall-e-3",
-  prompt: `Create a high-quality blog cover image that visually represents this topic: "${topic}"`,
-  n: 1,
-  size: '1792x1024'
-})
-
-const imageUrl = image?.data?.[0]?.url
-if (!imageUrl) {
-  return {error: 'Unable to generate the blog image.'}
-}
-
-// Download the image from DALL-E 3
-const imageResponse = await fetch(imageUrl)
-const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
-
-// Upload to supabase storage
-const imageName = `blog-${Date.now()}.png`
-const { data, error } = await supabase.storage
-  .from('aiimage')
-  .upload(imageName, imageBuffer, {
-    contentType: 'image/png'
+  // Generate image using openai
+  const image = await openai.images.generate({
+    model: "dall-e-3",
+    prompt: `Create a high-quality blog cover image that visually represents this topic: "${topic}"`,
+    n: 1,
+    size: '1792x1024'
   })
 
-if (error) {
-  return(error)
-  console.log({error})
-}
+  const imageUrl = image?.data?.[0]?.url
+  if (!imageUrl) {
+    return {error: 'Unable to generate the blog image.'}
+  }
 
-const path = data?.path
-const permanentImageUrl = `${process.env.SUPABASE_URL}/storage/v1/object/public/aiimage/${path}`
+  // Download the image from DALL-E 3
+  const imageResponse = await fetch(imageUrl)
+  const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
 
-// Create a new blog post in supabase
-// const user = await currentUser()
-if (!user) {
-  return { error: 'User not authenticated' }
-}
+  // Upload to supabase storage
+  const imageName = `blog-${Date.now()}.png`
+  const { data, error } = await supabase.storage
+    .from('aiimage')
+    .upload(imageName, imageBuffer, {
+      contentType: 'image/png'
+    })
 
-const { data: blog, error: blogError } = await supabase
-  .from('blogs')
-  .insert([{ title: topic, content: response, imageUrl: permanentImageUrl, userId: user.id }])
-  .select()
+  if (error) {
+    return(error)
+    console.log({error})
+  }
 
-if (blogError) {
-  console.log(blogError)
-  return { error: 'Unable to create blog post.' }
-}
+  const path = data?.path
+  const permanentImageUrl = `${process.env.SUPABASE_URL}/storage/v1/object/public/aiimage/${path}`
 
-return blog;
+  // Create a new blog post in supabase
+  const { data: blog, error: blogError } = await supabase
+    .from('blogs')
+    .insert([{ title: topic, content: response, imageUrl: permanentImageUrl, userId: user.id }])
+    .select()
+
+  if (blogError) {
+    console.log(blogError)
+    return { error: 'Unable to create blog post.' }
+  }
+
+  return blog;
 }
 
 //Make blog publicly available
-interface Blog {
-  id: number;
-  created_at: EpochTimeStamp;
-  title: string;
-  content: string;
-  imageUrl: string;
-  userId: string;
-}
-export async function shareBlog(blog: Blog) {
+
+export async function shareBlog(blog: BlogStructure) {
   const {data: sharedBlog, error: blogError} = await supabase
     .from('shared-blogs')
-    .insert([{ title: blog.title, content: blog.content, imageUrl: blog.imageUrl, userId: blog.userId }])
+    .insert([{ id: blog.id, created_at: blog.created_at, title: blog.title, content: blog.content, imageUrl: blog.imageUrl, userId: blog.userId }])
   
   if(blogError) {
     console.log(blogError)
@@ -100,12 +90,12 @@ export async function shareBlog(blog: Blog) {
 }
 
 //Make blog private
-export async function unshareBlog(blog: Blog) {
+export async function unshareBlog(blog: BlogStructure) {
   const { error: unshareError } = await supabase
     .from('shared-blogs')
     .delete()
     .eq('id', blog.id)
-    .eq('userId', user?.id)
+    .eq('userId', blog.userId)
   
   if (unshareError) {
     console.log(unshareError)
@@ -116,12 +106,12 @@ export async function unshareBlog(blog: Blog) {
 }
 
 //Delete blog post
-export async function deleteBlog(blog: Blog) {
+export async function deleteBlog(blogId: number, userId: string) {
   const { error: deleteError } = await supabase
     .from('blogs')
     .delete()
-    .eq('id', blog.id)
-    .eq('userId', user?.id)
+    .eq('id', blogId)
+    .eq('userId', userId)
   
   if (deleteError) {
     console.log(deleteError)
@@ -131,15 +121,15 @@ export async function deleteBlog(blog: Blog) {
   const { data: sharedBlog} = await supabase
     .from('shared-blogs')
     .select()
-    .eq('id', blog.id)
-    .eq('userId', user?.id)
+    .eq('id', blogId)
+    .eq('userId', userId)
     .single()
 
   if (sharedBlog) {
     const { error: deleteError } = await supabase
       .from('shared-blogs')
       .delete()
-      .eq('id', blog.id)
+      .eq('id', blogId)
   
 
   if (deleteError) {
