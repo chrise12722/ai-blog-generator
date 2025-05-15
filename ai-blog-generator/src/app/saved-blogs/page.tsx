@@ -1,10 +1,10 @@
 //import Form from '@/components/form'
-import { Card, CardContent } from '@/components/ui/card'
-import { getAllBlogs } from '@/lib/supabase'
-import { auth, currentUser } from '@clerk/nextjs/server'
-import Image from 'next/image'
-import Link from 'next/link'
-import { formatDate } from '@/lib/utils'
+import { Card, CardContent } from '@/components/ui/card';
+import { getAllBlogs } from '@/lib/supabase';
+import { auth, currentUser } from '@clerk/nextjs/server';
+import Image from 'next/image';
+import Link from 'next/link';
+import { formatDate } from '@/lib/utils';
 
 export default async function Saved_Blogs() {
 
@@ -15,14 +15,15 @@ export default async function Saved_Blogs() {
   const blogs = await getAllBlogs(user.id);
 
   return (
-    <div className="mt-5 ml-5">
-      <h1 className="font-bold text-4xl">View All of Your Saved Blogs</h1>
-
-      <div className='flex flex-row flex-wrap'>
+    <>
+      <div className="mt-5 ml-5">
+        <h1 className="font-bold text-4xl">View All of Your Saved Blogs</h1>
+      </div>
+      <div className='flex flex-row flex-wrap m-2'>
         {blogs?.map(blog => (
-          <Card key={blog.id} className='overflow-hidden w-1/2 '>
+          <Card key={blog.id} className='overflow-hidden w-1/2'>
             <CardContent className='p-0'>
-              <Link href={`/blog/${blog.id}`} key={blog.id}>
+              <Link href={`/user-blog/${blog.id}`} key={blog.id}>
                 <Image
                   alt=''
                   src={blog.imageUrl}
@@ -42,7 +43,8 @@ export default async function Saved_Blogs() {
           </Card>
         ))}
       </div>
+    </>
 
-    </div>
+
   );
 }

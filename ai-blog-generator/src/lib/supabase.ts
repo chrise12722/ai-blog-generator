@@ -20,12 +20,33 @@ export async function getBlogById(id: number, userId: string) {
   return data
 }
 
+export async function getSharedBlogById(id: number) {
+  const {data, error} = await supabase
+    .from('shared-blogs')
+    .select()
+    .eq('id', id)
+    .single()
+  if (!data){
+    redirect('/')
+  }
+  return data
+}
+
 export async function getAllBlogs(userId: string) {
   const {data,error} = await supabase
     .from('blogs')
     .select()
     .eq('userId', userId)
     .order('created_at', {ascending: false})
+
+  return data
+}
+
+export async function getAllSharedBlogs(){
+  const {data,error} = await supabase
+    .from('shared-blogs')
+    .select()
+    .order('likes', {ascending: false})
 
   return data
 }
@@ -37,4 +58,81 @@ export async function isBlogShared(id: number) {
     .eq('id', id)
 
   return data && data.length > 0
+}
+
+export async function viewLikes(blogId: number) {
+  const { data, error } = await supabase
+    .from('shared-blogs')
+    .select('likes')
+    .eq('id', blogId)
+    .single()
+
+  if (error) {
+    console.log(error)
+  }
+  else if (!data) {
+    return 0
+  }
+
+  return data?.likes || 0
+}
+
+//Add like to database
+
+export async function incrementLikes(blogId: number, userId: string) {
+  const { data: likeData, error: likeError } = await supabase.rpc('increment_likes', {row_id: blogId})
+
+
+  if (likeError) {
+    console.log("Failed to add like")
+  }
+
+  const { data: recordData, error: recordError } = await supabase
+    .from('likes')
+    .insert([{ user_id: userId, blog_id: blogId }])
+  
+  if (recordError) {
+    console.log('Failed to record like')
+  }
+  
+  return { success: true }
+}
+
+//Remove like from database
+
+export async function decrementLikes(blogId: number, userId: string) {
+  const { data: likeData, error: likeError } = await supabase.rpc('decrement_likes', {row_id: blogId})
+
+  if (likeError) {
+    console.log('Failed to decrease likes')
+  }
+
+  const { data: recordData, error: recordError } = await supabase
+    .from('likes')
+    .delete()
+    .eq('user_id', userId)
+    .eq('blog_id', blogId)
+  
+  if (recordError) {
+   console.log('Failed to delete like')
+  }
+
+  return { success: true }
+}
+
+//Check if user has liked a blog
+
+export async function isBlogLiked(blogId: number, userId: string) {
+  const { data, error } = await supabase
+  .from('likes')
+  .select()
+  .eq('user_id', userId)
+  .eq('blog_id', blogId)
+  
+
+if (error) {
+  console.log(error)
+}
+
+return data && data.length > 0
 }

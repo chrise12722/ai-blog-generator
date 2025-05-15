@@ -3,6 +3,7 @@ import openai from "../utils/openai";
 import { supabase } from "../lib/supabase";
 import { auth, currentUser } from '@clerk/nextjs/server'
 import { BlogStructure } from "@/interfaces";
+import { incrementLikes, decrementLikes, isBlogLiked, viewLikes } from "@/lib/supabase";
 
 export async function createCompletion(topic: string, keywords: string, length: string){
   const user = await currentUser()
@@ -139,4 +140,26 @@ export async function deleteBlog(blogId: number, userId: string) {
   }
 
   return { success: true }
+}
+
+export async function handleLike(blogId: number, userId: string) {
+  const result = await incrementLikes(blogId, userId)
+  return result
+}
+
+export async function handleUnlike(blogId: number, userId: string) {
+  const result = await decrementLikes(blogId, userId)
+  return result
+}
+
+export async function checkIfLiked(blogId: number, userId: string) {
+  console.log('Server: Checking if blog', blogId, 'is liked by user', userId)
+  const result = await isBlogLiked(blogId, userId)
+  console.log('Server: Is blog liked?', result)
+  return result
+}
+
+export async function getLikes(blogId: number) {
+  const result = await viewLikes(blogId)
+  return result
 }
