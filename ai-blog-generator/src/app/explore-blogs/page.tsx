@@ -20,6 +20,7 @@ export default async function Explore_Blogs({
     return { error: 'User not authenticated' }
   }
   const blogs = await getAllSharedBlogs({ query: search, page, limit });
+  const hitLimit = !blogs || blogs.length < limit;
 
   return (
     <>
@@ -49,7 +50,9 @@ export default async function Explore_Blogs({
                 page: page + 1
               }
             }}
-            className='rounded border bg-gray-100 px-3 py-1 text-sm text-gray-800'
+            className={clsx('rounded border bg-gray-100 px-3 py-1 text-sm text-gray-800',
+              hitLimit && 'pointer-events-none opacity-50'
+            )}
           >
             Next
           </Link>
