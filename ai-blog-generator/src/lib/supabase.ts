@@ -42,13 +42,22 @@ export async function getAllBlogs(userId: string) {
   return data
 }
 
-export async function getAllSharedBlogs(query?: string){
+export async function getAllSharedBlogs({
+  query,
+  page = 1,
+  limit = 10
+}: {
+  query?: string
+  page?: number
+  limit?: number
+} = {}) {
   if(query) {
     const {data: searchBlogs, error} = await supabase
       .from('shared-blogs')
       .select()
       .ilike('title', query)
       .order('likes', {ascending: false})
+      .range((page - 1) * limit, page * limit - 1)
 
      if (error) {
       console.log(error)
@@ -62,6 +71,7 @@ export async function getAllSharedBlogs(query?: string){
       .from('shared-blogs')
       .select()
       .order('likes', {ascending: false})
+      .range((page - 1) * limit, page * limit - 1)
 
     if (error) {
       console.log(error)

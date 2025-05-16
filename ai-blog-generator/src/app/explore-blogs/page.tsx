@@ -6,25 +6,55 @@ import Link from 'next/link';
 import { formatDate } from '@/lib/utils';
 import { LikeButton } from '@/components/likeButton/LikeButton';
 import Search from '@/components/Search';
-import { SearchParamsContext } from 'next/dist/shared/lib/hooks-client-context.shared-runtime';
+import clsx from 'clsx'
 
 export default async function Explore_Blogs({
   searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }
 ) {
+  const page = typeof searchParams.page === 'string' ? Number(searchParams.page) : 1
+  const limit = typeof searchParams.limit === 'string' ? Number(searchParams.limit) : 10
   const search = typeof searchParams.search === 'string' ? searchParams.search : undefined
 
   const user = await currentUser()
   if (!user) {
     return { error: 'User not authenticated' }
   }
-  const blogs = await getAllSharedBlogs(search);
+  const blogs = await getAllSharedBlogs({ query: search, page, limit });
 
   return (
     <>
       <div className="mt-5 ml-5 flex justify-between mr-2">
         <h1 className="font-bold text-4xl">Explore Shared Blogs</h1>
-        <Search search={search} />
-      </div>
+        <div className='flex flex-row gap-2'>
+          <Search search={search} />
+
+          <Link
+            href={{
+              pathname: '/explore-blogs',
+              query: {
+                ...(search ? { search } : {}),
+                page: page > 1 ? page - 1 : 1
+              }
+            }}
+            className={clsx('rounded border bg-gray-100 px-3 py-1 text-sm text-gray-800',
+              page <= 1 && 'pointer-events-none opacity-50'
+            )}>
+            Previous
+          </Link>
+          <Link
+            href={{
+              pathname: '/explore-blogs',
+              query: {
+                ...(search ? { search } : {}),
+                page: page + 1
+              }
+            }}
+            className='rounded border bg-gray-100 px-3 py-1 text-sm text-gray-800'
+          >
+            Next
+          </Link>
+        </div>
+      </div >
       <div className='flex flex-row flex-wrap m-2 relative min-h-[50vh]'>
         {Array.isArray(blogs) && blogs.length > 0 ? (
           blogs.map(blog => (
