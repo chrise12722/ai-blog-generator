@@ -42,13 +42,34 @@ export async function getAllBlogs(userId: string) {
   return data
 }
 
-export async function getAllSharedBlogs(){
-  const {data,error} = await supabase
-    .from('shared-blogs')
-    .select()
-    .order('likes', {ascending: false})
+export async function getAllSharedBlogs(query?: string){
+  if(query) {
+    const {data: searchBlogs, error} = await supabase
+      .from('shared-blogs')
+      .select()
+      .ilike('title', query)
+      .order('likes', {ascending: false})
 
-  return data
+     if (error) {
+      console.log(error)
+      return undefined
+      }
+
+    return searchBlogs
+  }
+  else {
+    const {data: allBlogs, error} = await supabase
+      .from('shared-blogs')
+      .select()
+      .order('likes', {ascending: false})
+
+    if (error) {
+      console.log(error)
+      return undefined
+    }
+
+    return allBlogs
+  }
 }
 
 export async function isBlogShared(id: number) {

@@ -37,14 +37,11 @@ export default function CreateBlog() {
 
   }
 
-
-
-
   return (
     <>
       <div className="mt-10 ml-5 flex flex-row gap-4">
         <div className="flex-1">
-          <h1 className="text-3xl">Create a Blog</h1>
+          <h1 className="font-bold text-4xl">Create a Blog</h1>
           <form className="flex flex-col max-w-md" action={formAction}>
             <p className="mb-2 mt-5" >Blog Topic</p>
             <input type="text" name="blog-topic" required className="border p-2 mr-2 bg-white text-black-700" />

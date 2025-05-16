@@ -1,6 +1,6 @@
 //import Form from '@/components/form'
 import { Card, CardContent } from '@/components/ui/card';
-import { getAllBlogs } from '@/lib/supabase';
+import { getAllBlogs, isBlogShared } from '@/lib/supabase';
 import { auth, currentUser } from '@clerk/nextjs/server';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,6 +13,7 @@ export default async function Saved_Blogs() {
     return { error: 'User not authenticated' }
   }
   const blogs = await getAllBlogs(user.id);
+
 
   return (
     <>
