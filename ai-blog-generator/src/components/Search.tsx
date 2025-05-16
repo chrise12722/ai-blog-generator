@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDebounce } from 'use-debounce'
 
-const Search = ({ search }: { search?: string }) => {
+const Search = ({ search, url }: { search?: string, url?: string }) => {
   const router = useRouter()
   const [text, setText] = useState(search ? search : '')
   const [query] = useDebounce(text, 1000)
@@ -17,10 +17,10 @@ const Search = ({ search }: { search?: string }) => {
       return
     }
     if (!query) {
-      router.push(`/explore-blogs`)
+      router.push(`/${url}`)
     }
     else {
-      router.push(`/explore-blogs?search=${text}`)
+      router.push(`/${url}?search=${text}`)
     }
   }, [query])
 

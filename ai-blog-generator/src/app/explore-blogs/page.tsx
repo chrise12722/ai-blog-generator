@@ -11,9 +11,11 @@ import clsx from 'clsx'
 export default async function Explore_Blogs({
   searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }
 ) {
-  const page = typeof searchParams.page === 'string' ? Number(searchParams.page) : 1
-  const limit = typeof searchParams.limit === 'string' ? Number(searchParams.limit) : 10
-  const search = typeof searchParams.search === 'string' ? searchParams.search : undefined
+  const params = await searchParams;
+  const page = typeof params.page === 'string' ? Number(params.page) : 1
+  const limit = typeof params.limit === 'string' ? Number(params.limit) : 10
+  const search = typeof params.search === 'string' ? params.search : undefined
+  const url = 'explore-blogs'
 
   const user = await currentUser()
   if (!user) {
@@ -27,7 +29,7 @@ export default async function Explore_Blogs({
       <div className="mt-5 ml-5 flex justify-between mr-2">
         <h1 className="font-bold text-4xl">Explore Shared Blogs</h1>
         <div className='flex flex-row gap-2'>
-          <Search search={search} />
+          <Search search={search} url={url} />
 
           <Link
             href={{
