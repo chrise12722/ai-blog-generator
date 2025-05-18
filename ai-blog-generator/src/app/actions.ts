@@ -127,6 +127,17 @@ export async function deleteBlog(blogId: number, userId: string) {
     .single()
 
   if (sharedBlog) {
+    if( await viewLikes(blogId) > 0) {
+      const { error: deleteLikesError} = await supabase
+        .from('likes')
+        .delete()
+        .eq('blog_id', blogId)
+      
+      if(deleteLikesError) {
+        console.log(deleteLikesError)
+      }
+    }
+
     const { error: deleteError } = await supabase
       .from('shared-blogs')
       .delete()

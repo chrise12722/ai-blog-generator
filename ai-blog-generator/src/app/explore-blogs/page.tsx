@@ -4,7 +4,7 @@ import { currentUser } from '@clerk/nextjs/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatDate } from '@/lib/utils';
-import { LikeButton } from '@/components/likeButton/LikeButton';
+import { LikeButton } from '@/components/LikeButton';
 import Search from '@/components/Search';
 import clsx from 'clsx'
 
