@@ -8,7 +8,7 @@ import { BlogStructure } from "@/interfaces";
 import { LikeButton } from '@/components/LikeButton'
 
 
-export default async function NonUser_Blog({ params }: { params: { id: string } }) {
+export default async function Nonuser_Blog({ params }: { params: { id: string } }) {
   const user = await currentUser()
   if (!user) {
     return <div>User not authenticated</div>
@@ -38,9 +38,11 @@ export default async function NonUser_Blog({ params }: { params: { id: string } 
           <LikeButton blogId={blogId} userId={user.id} />
         </div>
       </div>
-      <section className='prose mt-6 ml-6 mr-6 flex flex-col'>
-        <Image className='self-center' src={imageUrl} width={1000} height={500} alt='' />
-        <Markdown>{content}</Markdown>
+      <section className='prose mt-6 ml-6 mr-6 flex flex-col min-h-full'>
+        <Image className='self-center ' src={imageUrl} width={1000} height={500} alt='' />
+        <div className='mt-4 text-base'>
+          <Markdown>{content}</Markdown>
+        </div>
       </section>
     </section>
   )

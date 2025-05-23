@@ -18,7 +18,7 @@ export default function DeleteButton({ blogId, userId }: DeleteButtonProps) {
     toast("Blog has been successfully deleted")
   }
   return (
-    <button className="rounded-xl bg-red-500 hover:bg-red-400 text-white p-3 cursor-pointer" onClick={deleteUserBlog}>
+    <button className="rounded-xl bg-red-500 hover:bg-red-400 text-white p-2 sm:p-3 cursor-pointer" onClick={deleteUserBlog}>
       Delete Blog
     </button>
   )

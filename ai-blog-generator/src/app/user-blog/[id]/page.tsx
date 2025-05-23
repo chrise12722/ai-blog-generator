@@ -27,7 +27,7 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
 
   return (
     <section>
-      <div className="flex justify-between mr-2 mb-2">
+      <div className="flex justify-between mr-2 mt-2">
         <Link
           href='/saved-blogs'
           className='ml-2 inline-flex items-center text-sm font-light text-gray'
@@ -35,14 +35,16 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
           <ChevronLeft strokeWidth={1} size={20} />
           <span>Go Back</span>
         </Link>
-        <div>
+        <div className='flex flex-row gap-1'>
           <ShareButtons blog={currentBlog} isShared={!!sharedBlog} userId={user.id} />
           <DeleteButton blogId={blogId} userId={user.id} />
         </div>
       </div>
-      <section className='prose mt-6 ml-6 mr-6 flex flex-col'>
+      <section className='prose mt-6 ml-6 mr-6 flex flex-col min-h-full'>
         <Image className='self-center' src={imageUrl} width={1000} height={500} alt='' />
-        <Markdown>{content}</Markdown>
+        <div className='mt-4 text-base'>
+          <Markdown>{content}</Markdown>
+        </div>
       </section>
     </section>
   )

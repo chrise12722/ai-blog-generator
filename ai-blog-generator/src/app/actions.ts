@@ -28,7 +28,6 @@ export async function createCompletion(topic: string, keywords: string, length: 
 
   const response = completion.choices[0].message.content;
   console.log(response)
-
   // Generate image using openai
   const image = await openai.images.generate({
     model: "dall-e-3",
@@ -36,12 +35,12 @@ export async function createCompletion(topic: string, keywords: string, length: 
     n: 1,
     size: '1792x1024'
   })
-
+  
   const imageUrl = image?.data?.[0]?.url
   if (!imageUrl) {
     return {error: 'Unable to generate the blog image.'}
   }
-
+  console.log("Image generated successful")
   // Download the image from DALL-E 3
   const imageResponse = await fetch(imageUrl)
   const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
@@ -164,9 +163,7 @@ export async function handleUnlike(blogId: number, userId: string) {
 }
 
 export async function checkIfLiked(blogId: number, userId: string) {
-  console.log('Server: Checking if blog', blogId, 'is liked by user', userId)
   const result = await isBlogLiked(blogId, userId)
-  console.log('Server: Is blog liked?', result)
   return result
 }
 

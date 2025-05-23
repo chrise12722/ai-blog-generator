@@ -36,7 +36,7 @@ export async function getAllUserBlogs({
   userId,
   query,
   page = 1,
-  limit = 10
+  limit = 12
 }: {
   userId: string
   query?: string
@@ -79,7 +79,7 @@ export async function getAllUserBlogs({
 export async function getAllSharedBlogs({
   query,
   page = 1,
-  limit = 10
+  limit = 12
 }: {
   query?: string
   page?: number

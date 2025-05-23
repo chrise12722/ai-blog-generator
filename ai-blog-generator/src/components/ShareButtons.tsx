@@ -29,13 +29,13 @@ export default function ShareButtons({ blog, isShared, userId }: ShareButtonsPro
   return (
     <>
       {!isShared && (
-        <button className="rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-3 cursor-pointer" onClick={handleShare}>
+        <button className="rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-2 sm:p-3 cursor-pointer" onClick={handleShare}>
           Share Blog
         </button>
       )}
 
       {isShared && (
-        <button className="rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-3 cursor-pointer" onClick={handleUnshare}>
+        <button className="rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-2 sm:p-3 cursor-pointer" onClick={handleUnshare}>
           Unshare Blog
         </button>
       )}

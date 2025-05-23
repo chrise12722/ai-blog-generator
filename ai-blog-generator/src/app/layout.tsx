@@ -31,7 +31,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <header className="bg-slate-900 text-white p-4 text-center">
+          <header className="bg-blue-400 text-white p-4 text-center">
             <Navigation />
           </header>
           <main>
