@@ -42,7 +42,7 @@ export default function CreateBlog() {
       <div className=' mt-10 ml-2 sm:ml-4 flex flex-col sm:flex-row gap-4'>
         <div className={`flex-1 ${blogContent ? '' : 'sm:flex sm:flex-col sm:items-center'}`}>
           <h1 className="font-bold text-4xl">Create a Blog</h1>
-          <form className='flex flex-col max-w-100 sm:gap-1' action={formAction}>
+          <form className='flex flex-col max-w-100 sm:w-100 sm:gap-1' action={formAction}>
             <p className="mb-2 mt-5" >Blog Topic</p>
             <input type="text" name="blog-topic" required className="border p-2 mr-3 bg-gray-100 text-black-700" />
             <p className="mb-2 mt-2">Keywords(optional)</p>
