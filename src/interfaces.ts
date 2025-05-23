@@ -6,3 +6,9 @@ export interface BlogStructure {
   imageUrl: string;
   userId: string;
 }
+
+export interface LikeStructure {
+  blog_id: number;
+  id: number;
+  user_id: string;
+}

@@ -8,7 +8,7 @@ import { useDebounce } from 'use-debounce'
 const Search = ({ search, url }: { search?: string, url?: string }) => {
   const router = useRouter()
   const [text, setText] = useState(search ? search : '')
-  const [query] = useDebounce(text, 1000)
+  const [query] = useDebounce(text, 750)
   const initialRender = useRef(true)
 
   useEffect(() => {

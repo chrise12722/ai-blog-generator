@@ -11,7 +11,7 @@ interface ShareButtonsProps {
   userId: string;
 }
 
-export default function ShareButtons({ blog, isShared, userId }: ShareButtonsProps) {
+export const ShareButtons = ({ blog, isShared, userId }: ShareButtonsProps) => {
   const router = useRouter()
 
   const handleShare = async () => {

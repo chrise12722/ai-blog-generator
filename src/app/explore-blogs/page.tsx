@@ -7,6 +7,7 @@ import { formatDate } from '@/lib/utils';
 import { LikeButton } from '@/components/LikeButton';
 import Search from '@/components/Search';
 import clsx from 'clsx';
+import { LikeStructure } from '@/interfaces';
 
 export default async function Explore_Blogs({
   searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }
@@ -80,7 +81,7 @@ export default async function Explore_Blogs({
                     <p className='text-xs text-gray-600'>
                       {formatDate(blog.created_at)}
                     </p>
-                    <LikeButton blogId={blog.id} userId={user.id} />
+                    <LikeButton blogId={blog.id} userId={user.id} liked={blog.user_likes.some((like: LikeStructure) => like.user_id === user.id)} likes={blog.likes} />
                   </div>
                 </Link>
               </CardContent>

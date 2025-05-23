@@ -105,7 +105,6 @@ export async function unshareBlog(blog: BlogStructure) {
   return { success: true }
 }
 
-//Delete blog post
 export async function deleteBlog(blogId: number, userId: string) {
   const { error: deleteError } = await supabase
     .from('blogs')

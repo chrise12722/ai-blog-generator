@@ -9,7 +9,7 @@ interface DeleteButtonProps {
   userId: string;
 }
 
-export default function DeleteButton({ blogId, userId }: DeleteButtonProps) {
+export const DeleteButton = ({ blogId, userId }: DeleteButtonProps) => {
   const router = useRouter()
 
   const deleteUserBlog = async () => {

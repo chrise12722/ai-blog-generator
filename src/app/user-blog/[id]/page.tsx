@@ -3,9 +3,9 @@ import Image from 'next/image'
 import Markdown from 'react-markdown'
 import { getBlogById, isBlogShared } from '@/lib/supabase'
 import { ChevronLeft } from 'lucide-react'
-import { auth, currentUser } from '@clerk/nextjs/server'
-import ShareButtons from '@/components/ShareButtons'
-import DeleteButton from '@/components/DeleteButton'
+import { currentUser } from '@clerk/nextjs/server'
+import { ShareButtons } from '@/components/ShareButtons'
+import { DeleteButton } from '@/components/DeleteButton'
 import { BlogStructure } from "@/interfaces";
 
 
@@ -15,7 +15,7 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
     return <div>User not authenticated</div>
   }
 
-  const blogId = Number(params.id)
+  const blogId = Number(await params.id)
   const { created_at, title, content, imageUrl } = await getBlogById(blogId, user.id)
 
   if (!content || !imageUrl) {

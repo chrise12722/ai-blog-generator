@@ -23,9 +23,28 @@ export async function getBlogById(id: number, userId: string) {
 export async function getSharedBlogById(id: number) {
   const {data, error} = await supabase
     .from('shared-blogs')
-    .select()
+    .select(`
+      id,
+      created_at,
+      title,
+      content,
+      imageUrl,
+      userId,
+      likes,
+      user_likes (
+        id,
+        user_id,
+        blog_id
+        )`
+    )
     .eq('id', id)
     .single()
+  
+  if (error) {
+    console.error('Error fetching shared blog:', error)
+    redirect('/')
+  }
+  
   if (!data){
     redirect('/')
   }
@@ -103,7 +122,20 @@ export async function getAllSharedBlogs({
   else {
     const {data: allBlogs, error} = await supabase
       .from('shared-blogs')
-      .select()
+      .select(`
+        id,
+        created_at,
+        title,
+        content,
+        imageUrl,
+        userId,
+        likes,
+        user_likes (
+          id,
+          user_id,
+          blog_id
+          )`
+      )
       .order('likes', {ascending: false})
       .range((page - 1) * limit, page * limit - 1)
 
@@ -153,11 +185,11 @@ export async function incrementLikes(blogId: number, userId: string) {
   }
 
   const { data: recordData, error: recordError } = await supabase
-    .from('likes')
+    .from('user_likes')
     .insert([{ user_id: userId, blog_id: blogId }])
   
   if (recordError) {
-    console.log('Failed to record like')
+    console.log(recordError)
   }
   
   return { success: true }
@@ -173,7 +205,7 @@ export async function decrementLikes(blogId: number, userId: string) {
   }
 
   const { data: recordData, error: recordError } = await supabase
-    .from('likes')
+    .from('user_likes')
     .delete()
     .eq('user_id', userId)
     .eq('blog_id', blogId)
@@ -189,7 +221,7 @@ export async function decrementLikes(blogId: number, userId: string) {
 
 export async function isBlogLiked(blogId: number, userId: string) {
   const { data, error } = await supabase
-  .from('likes')
+  .from('user_likes')
   .select()
   .eq('user_id', userId)
   .eq('blog_id', blogId)
