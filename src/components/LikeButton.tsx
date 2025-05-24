@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
-import { handleLike, handleUnlike, checkIfLiked, getLikes } from '@/app/actions';
+import { handleLike, handleUnlike } from '@/app/actions';
 
 interface LikeButtonProps {
   blogId: number;
@@ -15,18 +15,17 @@ interface LikeButtonProps {
 export const LikeButton = ({ blogId, userId, liked, likes }: LikeButtonProps) => {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
-  const [isLiked, setIsLiked] = useState(false)
 
 
   // useEffect(() => {
   //   const checkLiked = async () => {
   //     console.log('Checking if blog is liked...')
-  //     const isLiked = await checkIfLiked(blogId, userId)
+  //     const isLiked = await checkIfLiked(blogId, user_id)
   //     console.log('Is blog liked?', isLiked)
   //     setLiked(!!isLiked)
   //   }
   //   checkLiked()
-  // }, [blogId, userId])
+  // }, [blogId, user_id])
 
   const handleLikeClick = async () => {
     if (isLoading) return;
@@ -35,12 +34,9 @@ export const LikeButton = ({ blogId, userId, liked, likes }: LikeButtonProps) =>
     try {
       if (liked) {
         await handleUnlike(blogId, userId)
-        const newLikes = await getLikes(blogId)
         toast('Blog has been unliked')
       } else {
         await handleLike(blogId, userId)
-        console.log("Blog was liked")
-        const newLikes = await getLikes(blogId)
         toast('Blog has been liked')
       }
       router.refresh()

@@ -1,9 +1,9 @@
 'use server'
-import openai from "../utils/openai";
-import { supabase } from "../lib/supabase";
-import { auth, currentUser } from '@clerk/nextjs/server'
-import { BlogStructure } from "@/interfaces";
-import { incrementLikes, decrementLikes, isBlogLiked, viewLikes } from "@/lib/supabase";
+import openai from '../utils/openai';
+import { supabase } from '../lib/supabase';
+import { currentUser } from '@clerk/nextjs/server'
+import { BlogStructure } from '@/interfaces';
+import { incrementLikes, decrementLikes, isBlogLiked, viewLikes } from '@/lib/supabase';
 
 export async function createCompletion(topic: string, keywords: string, length: string){
   const user = await currentUser()
@@ -30,7 +30,7 @@ export async function createCompletion(topic: string, keywords: string, length: 
   console.log(response)
   // Generate image using openai
   const image = await openai.images.generate({
-    model: "dall-e-3",
+    model: 'dall-e-3',
     prompt: `Create a high-quality blog cover image that visually represents this topic: "${topic}"`,
     n: 1,
     size: '1792x1024'
@@ -40,7 +40,7 @@ export async function createCompletion(topic: string, keywords: string, length: 
   if (!imageUrl) {
     return {error: 'Unable to generate the blog image.'}
   }
-  console.log("Image generated successful")
+  console.log('Image generated successful')
   // Download the image from DALL-E 3
   const imageResponse = await fetch(imageUrl)
   const imageBuffer = Buffer.from(await imageResponse.arrayBuffer());
@@ -59,12 +59,12 @@ export async function createCompletion(topic: string, keywords: string, length: 
   }
 
   const path = data?.path
-  const permanentImageUrl = `${process.env.SUPABASE_URL}/storage/v1/object/public/aiimage/${path}`
+  const permanentimage_url = `${process.env.SUPABASE_URL}/storage/v1/object/public/aiimage/${path}`
 
   // Create a new blog post in supabase
   const { data: blog, error: blogError } = await supabase
     .from('blogs')
-    .insert([{ title: topic, content: response, imageUrl: permanentImageUrl, userId: user.id }])
+    .insert([{ title: topic, content: response, image_url: permanentimage_url, user_id: user.id }])
     .select()
 
   if (blogError) {
@@ -80,7 +80,7 @@ export async function createCompletion(topic: string, keywords: string, length: 
 export async function shareBlog(blog: BlogStructure) {
   const {data: sharedBlog, error: blogError} = await supabase
     .from('shared-blogs')
-    .insert([{ id: blog.id, created_at: blog.created_at, title: blog.title, content: blog.content, imageUrl: blog.imageUrl, userId: blog.userId }])
+    .insert([{ id: blog.id, created_at: blog.created_at, title: blog.title, content: blog.content, image_url: blog.imageUrl, user_id: blog.userId }])
   
   if(blogError) {
     console.log(blogError)
@@ -95,7 +95,7 @@ export async function unshareBlog(blog: BlogStructure) {
     .from('shared-blogs')
     .delete()
     .eq('id', blog.id)
-    .eq('userId', blog.userId)
+    .eq('user_id', blog.userId)
   
   if (unshareError) {
     console.log(unshareError)
@@ -105,12 +105,12 @@ export async function unshareBlog(blog: BlogStructure) {
   return { success: true }
 }
 
-export async function deleteBlog(blogId: number, userId: string) {
+export async function deleteBlog(blogId: number, user_id: string) {
   const { error: deleteError } = await supabase
     .from('blogs')
     .delete()
     .eq('id', blogId)
-    .eq('userId', userId)
+    .eq('user_id', user_id)
   
   if (deleteError) {
     console.log(deleteError)
@@ -121,7 +121,7 @@ export async function deleteBlog(blogId: number, userId: string) {
     .from('shared-blogs')
     .select()
     .eq('id', blogId)
-    .eq('userId', userId)
+    .eq('user_id', user_id)
     .single()
 
   if (sharedBlog) {
@@ -151,18 +151,18 @@ export async function deleteBlog(blogId: number, userId: string) {
   return { success: true }
 }
 
-export async function handleLike(blogId: number, userId: string) {
-  const result = await incrementLikes(blogId, userId)
+export async function handleLike(blogId: number, user_id: string) {
+  const result = await incrementLikes(blogId, user_id)
   return result
 }
 
-export async function handleUnlike(blogId: number, userId: string) {
-  const result = await decrementLikes(blogId, userId)
+export async function handleUnlike(blogId: number, user_id: string) {
+  const result = await decrementLikes(blogId, user_id)
   return result
 }
 
-export async function checkIfLiked(blogId: number, userId: string) {
-  const result = await isBlogLiked(blogId, userId)
+export async function checkIfLiked(blogId: number, user_id: string) {
+  const result = await isBlogLiked(blogId, user_id)
   return result
 }
 

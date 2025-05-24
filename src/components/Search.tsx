@@ -4,6 +4,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDebounce } from 'use-debounce'
+import React from 'react'
 
 const Search = ({ search, url }: { search?: string, url?: string }) => {
   const router = useRouter()

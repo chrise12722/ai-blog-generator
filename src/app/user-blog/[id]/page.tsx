@@ -6,7 +6,6 @@ import { ChevronLeft } from 'lucide-react'
 import { currentUser } from '@clerk/nextjs/server'
 import { ShareButtons } from '@/components/ShareButtons'
 import { DeleteButton } from '@/components/DeleteButton'
-import { BlogStructure } from "@/interfaces";
 
 
 export default async function User_Blog({ params }: { params: { id: string } }) {
@@ -16,18 +15,18 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
   }
 
   const blogId = Number(await params.id)
-  const { created_at, title, content, imageUrl } = await getBlogById(blogId, user.id)
+  const { created_at, title, content, image_url } = await getBlogById(blogId, user.id)
 
-  if (!content || !imageUrl) {
+  if (!content || !image_url) {
     return <div>Blog not found</div>
   }
 
-  const currentBlog = { id: blogId, created_at, title, content, imageUrl, userId: user.id }
+  const currentBlog = { id: blogId, created_at, title, content, imageUrl: image_url, userId: user.id }
   const sharedBlog = await isBlogShared(blogId)
 
   return (
     <section>
-      <div className="flex justify-between mr-2 mt-2">
+      <div className='flex justify-between mr-2 mt-2'>
         <Link
           href='/saved-blogs'
           className='ml-2 inline-flex items-center text-sm font-light text-gray'
@@ -41,7 +40,7 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
         </div>
       </div>
       <section className='prose mt-6 ml-6 mr-6 flex flex-col min-h-full'>
-        <Image className='self-center' src={imageUrl} width={1000} height={500} alt='' />
+        <Image className='self-center' src={image_url} width={1000} height={500} alt='' />
         <div className='mt-4 text-base'>
           <Markdown>{content}</Markdown>
         </div>

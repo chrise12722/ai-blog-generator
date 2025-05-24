@@ -8,6 +8,7 @@ import { LikeButton } from '@/components/LikeButton';
 import Search from '@/components/Search';
 import clsx from 'clsx';
 import { LikeStructure } from '@/interfaces';
+import React from 'react';
 
 export default async function Explore_Blogs({
   searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }
@@ -27,8 +28,8 @@ export default async function Explore_Blogs({
 
   return (
     <>
-      <div className="mt-5 ml-5 sm:flex sm:justify-between mr-2">
-        <h1 className="font-bold text-2xl md:text-4xl">Explore Shared Blogs</h1>
+      <div className='mt-5 ml-5 sm:flex sm:justify-between mr-2'>
+        <h1 className='font-bold text-2xl md:text-4xl'>Explore Shared Blogs</h1>
         <div className='flex flex-col gap-2 sm:flex-row mt-4'>
           <Search search={search} url={url} />
           <div className='flex flex-row justify-center gap-2'>
@@ -70,7 +71,7 @@ export default async function Explore_Blogs({
                 <Link href={`/nonuser-blog/${blog.id}`} key={blog.id}>
                   <Image
                     alt=''
-                    src={blog.imageUrl}
+                    src={blog.image_url}
                     width={400}
                     height={400}
                     className='w-full'
@@ -81,7 +82,7 @@ export default async function Explore_Blogs({
                     <p className='text-xs text-gray-600'>
                       {formatDate(blog.created_at)}
                     </p>
-                    <LikeButton blogId={blog.id} userId={user.id} liked={blog.user_likes.some((like: LikeStructure) => like.user_id === user.id)} likes={blog.likes} />
+                    <LikeButton blogId={blog.id} userId={user.id} liked={blog.user_likes.some((like: LikeStructure) => like.userId === user.id)} likes={blog.likes} />
                   </div>
                 </Link>
               </CardContent>

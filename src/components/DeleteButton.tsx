@@ -3,6 +3,7 @@
 import { deleteBlog } from "@/app/actions";
 import { useRouter } from "next/navigation";
 import { toast } from 'sonner';
+import React from "react";
 
 interface DeleteButtonProps {
   blogId: number;
@@ -18,7 +19,7 @@ export const DeleteButton = ({ blogId, userId }: DeleteButtonProps) => {
     toast("Blog has been successfully deleted")
   }
   return (
-    <button className="rounded-xl bg-red-500 hover:bg-red-400 text-white p-2 sm:p-3 cursor-pointer" onClick={deleteUserBlog}>
+    <button className='rounded-xl bg-red-500 hover:bg-red-400 text-white p-2 sm:p-3 cursor-pointer' onClick={deleteUserBlog}>
       Delete Blog
     </button>
   )

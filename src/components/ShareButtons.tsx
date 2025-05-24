@@ -4,6 +4,7 @@ import { shareBlog, unshareBlog } from '@/app/actions'
 import { BlogStructure } from "@/interfaces";
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import React from 'react';
 
 interface ShareButtonsProps {
   blog: BlogStructure;
@@ -13,7 +14,6 @@ interface ShareButtonsProps {
 
 export const ShareButtons = ({ blog, isShared, userId }: ShareButtonsProps) => {
   const router = useRouter()
-
   const handleShare = async () => {
     await shareBlog({ ...blog, userId })
     router.refresh()
@@ -29,13 +29,13 @@ export const ShareButtons = ({ blog, isShared, userId }: ShareButtonsProps) => {
   return (
     <>
       {!isShared && (
-        <button className="rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-2 sm:p-3 cursor-pointer" onClick={handleShare}>
+        <button className='rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-2 sm:p-3 cursor-pointer' onClick={handleShare}>
           Share Blog
         </button>
       )}
 
       {isShared && (
-        <button className="rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-2 sm:p-3 cursor-pointer" onClick={handleUnshare}>
+        <button className='rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-2 sm:p-3 cursor-pointer' onClick={handleUnshare}>
           Unshare Blog
         </button>
       )}

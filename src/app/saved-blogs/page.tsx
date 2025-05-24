@@ -1,12 +1,13 @@
 //import Form from '@/components/form'
 import { Card, CardContent } from '@/components/ui/card';
 import { getAllUserBlogs, isBlogShared, viewLikes } from '@/lib/supabase';
-import { auth, currentUser } from '@clerk/nextjs/server';
+import { currentUser } from '@clerk/nextjs/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatDate } from '@/lib/utils';
 import clsx from 'clsx';
 import Search from '@/components/Search';
+import React from 'react';
 
 export default async function Saved_Blogs({
   searchParams }: {
@@ -22,7 +23,7 @@ export default async function Saved_Blogs({
   if (!user) {
     return { error: 'User not authenticated' }
   }
-  const blogs = await getAllUserBlogs({ userId: user.id, query: search, page, limit });
+  const blogs = await getAllUserBlogs({ user_id: user.id, query: search, page, limit });
   const hitLimit = !blogs || Array.isArray(blogs) && blogs.length < limit;
 
   // Check shared status for all blogs at once
@@ -30,8 +31,8 @@ export default async function Saved_Blogs({
 
   return (
     <>
-      <div className="mt-5 ml-5 sm:flex sm:justify-between mr-2">
-        <h1 className="font-bold text-2xl/6 md:text-3xl lg:text-4xl ">View All of Your Saved Blogs</h1>
+      <div className='mt-5 ml-5 sm:flex sm:justify-between mr-2'>
+        <h1 className='font-bold text-2xl/6 md:text-3xl lg:text-4xl'>View All of Your Saved Blogs</h1>
         <div className='flex flex-col gap-2 sm:flex-row mt-4'>
           <Search search={search} url={url} />
           <div className='flex flex-row justify-center gap-2'>
@@ -73,7 +74,7 @@ export default async function Saved_Blogs({
                 <Link href={`/user-blog/${blog.id}`} key={blog.id}>
                   <Image
                     alt=''
-                    src={blog.imageUrl}
+                    src={blog.image_url}
                     width={400}
                     height={400}
                     className='w-full'

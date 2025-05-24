@@ -6,6 +6,7 @@ import { formatDate } from "@/lib/utils";
 import { viewLikes } from '@/lib/supabase';
 import { SignInButton } from "@clerk/nextjs";
 import { currentUser } from '@clerk/nextjs/server';
+import React from "react";
 
 export default async function Home() {
   const user = await currentUser()
@@ -41,7 +42,7 @@ export default async function Home() {
                     <Link href={`/nonuser-blog/${blog.id}`} key={blog.id}>
                       <Image
                         alt=''
-                        src={blog.imageUrl}
+                        src={blog.image_url}
                         width={400}
                         height={400}
                         className='w-full'

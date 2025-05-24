@@ -1,6 +1,5 @@
 import {createClient} from '@supabase/supabase-js'
 import { redirect } from 'next/navigation'
-import { toast } from "sonner"
 
 const supabaseUrl = process.env.SUPABASE_URL as string
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY as string
@@ -12,7 +11,7 @@ export async function getBlogById(id: number, userId: string) {
     .from('blogs')
     .select()
     .eq('id', id)
-    .eq('userId', userId)
+    .eq('user_id', userId)
     .single()
   if (!data){
     redirect('/')
@@ -28,8 +27,8 @@ export async function getSharedBlogById(id: number) {
       created_at,
       title,
       content,
-      imageUrl,
-      userId,
+      image_url,
+      user_id,
       likes,
       user_likes (
         id,
@@ -52,12 +51,12 @@ export async function getSharedBlogById(id: number) {
 }
 
 export async function getAllUserBlogs({
-  userId,
+  user_id,
   query,
   page = 1,
   limit = 12
 }: {
-  userId: string
+  user_id: string
   query?: string
   page?: number
   limit?: number
@@ -66,7 +65,7 @@ export async function getAllUserBlogs({
     const {data: searchUserBlogs, error} = await supabase
       .from('blogs')
       .select()
-      .eq('userId', userId)
+      .eq('user_id', user_id)
       .ilike('title', query)
       .order('created_at', {ascending: false})
       .range((page - 1) * limit, page * limit - 1)
@@ -82,7 +81,7 @@ export async function getAllUserBlogs({
     const {data: userBlogs,error} = await supabase
       .from('blogs')
       .select()
-      .eq('userId', userId)
+      .eq('user_id', user_id)
       .order('created_at', {ascending: false})
       .range((page - 1) * limit, page * limit - 1)
 
@@ -127,8 +126,8 @@ export async function getAllSharedBlogs({
         created_at,
         title,
         content,
-        imageUrl,
-        userId,
+        image_url,
+        user_id,
         likes,
         user_likes (
           id,

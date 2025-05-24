@@ -8,7 +8,7 @@ export interface BlogStructure {
 }
 
 export interface LikeStructure {
-  blog_id: number;
+  blogId: number;
   id: number;
-  user_id: string;
+  userId: string;
 }
