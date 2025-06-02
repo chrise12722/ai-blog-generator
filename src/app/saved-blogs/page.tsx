@@ -1,13 +1,13 @@
-//import Form from '@/components/form'
-import { Card, CardContent } from '@/components/ui/card';
-import { getAllUserBlogs, isBlogShared, viewLikes } from '@/lib/supabase';
-import { currentUser } from '@clerk/nextjs/server';
-import Image from 'next/image';
-import Link from 'next/link';
-import { formatDate } from '@/lib/utils';
 import clsx from 'clsx';
 import Search from '@/components/Search';
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { formatDate } from '@/lib/utils';
+import { Card, CardContent } from '@/components/ui/card';
+import { getAllUserBlogs, isBlogShared, viewLikes } from '@/lib/supabase';
+import { currentUser } from '@clerk/nextjs/server';
+
 
 export default async function Saved_Blogs({
   searchParams }: {
@@ -28,6 +28,7 @@ export default async function Saved_Blogs({
 
   // Check shared status for all blogs at once
   const sharedStatuses = Array.isArray(blogs) ? await Promise.all(blogs.map(blog => isBlogShared(blog.id))) : [];
+  const likesArray = Array.isArray(blogs) ? await Promise.all(blogs.map(blog => viewLikes(blog.id))) : [];
 
   return (
     <>
@@ -86,7 +87,9 @@ export default async function Saved_Blogs({
                       {formatDate(blog.created_at)}
                     </p>
                     {sharedStatuses[index] &&
-                      <p>{viewLikes(blog.id)} Likes </p>
+                      <p>
+                        {likesArray[index]} {likesArray[index] === 1 ? 'Like' : 'Likes'}
+                      </p>
                     }
                   </div>
                 </Link>

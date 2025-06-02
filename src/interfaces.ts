@@ -1,6 +1,6 @@
 export interface BlogStructure {
   id: number;
-  created_at: EpochTimeStamp;
+  createdAt: EpochTimeStamp;
   title: string;
   content: string;
   imageUrl: string;
@@ -10,5 +10,5 @@ export interface BlogStructure {
 export interface LikeStructure {
   blogId: number;
   id: number;
-  userId: string;
+  user_id: string;
 }

@@ -5,7 +5,7 @@ import { getSharedBlogById } from '@/lib/supabase'
 import { ChevronLeft } from 'lucide-react'
 import { currentUser } from '@clerk/nextjs/server'
 import { LikeButton } from '@/components/LikeButton'
-import { LikeStructure } from '@/interfaces'
+
 
 
 export default async function Nonuser_Blog({ params }: { params: { id: string } }) {

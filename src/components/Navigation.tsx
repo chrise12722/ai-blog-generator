@@ -1,10 +1,9 @@
 'use client'
-
+import Image from 'next/image';
 import Link from 'next/link';
+import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { SignInButton, UserButton, SignedIn, SignedOut } from '@clerk/nextjs';
-import React, { useState } from 'react';
-import Image from 'next/image';
 
 export const Navigation = () => {
   const pathname = usePathname();

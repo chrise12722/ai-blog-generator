@@ -1,16 +1,17 @@
+import React from "react";
 import Image from "next/image";
+import Link from 'next/link';
 import { getAllSharedBlogs } from "@/lib/supabase";
 import { Card, CardContent } from "@/components/ui/card";
-import Link from 'next/link';
 import { formatDate } from "@/lib/utils";
 import { viewLikes } from '@/lib/supabase';
 import { SignInButton } from "@clerk/nextjs";
 import { currentUser } from '@clerk/nextjs/server';
-import React from "react";
 
 export default async function Home() {
   const user = await currentUser()
   const blogs = await getAllSharedBlogs({ limit: 3 })
+
   return (
     <>
       <div className="mx-4 mt-4">

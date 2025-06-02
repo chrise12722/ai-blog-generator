@@ -1,10 +1,9 @@
 'use client'
-
+import React from 'react';
 import { shareBlog, unshareBlog } from '@/app/actions'
 import { BlogStructure } from "@/interfaces";
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
-import React from 'react';
 
 interface ShareButtonsProps {
   blog: BlogStructure;

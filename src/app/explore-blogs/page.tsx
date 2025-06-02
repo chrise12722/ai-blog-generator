@@ -1,14 +1,14 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { getAllSharedBlogs } from '@/lib/supabase';
-import { currentUser } from '@clerk/nextjs/server';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { formatDate } from '@/lib/utils';
-import { LikeButton } from '@/components/LikeButton';
 import Search from '@/components/Search';
 import clsx from 'clsx';
 import { LikeStructure } from '@/interfaces';
-import React from 'react';
+import { formatDate } from '@/lib/utils';
+import { LikeButton } from '@/components/LikeButton';
+import { Card, CardContent } from '@/components/ui/card';
+import { getAllSharedBlogs } from '@/lib/supabase';
+import { currentUser } from '@clerk/nextjs/server';
 
 export default async function Explore_Blogs({
   searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }
@@ -82,7 +82,12 @@ export default async function Explore_Blogs({
                     <p className='text-xs text-gray-600'>
                       {formatDate(blog.created_at)}
                     </p>
-                    <LikeButton blogId={blog.id} userId={user.id} liked={blog.user_likes.some((like: LikeStructure) => like.userId === user.id)} likes={blog.likes} />
+                    <LikeButton
+                      blogId={blog.id}
+                      userId={user.id}
+                      liked={blog.user_likes?.some((like: LikeStructure) => like.user_id === user.id) ?? false}
+                      likes={blog.likes}
+                    />
                   </div>
                 </Link>
               </CardContent>

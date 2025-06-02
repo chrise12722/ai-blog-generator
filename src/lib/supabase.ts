@@ -21,7 +21,7 @@ export async function getBlogById(id: number, userId: string) {
 
 export async function getSharedBlogById(id: number) {
   const {data, error} = await supabase
-    .from('shared-blogs')
+    .from('blogs')
     .select(`
       id,
       created_at,
@@ -29,6 +29,7 @@ export async function getSharedBlogById(id: number) {
       content,
       image_url,
       user_id,
+      is_shared,
       likes,
       user_likes (
         id,
@@ -105,8 +106,9 @@ export async function getAllSharedBlogs({
 } = {}) {
   if(query) {
     const {data: searchBlogs, error} = await supabase
-      .from('shared-blogs')
+      .from('blogs')
       .select()
+      .eq('is_shared', true)
       .ilike('title', query)
       .order('likes', {ascending: false})
       .range((page - 1) * limit, page * limit - 1)
@@ -120,7 +122,7 @@ export async function getAllSharedBlogs({
   }
   else {
     const {data: allBlogs, error} = await supabase
-      .from('shared-blogs')
+      .from('blogs')
       .select(`
         id,
         created_at,
@@ -128,13 +130,15 @@ export async function getAllSharedBlogs({
         content,
         image_url,
         user_id,
+        is_shared,
         likes,
-        user_likes (
+        user_likes(
           id,
           user_id,
           blog_id
-          )`
+        )`
       )
+      .eq('is_shared', true)
       .order('likes', {ascending: false})
       .range((page - 1) * limit, page * limit - 1)
 
@@ -149,16 +153,17 @@ export async function getAllSharedBlogs({
 
 export async function isBlogShared(id: number) {
   const { data } = await supabase
-    .from('shared-blogs')
+    .from('blogs')
     .select()
     .eq('id', id)
+    .eq('is_shared', true)
 
   return data && data.length > 0
 }
 
 export async function viewLikes(blogId: number) {
   const { data, error } = await supabase
-    .from('shared-blogs')
+    .from('blogs')
     .select('likes')
     .eq('id', blogId)
     .single()
@@ -176,14 +181,14 @@ export async function viewLikes(blogId: number) {
 //Add like to database
 
 export async function incrementLikes(blogId: number, userId: string) {
-  const { data: likeData, error: likeError } = await supabase.rpc('increment_likes', {row_id: blogId})
+  const { error: likeError } = await supabase.rpc('increment_likes', {row_id: blogId})
 
 
   if (likeError) {
     console.log("Failed to add like")
   }
 
-  const { data: recordData, error: recordError } = await supabase
+  const { error: recordError } = await supabase
     .from('user_likes')
     .insert([{ user_id: userId, blog_id: blogId }])
   
@@ -197,13 +202,13 @@ export async function incrementLikes(blogId: number, userId: string) {
 //Remove like from database
 
 export async function decrementLikes(blogId: number, userId: string) {
-  const { data: likeData, error: likeError } = await supabase.rpc('decrement_likes', {row_id: blogId})
+  const { error: likeError } = await supabase.rpc('decrement_likes', {row_id: blogId})
 
   if (likeError) {
     console.log('Failed to decrease likes')
   }
 
-  const { data: recordData, error: recordError } = await supabase
+  const { error: recordError } = await supabase
     .from('user_likes')
     .delete()
     .eq('user_id', userId)
