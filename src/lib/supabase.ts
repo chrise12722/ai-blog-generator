@@ -1,4 +1,5 @@
 import {createClient} from '@supabase/supabase-js'
+import { User } from 'lucide-react'
 import { redirect } from 'next/navigation'
 
 const supabaseUrl = process.env.SUPABASE_URL as string
@@ -11,10 +12,13 @@ export async function getBlogById(id: number, userId: string) {
     .from('blogs')
     .select()
     .eq('id', id)
-    .eq('user_id', userId)
+    .eq("user_id", userId)
     .single()
   if (!data){
     redirect('/')
+  }
+  if (error){
+    return { error: "Blog not found. Please try again"}
   }
   return data
 }
@@ -73,7 +77,7 @@ export async function getAllUserBlogs({
     
     if(error) {
       console.log(error)
-      return undefined
+      return {error: "Failed to get all user blogs. Try again"}
     }
 
     return searchUserBlogs
@@ -88,7 +92,7 @@ export async function getAllUserBlogs({
 
     if (error) {
       console.log(error)
-      return error
+      return {error: "Failed to get all user blogs. Try again"}
       }
     
     return userBlogs
@@ -185,7 +189,8 @@ export async function incrementLikes(blogId: number, userId: string) {
 
 
   if (likeError) {
-    console.log("Failed to add like")
+    console.log(likeError)
+    return { error: 'Unable to like blog post. Please try again' }
   }
 
   const { error: recordError } = await supabase
@@ -206,6 +211,7 @@ export async function decrementLikes(blogId: number, userId: string) {
 
   if (likeError) {
     console.log('Failed to decrease likes')
+    return { error: 'Failed to decrease like. Please try again' }
   }
 
   const { error: recordError } = await supabase
@@ -215,7 +221,8 @@ export async function decrementLikes(blogId: number, userId: string) {
     .eq('blog_id', blogId)
   
   if (recordError) {
-   console.log('Failed to delete like')
+   console.log(recordError)
+   return { error: "Failed to delete like. Please try again" }
   }
 
   return { success: true }
