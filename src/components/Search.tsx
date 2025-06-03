@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDebounce } from 'use-debounce'
 
-const Search = ({ search, url }: { search?: string, url?: string }) => {
+export const Search = ({ search, url }: { search?: string, url: string }) => {
   const router = useRouter()
   const [text, setText] = useState(search ? search : '')
   const [query] = useDebounce(text, 750)
@@ -40,5 +40,4 @@ const Search = ({ search, url }: { search?: string, url?: string }) => {
     </div>
   )
 }
-
 export default Search

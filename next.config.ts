@@ -3,9 +3,9 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
+        protocol: 'http',
         hostname: 
-          'nfnvvrtdmfxntevegtyn.supabase.co',
+          '127.0.0.1',
         pathname: '/storage/v1/object/public/aiimage/**'
 
       }],

@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Search from '@/components/Search';
 import clsx from 'clsx';
+import { Search } from '@/components/Search';
 import { LikeStructure } from '@/interfaces';
 import { formatDate } from '@/lib/utils';
 import { LikeButton } from '@/components/LikeButton';

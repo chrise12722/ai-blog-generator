@@ -13,9 +13,13 @@ export const DeleteButton = ({ blogId, userId }: DeleteButtonProps) => {
   const router = useRouter()
 
   const deleteUserBlog = async () => {
-    await deleteBlog(blogId, userId)
-    router.push('/saved-blogs')
-    toast("Blog has been successfully deleted")
+    const result = await deleteBlog(blogId, userId)
+    if (result && result.error) {
+      toast(result.error);
+    } else {
+      router.push('/saved-blogs')
+      toast("Blog has been successfully deleted")
+    }
   }
   return (
     <button className='rounded-xl bg-red-500 hover:bg-red-400 text-white p-2 sm:p-3 cursor-pointer' onClick={deleteUserBlog}>

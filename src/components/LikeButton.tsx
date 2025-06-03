@@ -33,11 +33,19 @@ export const LikeButton = ({ blogId, userId, liked, likes }: LikeButtonProps) =>
     setIsLoading(true)
     try {
       if (liked) {
-        await handleUnlike(blogId, userId)
-        toast('Blog has been unliked')
+        const result = await handleUnlike(blogId, userId)
+        if (result && result.error) {
+          toast(result.error)
+        } else {
+          toast('Blog has been unliked')
+        }
       } else {
-        await handleLike(blogId, userId)
-        toast('Blog has been liked')
+        const result = await handleLike(blogId, userId)
+        if (result && result.error) {
+          toast(result.error)
+        } else {
+          toast('Blog has been liked')
+        }
       }
       router.refresh()
     } finally {

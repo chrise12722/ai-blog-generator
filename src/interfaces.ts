@@ -1,14 +1,14 @@
 export interface BlogStructure {
   id: number;
-  createdAt: EpochTimeStamp;
+  created_at: EpochTimeStamp;
   title: string;
   content: string;
-  imageUrl: string;
+  image_url: string;
   userId: string;
 }
 
 export interface LikeStructure {
-  blogId: number;
+  blog_id: number;
   id: number;
   user_id: string;
 }

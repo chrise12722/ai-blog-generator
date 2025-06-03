@@ -21,7 +21,7 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
     return <div>Blog not found</div>
   }
 
-  const currentBlog = { id: blogId, createdAt: created_at, title, content, imageUrl: image_url, userId: user.id }
+  const currentBlog = { id: blogId, created_at: created_at, title, content, image_url, userId: user.id }
   const sharedBlog = await isBlogShared(blogId)
 
   return (

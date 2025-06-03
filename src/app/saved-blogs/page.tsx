@@ -1,12 +1,14 @@
 import clsx from 'clsx';
-import Search from '@/components/Search';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Search from '@/components/Search';
+import { toast } from 'sonner';
 import { formatDate } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
 import { getAllUserBlogs, isBlogShared, viewLikes } from '@/lib/supabase';
 import { currentUser } from '@clerk/nextjs/server';
+import { BlogStructure } from '@/interfaces';
 
 
 export default async function Saved_Blogs({
@@ -24,6 +26,9 @@ export default async function Saved_Blogs({
     return { error: 'User not authenticated' }
   }
   const blogs = await getAllUserBlogs({ user_id: user.id, query: search, page, limit });
+  if (blogs && !Array.isArray(blogs) && blogs.error) {
+    toast(blogs.error)
+  }
   const hitLimit = !blogs || Array.isArray(blogs) && blogs.length < limit;
 
   // Check shared status for all blogs at once
@@ -69,7 +74,7 @@ export default async function Saved_Blogs({
       </div>
       <div className='flex flex-row flex-wrap m-2 relative min-h-[50vh]'>
         {Array.isArray(blogs) && blogs.length > 0 ? (
-          blogs.map((blog: any, index: number) => (
+          blogs.map((blog: BlogStructure, index: number) => (
             <Card key={blog.id} className='overflow-hidden w-full sm:w-1/2 xl:w-1/3 2xl:w-1/4'>
               <CardContent className='p-0'>
                 <Link href={`/user-blog/${blog.id}`} key={blog.id}>
@@ -84,7 +89,7 @@ export default async function Saved_Blogs({
                   <div className='px-4 pb-3 pt-2'>
                     <h3 className='font-medium'>{blog.title}</h3>
                     <p className='text-xs text-gray-600'>
-                      {formatDate(blog.created_at)}
+                      {formatDate(String(blog.created_at))}
                     </p>
                     {sharedStatuses[index] &&
                       <p>

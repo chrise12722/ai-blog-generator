@@ -95,7 +95,7 @@ export async function shareBlog(blog: BlogStructure) {
 
   if (blogError) {
     console.log(blogError)
-    return blogError
+    return {error: "Failed to share blog. Please try again"}
   }
 
   return { success: true }
@@ -123,7 +123,7 @@ export async function unshareBlog(blog: BlogStructure) {
   
   if (unshareError) {
     console.log(unshareError)
-    return unshareError
+    return {error: "Unable to unshare blog. Please try again"}
   }
 
   return { success: true }
