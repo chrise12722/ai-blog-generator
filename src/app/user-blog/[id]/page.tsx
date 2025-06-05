@@ -11,18 +11,18 @@ import { DeleteButton } from '@/components/DeleteButton'
 export default async function User_Blog({ params }: { params: { id: string } }) {
   const user = await currentUser()
   if (!user) {
-    return <div>User not authenticated</div>
+    return <div>User not authenticated</div>;
   }
 
-  const blogId = Number(await params.id)
-  const { created_at, title, content, image_url } = await getBlogById(blogId, user.id)
+  const blogId = Number(await params.id);
+  const { created_at, title, content, image_url } = await getBlogById(blogId, user.id);
 
   if (!content || !image_url) {
-    return <div>Blog not found</div>
+    return <div>Blog not found</div>;
   }
 
-  const currentBlog = { id: blogId, created_at: created_at, title, content, image_url, userId: user.id }
-  const sharedBlog = await isBlogShared(blogId)
+  const currentBlog = { id: blogId, created_at: created_at, title, content, image_url, userId: user.id };
+  const sharedBlog = await isBlogShared(blogId);
 
   return (
     <section>
@@ -46,5 +46,5 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
         </div>
       </section>
     </section>
-  )
+  );
 }

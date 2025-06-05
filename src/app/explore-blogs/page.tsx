@@ -14,14 +14,14 @@ export default async function Explore_Blogs({
   searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }
 ) {
   const params = await searchParams;
-  const page = typeof params.page === 'string' ? Number(params.page) : 1
-  const limit = typeof params.limit === 'string' ? Number(params.limit) : 12
+  const page = typeof params.page === 'string' ? Number(params.page) : 1;
+  const limit = typeof params.limit === 'string' ? Number(params.limit) : 12;
   const search = typeof params.search === 'string' ? params.search : undefined
-  const url = 'explore-blogs'
+  const url = 'explore-blogs';
 
-  const user = await currentUser()
+  const user = await currentUser();
   if (!user) {
-    return { error: 'User not authenticated' }
+    return { error: 'User not authenticated' };
   }
   const blogs = await getAllSharedBlogs({ query: search, page, limit });
   const hitLimit = !blogs || blogs.length < limit;

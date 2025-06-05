@@ -1,34 +1,35 @@
 import React from "react";
 import Image from "next/image";
 import Link from 'next/link';
-import { getAllSharedBlogs } from "@/lib/supabase";
+import { TypingAnimation } from "@/components/magicui/typing-animation"
 import { Card, CardContent } from "@/components/ui/card";
+import { getAllSharedBlogs } from "@/lib/supabase";
 import { formatDate } from "@/lib/utils";
 import { viewLikes } from '@/lib/supabase';
 import { SignInButton } from "@clerk/nextjs";
 import { currentUser } from '@clerk/nextjs/server';
 
 export default async function Home() {
-  const user = await currentUser()
-  const blogs = await getAllSharedBlogs({ limit: 3 })
+  const user = await currentUser();
+  const blogs = await getAllSharedBlogs({ limit: 3 });
 
   return (
     <>
       <div className="mx-4 mt-4">
         <h1 className='font-bold text-4xl'>NeuroBlog</h1>
-        <div className='bg-gray-300 h-40 mt-16 flex flex-col gap-4 justify-center items-center '>
-          <h2 className='text-center text-xl md:text-3xl pt-4'>Get Started With Generating AI Blogs Today</h2>
-          <div className='pb-4'>
+        <div className='h-40 mt-16 flex flex-col gap-4 justify-center items-center '>
+          <TypingAnimation className='text-center text-2xl font-light md:text-3xl pt-4'>Get Started With Generating AI Blogs Today</TypingAnimation>
+          <div className='pb-4 text-lg'>
             {!user && (
               <SignInButton>
-                <button className='py-2 px-4 rounded hover:bg-blue-500 border-solid border-black hover:border-blue-500 text-black hover:text-white font-bold .transition duration-750 cursor-pointer'>Sign In</button>
+                <button className='py-2 px-4 rounded text-black font-extrabold hover:bg-blue-500 hover:border-blue-500  hover:text-white .transition duration-750 cursor-pointer'>&rarr; Sign In</button>
               </SignInButton>
             )}
             {user && (
-              <Link className='py-2 px-4 rounded hover:bg-blue-500 border-solid border-black hover:border-blue-500 text-black hover:text-white font-bold .transtion duration-750 cursor-pointer'
+              <Link className='py-3 px-4 rounded text-black font-extrabold hover:border-blue-500 hover:bg-blue-500 hover:text-white transition duration-750 cursor-pointer'
                 href='/create-blog'
               >
-                Create a Blog
+                &rarr; Create a Blog
               </Link>
             )}
           </div>

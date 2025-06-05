@@ -11,7 +11,7 @@ export const Navigation = () => {
   const [isClick, setisClick] = useState(false);
 
   const toggleNavbar = (): void => {
-    setisClick(!isClick)
+    setisClick(!isClick);
   }
 
   return (
@@ -40,7 +40,7 @@ export const Navigation = () => {
                   Explore Blogs
                 </Link>
                 <Link href='/saved-blogs' className={pathname === '/saved-blogs' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition hover:animate-bounce duration-300'}>
-                  View Saved Blogs
+                  Your Blogs
                 </Link>
                 <Link href='/create-blog' className={pathname === '/create-blog' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition hover:animate-bounce duration-300'}>
                   Create New Blog
@@ -121,5 +121,5 @@ export const Navigation = () => {
         )}
       </nav>
     </>
-  )
+  );
 }

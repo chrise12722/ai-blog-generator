@@ -18,5 +18,5 @@ export const FormSubmitButton = () => {
         </div>
       ) : 'Generate Blog'}
     </button>
-  )
+  );
 }

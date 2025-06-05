@@ -13,19 +13,8 @@ interface LikeButtonProps {
 }
 
 export const LikeButton = ({ blogId, userId, liked, likes }: LikeButtonProps) => {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(false)
-
-
-  // useEffect(() => {
-  //   const checkLiked = async () => {
-  //     console.log('Checking if blog is liked...')
-  //     const isLiked = await checkIfLiked(blogId, user_id)
-  //     console.log('Is blog liked?', isLiked)
-  //     setLiked(!!isLiked)
-  //   }
-  //   checkLiked()
-  // }, [blogId, user_id])
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLikeClick = async () => {
     if (isLoading) return;
@@ -33,23 +22,23 @@ export const LikeButton = ({ blogId, userId, liked, likes }: LikeButtonProps) =>
     setIsLoading(true)
     try {
       if (liked) {
-        const result = await handleUnlike(blogId, userId)
+        const result = await handleUnlike(blogId, userId);
         if (result && result.error) {
-          toast(result.error)
+          toast(result.error);
         } else {
-          toast('Blog has been unliked')
+          toast('Blog has been unliked');
         }
       } else {
-        const result = await handleLike(blogId, userId)
+        const result = await handleLike(blogId, userId);
         if (result && result.error) {
-          toast(result.error)
+          toast(result.error);
         } else {
-          toast('Blog has been liked')
+          toast('Blog has been liked');
         }
       }
-      router.refresh()
+      router.refresh();
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
   }
 
@@ -62,5 +51,5 @@ export const LikeButton = ({ blogId, userId, liked, likes }: LikeButtonProps) =>
       <span>{likes}</span>
       <span>{liked ? '❤️' : '🤍'}</span>
     </button>
-  )
+  );
 }

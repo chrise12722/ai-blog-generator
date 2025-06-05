@@ -6,21 +6,21 @@ import { useRouter } from 'next/navigation'
 import { useDebounce } from 'use-debounce'
 
 export const Search = ({ search, url }: { search?: string, url: string }) => {
-  const router = useRouter()
-  const [text, setText] = useState(search ? search : '')
-  const [query] = useDebounce(text, 750)
-  const initialRender = useRef(true)
+  const router = useRouter();
+  const [text, setText] = useState(search ? search : '');
+  const [query] = useDebounce(text, 750);
+  const initialRender = useRef(true);
 
   useEffect(() => {
     if (initialRender.current) {
-      initialRender.current = false
-      return
+      initialRender.current = false;
+      return;
     }
     if (!query) {
-      router.push(`/${url}`)
+      router.push(`/${url}`);
     }
     else {
-      router.push(`/${url}?search=${text}`)
+      router.push(`/${url}?search=${text}`);
     }
   }, [query])
 
@@ -38,6 +38,6 @@ export const Search = ({ search, url }: { search?: string, url: string }) => {
           placeholder:text-gray-400 focus:ring02 focus:ring-sky-600 sm:text-sm sm:leading-6'
       />
     </div>
-  )
+  );
 }
 export default Search

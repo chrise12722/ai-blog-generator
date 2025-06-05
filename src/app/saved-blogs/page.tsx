@@ -21,17 +21,17 @@ export default async function Saved_Blogs({
   const search = typeof params.search === 'string' ? params.search : undefined
   const url = 'saved-blogs'
 
-  const user = await currentUser()
+  const user = await currentUser();
   if (!user) {
-    return { error: 'User not authenticated' }
+    return { error: 'User not authenticated' };
   }
   const blogs = await getAllUserBlogs({ user_id: user.id, query: search, page, limit });
   if (blogs && !Array.isArray(blogs) && blogs.error) {
-    toast(blogs.error)
+    toast(blogs.error);
   }
   const hitLimit = !blogs || Array.isArray(blogs) && blogs.length < limit;
 
-  // Check shared status for all blogs at once
+  // Check the shared status and like count for all blogs at once
   const sharedStatuses = Array.isArray(blogs) ? await Promise.all(blogs.map(blog => isBlogShared(blog.id))) : [];
   const likesArray = Array.isArray(blogs) ? await Promise.all(blogs.map(blog => viewLikes(blog.id))) : [];
 

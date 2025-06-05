@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { useState } from 'react';
+import Image from 'next/image';
 import { createCompletion } from '../actions';
 import { toast } from 'sonner';
-import Image from 'next/image';
 import { useActionState } from 'react';
 import { FormSubmitButton } from '@/components/FormSubmitButton';
 
@@ -17,23 +17,23 @@ export default function CreateBlog() {
   const [state, formAction] = useActionState(action, {});
 
   async function action(_previousState: object, formData: FormData) {
-    const topic = formData.get('blogTopic')
-    const keywords = formData.get('blogKeywords')
-    const length = formData.get('blogLength')
+    const topic = formData.get('blogTopic');
+    const keywords = formData.get('blogKeywords');
+    const length = formData.get('blogLength');
     //call server action
-    const result = await createCompletion(topic as string, keywords as string, length as string)
+    const result = await createCompletion(topic as string, keywords as string, length as string);
     if (result && 'error' in result) {
-      toast.error(result.error)
+      toast.error(result.error);
     }
-    console.log(result)
+    console.log(result);
 
     if (result && Array.isArray(result)) {
-      setBlogContent(result[0]?.content || '')
-      setBlogImage(result[0].image_url || '')
-      toast('Blog has been generated and saved')
+      setBlogContent(result[0]?.content || '');
+      setBlogImage(result[0].image_url || '');
+      toast('Blog has been generated and saved');
     }
 
-    return {}
+    return {};
 
   }
 

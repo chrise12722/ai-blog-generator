@@ -12,24 +12,24 @@ interface ShareButtonsProps {
 }
 
 export const ShareButtons = ({ blog, isShared, userId }: ShareButtonsProps) => {
-  const router = useRouter()
+  const router = useRouter();
   const handleShare = async () => {
-    const result = await shareBlog({ ...blog, userId })
+    const result = await shareBlog({ ...blog, userId });
     if (result && result.error) {
-      toast(result.error)
+      toast(result.error);
     } else {
-      router.refresh()
-      toast('Blog has been shared')
+      router.refresh();
+      toast('Blog has been shared');
     }
   }
   const handleUnshare = async () => {
-    const result = await unshareBlog({ ...blog, userId })
+    const result = await unshareBlog({ ...blog, userId });
     if (result && result.error) {
-      toast(result.error)
+      toast(result.error);
     } else {
-      toast('Blog has been made private')
+      toast('Blog has been made private');
     }
-    router.refresh()
+    router.refresh();
   }
   return (
     <>
@@ -45,5 +45,5 @@ export const ShareButtons = ({ blog, isShared, userId }: ShareButtonsProps) => {
         </button>
       )}
     </>
-  )
+  );
 } 

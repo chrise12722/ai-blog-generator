@@ -9,16 +9,16 @@ import { LikeButton } from '@/components/LikeButton'
 
 
 export default async function Nonuser_Blog({ params }: { params: { id: string } }) {
-  const user = await currentUser()
+  const user = await currentUser();
   if (!user) {
-    return <div>User not authenticated</div>
+    return <div>User not authenticated</div>;
   }
 
-  const blogId = Number(params.id)
-  const blog = await getSharedBlogById(blogId)
+  const blogId = Number(params.id);
+  const blog = await getSharedBlogById(blogId);
 
   if (!blog.content || !blog.image_url) {
-    return <div>Blog not found</div>
+    return <div>Blog not found</div>;
   }
 
   return (
@@ -42,5 +42,5 @@ export default async function Nonuser_Blog({ params }: { params: { id: string } 
         </div>
       </section>
     </section>
-  )
+  );
 }
