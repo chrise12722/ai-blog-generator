@@ -4,6 +4,7 @@ import { createRouteMatcher } from "@clerk/nextjs/server";
 const isProtectedRoute = createRouteMatcher(["/explore-blogs", "/saved-blogs", "/create-blog", "/user-blog/(.*)", "/nonuser-blog/(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
+  //Protect routes from being accessed by unauthorized users
   if(isProtectedRoute(req)) await auth.protect();
 });
 

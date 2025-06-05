@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Markdown from 'react-markdown'
-import { getBlogById, isBlogShared } from '@/lib/supabase'
+import { getBlogById, isBlogShared } from '@/utils/supabase'
 import { ChevronLeft } from 'lucide-react'
 import { currentUser } from '@clerk/nextjs/server'
 import { ShareButtons } from '@/components/ShareButtons'
@@ -15,14 +15,12 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
   }
 
   const blogId = Number(await params.id);
-  const { created_at, title, content, image_url } = await getBlogById(blogId, user.id);
+  // Fetch blog data
+  const currentBlog = await getBlogById(blogId, user.id);
 
-  if (!content || !image_url) {
+  if (!currentBlog.content || !currentBlog.image_url) {
     return <div>Blog not found</div>;
   }
-
-  const currentBlog = { id: blogId, created_at: created_at, title, content, image_url, userId: user.id };
-  const sharedBlog = await isBlogShared(blogId);
 
   return (
     <section>
@@ -35,14 +33,14 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
           <span>Go Back</span>
         </Link>
         <div className='flex flex-row gap-1'>
-          <ShareButtons blog={currentBlog} isShared={!!sharedBlog} userId={user.id} />
+          <ShareButtons blog={currentBlog} isShared={!!(await isBlogShared(blogId))} userId={user.id} />
           <DeleteButton blogId={blogId} userId={user.id} />
         </div>
       </div>
       <section className='prose mt-6 ml-6 mr-6 flex flex-col min-h-full'>
-        <Image className='self-center' src={image_url} width={1000} height={500} alt='' />
+        <Image className='self-center' src={currentBlog.image_url} width={1000} height={500} alt='' />
         <div className='mt-4 text-base'>
-          <Markdown>{content}</Markdown>
+          <Markdown>{currentBlog.content}</Markdown>
         </div>
       </section>
     </section>

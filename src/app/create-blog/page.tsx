@@ -13,19 +13,19 @@ export default function CreateBlog() {
   const [blogContent, setBlogContent] = useState<string>('');
   const [blogImage, setBlogImage] = useState<string>('');
 
-
+  // Handles form submission state
   const [state, formAction] = useActionState(action, {});
 
+  // Handles blog generation through server action
   async function action(_previousState: object, formData: FormData) {
     const topic = formData.get('blogTopic');
     const keywords = formData.get('blogKeywords');
     const length = formData.get('blogLength');
-    //call server action
+    // Call server action
     const result = await createCompletion(topic as string, keywords as string, length as string);
     if (result && 'error' in result) {
       toast.error(result.error);
     }
-    console.log(result);
 
     if (result && Array.isArray(result)) {
       setBlogContent(result[0]?.content || '');

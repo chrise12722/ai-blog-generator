@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Markdown from 'react-markdown'
-import { getSharedBlogById } from '@/lib/supabase'
+import { getSharedBlogById } from '@/utils/supabase'
 import { ChevronLeft } from 'lucide-react'
 import { currentUser } from '@clerk/nextjs/server'
 import { LikeButton } from '@/components/LikeButton'

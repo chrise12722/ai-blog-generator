@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from 'next/link';
 import { TypingAnimation } from "@/components/magicui/typing-animation"
 import { Card, CardContent } from "@/components/ui/card";
-import { getAllSharedBlogs } from "@/lib/supabase";
-import { formatDate } from "@/lib/utils";
-import { viewLikes } from '@/lib/supabase';
+import { getAllSharedBlogs } from "@/utils/supabase";
+import { formatDate } from "@/utils/utils";
+import { viewLikes } from '@/utils/supabase';
 import { SignInButton } from "@clerk/nextjs";
 import { currentUser } from '@clerk/nextjs/server';
 

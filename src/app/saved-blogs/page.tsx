@@ -4,9 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Search from '@/components/Search';
 import { toast } from 'sonner';
-import { formatDate } from '@/lib/utils';
+import { formatDate } from '@/utils/utils';
 import { Card, CardContent } from '@/components/ui/card';
-import { getAllUserBlogs, isBlogShared, viewLikes } from '@/lib/supabase';
+import { getAllUserBlogs, isBlogShared, viewLikes } from '@/utils/supabase';
 import { currentUser } from '@clerk/nextjs/server';
 import { BlogStructure } from '@/interfaces';
 
@@ -16,9 +16,11 @@ export default async function Saved_Blogs({
     searchParams: { [key: string]: string | string[] | undefined }
   }) {
   const params = await searchParams;
+  // Params for getAllUserBlogs function
   const page = typeof params.page === 'string' ? Number(params.page) : 1
   const limit = typeof params.limit === 'string' ? Number(params.limit) : 12
   const search = typeof params.search === 'string' ? params.search : undefined
+  // Used for dynamic Search component
   const url = 'saved-blogs'
 
   const user = await currentUser();
@@ -26,12 +28,12 @@ export default async function Saved_Blogs({
     return { error: 'User not authenticated' };
   }
   const blogs = await getAllUserBlogs({ user_id: user.id, query: search, page, limit });
-  if (blogs && !Array.isArray(blogs) && blogs.error) {
+  if (!Array.isArray(blogs) && blogs.error) {
     toast(blogs.error);
   }
   const hitLimit = !blogs || Array.isArray(blogs) && blogs.length < limit;
 
-  // Check the shared status and like count for all blogs at once
+  // Display like count if blog is shared
   const sharedStatuses = Array.isArray(blogs) ? await Promise.all(blogs.map(blog => isBlogShared(blog.id))) : [];
   const likesArray = Array.isArray(blogs) ? await Promise.all(blogs.map(blog => viewLikes(blog.id))) : [];
 

@@ -4,19 +4,21 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { Search } from '@/components/Search';
 import { LikeStructure } from '@/interfaces';
-import { formatDate } from '@/lib/utils';
+import { formatDate } from '@/utils/utils';
 import { LikeButton } from '@/components/LikeButton';
 import { Card, CardContent } from '@/components/ui/card';
-import { getAllSharedBlogs } from '@/lib/supabase';
+import { getAllSharedBlogs } from '@/utils/supabase';
 import { currentUser } from '@clerk/nextjs/server';
 
 export default async function Explore_Blogs({
   searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }
 ) {
   const params = await searchParams;
+  // Params for getAllSharedBlogs function
   const page = typeof params.page === 'string' ? Number(params.page) : 1;
   const limit = typeof params.limit === 'string' ? Number(params.limit) : 12;
   const search = typeof params.search === 'string' ? params.search : undefined
+  // Used for dynamic Search component
   const url = 'explore-blogs';
 
   const user = await currentUser();

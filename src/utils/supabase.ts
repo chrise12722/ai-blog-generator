@@ -7,6 +7,7 @@ const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY as string
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
 
+//Fetch individual user blog
 export async function getBlogById(id: number, userId: string) {
   const {data, error} = await supabase
     .from('blogs')
@@ -23,6 +24,7 @@ export async function getBlogById(id: number, userId: string) {
   return data
 }
 
+//Fetch shared blog along with users who've liked the blog
 export async function getSharedBlogById(id: number) {
   const {data, error} = await supabase
     .from('blogs')
@@ -55,6 +57,7 @@ export async function getSharedBlogById(id: number) {
   return data
 }
 
+//Fetch all user blogs
 export async function getAllUserBlogs({
   user_id,
   query,
@@ -99,6 +102,7 @@ export async function getAllUserBlogs({
   }
 }
 
+//Fetch all shared blogs
 export async function getAllSharedBlogs({
   query,
   page = 1,
@@ -155,6 +159,7 @@ export async function getAllSharedBlogs({
   }
 }
 
+//Checks if blog is marked as shared
 export async function isBlogShared(id: number) {
   const { data } = await supabase
     .from('blogs')
@@ -165,6 +170,7 @@ export async function isBlogShared(id: number) {
   return data && data.length > 0
 }
 
+//Checks blog's like count
 export async function viewLikes(blogId: number) {
   const { data, error } = await supabase
     .from('blogs')
@@ -183,7 +189,6 @@ export async function viewLikes(blogId: number) {
 }
 
 //Add like to database
-
 export async function incrementLikes(blogId: number, userId: string) {
   const { error: likeError } = await supabase.rpc('increment_likes', {row_id: blogId})
 
@@ -205,7 +210,6 @@ export async function incrementLikes(blogId: number, userId: string) {
 }
 
 //Remove like from database
-
 export async function decrementLikes(blogId: number, userId: string) {
   const { error: likeError } = await supabase.rpc('decrement_likes', {row_id: blogId})
 
@@ -229,7 +233,6 @@ export async function decrementLikes(blogId: number, userId: string) {
 }
 
 //Check if user has liked a blog
-
 export async function isBlogLiked(blogId: number, userId: string) {
   const { data, error } = await supabase
   .from('user_likes')

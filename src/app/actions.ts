@@ -1,9 +1,9 @@
 'use server'
 import openai from '../utils/openai';
-import { supabase } from '../lib/supabase';
+import { supabase } from '../utils/supabase';
 import { currentUser } from '@clerk/nextjs/server'
 import { BlogStructure } from '@/interfaces';
-import { incrementLikes, decrementLikes, isBlogLiked, viewLikes } from '@/lib/supabase';
+import { incrementLikes, decrementLikes, isBlogLiked, viewLikes } from '@/utils/supabase';
 
 export async function createCompletion(topic: string, keywords: string, length: string){
   const user = await currentUser();

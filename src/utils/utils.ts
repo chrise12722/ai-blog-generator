@@ -5,6 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+//Formats date to MM/DD/YYYY
 export function formatDate(date: string) {
   return new Date(date).toLocaleDateString('en-US',
     {
