@@ -33,21 +33,21 @@ export const Navigation = () => {
             </div>
             <div className='hidden md:block'>
               <div className='flex max-w-full items-center space-x-4'>
-                <Link href='/' className={pathname === '/' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition hover:animate-bounce duration-300'}>
+                <Link href='/' className={pathname === '/' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition duration-200 hover:scale-105'}>
                   Home
                 </Link>
-                <Link href='/explore-blogs' className={pathname === '/explore-blogs' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition hover:animate-bounce duration-300'}>
+                <Link href='/explore-blogs' className={pathname === '/explore-blogs' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition duration-200 hover:scale-105'}>
                   Explore Blogs
                 </Link>
-                <Link href='/saved-blogs' className={pathname === '/saved-blogs' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition hover:animate-bounce duration-300'}>
+                <Link href='/saved-blogs' className={pathname === '/saved-blogs' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition duration-200 hover:scale-105'}>
                   Your Blogs
                 </Link>
-                <Link href='/create-blog' className={pathname === '/create-blog' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition hover:animate-bounce duration-300'}>
+                <Link href='/create-blog' className={pathname === '/create-blog' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition duration-200 hover:scale-105'}>
                   Create New Blog
                 </Link>
                 <SignedOut>
                   <SignInButton mode='modal'>
-                    <button className='font-bold cursor-pointer'>Sign In</button>
+                    <button className='text-black font-bold hover:text-white hover:scale-105 cursor-pointer'>Sign In</button>
                   </SignInButton>
                 </SignedOut>
                 <SignedIn>
