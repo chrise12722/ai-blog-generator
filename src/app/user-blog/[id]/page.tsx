@@ -39,7 +39,7 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
       </div>
       <section className='prose mt-6 ml-6 mr-6 flex flex-col min-h-full'>
         <Image className='self-center' src={currentBlog.image_url} width={1000} height={500} alt='' />
-        <div className='mt-4 text-base'>
+        <div className='mt-4 pb-8 text-base'>
           <Markdown>{currentBlog.content}</Markdown>
         </div>
       </section>
