@@ -4,6 +4,7 @@ import { shareBlog, unshareBlog } from '@/app/actions'
 import { BlogStructure } from "@/interfaces";
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import { useTranslations } from 'next-intl';
 
 interface ShareButtonsProps {
   blog: BlogStructure;
@@ -12,6 +13,7 @@ interface ShareButtonsProps {
 }
 
 export const ShareButtons = ({ blog, isShared, userId }: ShareButtonsProps) => {
+  const t = useTranslations('ShareButtons');
   const router = useRouter();
   const handleShare = async () => {
     const result = await shareBlog({ ...blog, userId });
@@ -19,7 +21,7 @@ export const ShareButtons = ({ blog, isShared, userId }: ShareButtonsProps) => {
       toast(result.error);
     } else {
       router.refresh();
-      toast('Blog has been shared');
+      toast(t('Blog has been shared'));
     }
   }
   const handleUnshare = async () => {
@@ -27,7 +29,7 @@ export const ShareButtons = ({ blog, isShared, userId }: ShareButtonsProps) => {
     if (result && result.error) {
       toast(result.error);
     } else {
-      toast('Blog has been made private');
+      toast(t('Blog has been made private'));
     }
     router.refresh();
   }
@@ -35,13 +37,13 @@ export const ShareButtons = ({ blog, isShared, userId }: ShareButtonsProps) => {
     <>
       {!isShared && (
         <button className='rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-2 sm:p-3 cursor-pointer' onClick={handleShare}>
-          Share Blog
+          {t('Share Blog')}
         </button>
       )}
 
       {isShared && (
         <button className='rounded-xl bg-blue-500 hover:bg-blue-400 text-white p-2 sm:p-3 cursor-pointer' onClick={handleUnshare}>
-          Unshare Blog
+          {t('Unshare Blog')}
         </button>
       )}
     </>

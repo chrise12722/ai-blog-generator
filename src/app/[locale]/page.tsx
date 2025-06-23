@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from 'next/link';
 import { TypingAnimation } from "@/components/magicui/typing-animation"
 import { Card, CardContent } from "@/components/ui/card";
 import { getAllSharedBlogs } from "@/utils/supabase";
@@ -8,8 +7,11 @@ import { formatDate } from "@/utils/utils";
 import { viewLikes } from '@/utils/supabase';
 import { SignInButton } from "@clerk/nextjs";
 import { currentUser } from '@clerk/nextjs/server';
+import { getTranslations } from 'next-intl/server';
+import { Link } from '../../../i18n/navigation';
 
 export default async function Home() {
+  const t = await getTranslations('Home');
   const user = await currentUser();
   const blogs = await getAllSharedBlogs({ limit: 3 });
 
@@ -18,25 +20,25 @@ export default async function Home() {
       <div className="mx-4 mt-4">
         <h1 className='font-bold text-4xl'>NeuroBlog</h1>
         <div className='h-40 mt-16 flex flex-col gap-4 justify-center items-center '>
-          <TypingAnimation className='text-center text-2xl font-light md:text-3xl pt-4'>Get Started With Generating AI Blogs Today</TypingAnimation>
+          <TypingAnimation className='text-center text-2xl font-light md:text-3xl pt-4'>{t('Get Started With Generating AI Blogs Today')}</TypingAnimation>
           <div className='text-lg py-3 px-3 rounded text-black font-extrabold hover:border-blue-500 hover:bg-blue-500 hover:text-white transition duration-750 animate-bounce cursor-pointer'>
             {!user && (
               <SignInButton>
-                <button className='cursor-pointer'>&rarr; Sign In</button>
+                <button className='cursor-pointer'>&rarr; {t('Sign In')}</button>
               </SignInButton>
             )}
             {user && (
               <Link
                 href='/create-blog'
               >
-                &rarr; Create a Blog
+                &rarr;{t('Create a Blog')}
               </Link>
             )}
           </div>
         </div>
       </div>
-      <div className="mt-8">
-        <h2 className="text-xl min-[400px]:text-2xl md:text-3xl font-bold mb-4">Check Out The Most Popular Generated Blogs</h2>
+      <div className="mt-8 mx-4">
+        <h2 className="text-xl min-[400px]:text-2xl md:text-3xl font-bold mb-4">{t('Check Out The Most Popular Generated Blogs')}</h2>
         <div className="flex flex-row flex-wrap m-2 relative">
           {Array.isArray(blogs) && blogs.length > 0 ? (
             blogs.map(blog => (
@@ -62,7 +64,7 @@ export default async function Home() {
                 </CardContent>
               </Card>))
           ) : (
-            <p>Content Not Found</p>
+            <p>{t('Content Not Found')}</p>
           )}
         </div>
       </div>

@@ -1,0 +1,64 @@
+{
+  "Home": {
+    "Get Started With Generating AI Blogs Today": "Empiece Hoy Mismo a Generar Blogs de Inteligencia Artificial",
+    "Sign In": "Iniciar Sesión",
+    "Create a Blog": "Crear un Blog",
+    "Check Out The Most Popular Generated Blogs": "Echa un Vistazo a los Blogs Generados Más Populares",
+    "Content Not Found": "Contenido No Encontrado"
+  },
+  "CreateBlog": {
+    "Create a Blog": "Crear un Blog",
+    "Blog Topic": "Tema del Blog",
+    "Keywords(optional)": "Palabras Clave (opcional)",
+    "Length": "Longitud",
+    "Short": "Corto",
+    "Medium": "Medio",
+    "Long": "Largo",
+    "300 words": "300 palabras",
+    "600 words": "600 palabras",
+    "1000 words": "1000 palabras",
+    "Generate Blog": "Generar Blog",
+    "Generating": "Generando",
+    "Generated Blog": "Blog Generado"
+  },
+  "Navigation": {
+    "Home": "Inicio",
+    "Explore Blogs": "Explorar Blogs",
+    "Your Blogs": "Tus Blogs",
+    "Create New Blog": "Crear Nuevo Blog",
+    "Sign In": "Iniciar Sesión"
+  },
+  "ExploreBlogs": {
+    "Explore Shared Blogs": "Explorar Blogs Compartidos",
+    "Previous": "Anterior",
+    "Next": "Siguiente",
+    "Content Not Found": "Contenido No Encontrado",
+    "Please sign in to view this page": "Por favor inicia sesión para ver esta página"
+  },
+  "LikeButton": {
+    "Blog has been unliked": "El blog ha sido desmarcado como me gusta",
+    "Blog has been liked": "El blog ha sido marcado como me gusta"
+  },
+  "NonuserBlog/UserBlog": {
+    "Go Back": "Volver"
+  },
+  "SavedBlogs": {
+    "View All of Your Saved Blogs": "Ver Todos Tus Blogs Guardados",
+    "Previous": "Anterior",
+    "Next": "Siguiente",
+    "Content Not Found": "Contenido No Encontrado"
+  },
+  "ShareButtons": {
+    "Blog has been shared": "El blog ha sido compartido",
+    "Blog has been made private": "El blog ha sido hecho privado",
+    "Share Blog": "Compartir Blog",
+    "Unshare Blog": "Dejar de Compartir Blog"
+  },
+  "DeleteButton": {
+    "Delete Blog": "Eliminar Blog",
+    "Blog has been successfully deleted": "El blog ha sido eliminado exitosamente"
+  },
+  "Search": {
+    "Search Blogs": "Buscar Blogs"
+  }
+}

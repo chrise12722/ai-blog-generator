@@ -1,11 +1,13 @@
 'use client'
 import Image from 'next/image';
-import Link from 'next/link';
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { SignInButton, UserButton, SignedIn, SignedOut } from '@clerk/nextjs';
+import { useTranslations } from "next-intl";
+import { Link } from '../../i18n/navigation';
 
 export const Navigation = () => {
+  const t = useTranslations('Navigation')
   const pathname = usePathname();
 
   const [isClick, setisClick] = useState(false);
@@ -34,20 +36,20 @@ export const Navigation = () => {
             <div className='hidden md:block'>
               <div className='flex max-w-full items-center space-x-4'>
                 <Link href='/' className={pathname === '/' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition duration-200 hover:scale-105'}>
-                  Home
+                  {t('Home')}
                 </Link>
                 <Link href='/explore-blogs' className={pathname === '/explore-blogs' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition duration-200 hover:scale-105'}>
-                  Explore Blogs
+                  {t('Explore Blogs')}
                 </Link>
                 <Link href='/saved-blogs' className={pathname === '/saved-blogs' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition duration-200 hover:scale-105'}>
-                  Your Blogs
+                  {t('Your Blogs')}
                 </Link>
                 <Link href='/create-blog' className={pathname === '/create-blog' ? 'font-bold mr-8' : 'mr-8 text-black hover:text-blue-100 transition duration-200 hover:scale-105'}>
-                  Create New Blog
+                  {t('Create New Blog')}
                 </Link>
                 <SignedOut>
                   <SignInButton mode='modal'>
-                    <button className='text-black font-bold hover:text-white hover:scale-105 cursor-pointer'>Sign In</button>
+                    <button className='text-black font-bold hover:text-white hover:scale-105 cursor-pointer'>{t('Sign In')}</button>
                   </SignInButton>
                 </SignedOut>
                 <SignedIn>
@@ -97,20 +99,20 @@ export const Navigation = () => {
           <div className='md:hidden'>
             <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3'>
               <Link href='/' className={`${pathname === '/' ? 'font-bold mr-8' : 'mr-8 text-black'} block`}>
-                Home
+                {t('Home')}
               </Link>
               <Link href='/explore-blogs' className={`${pathname === '/explore-blogs' ? 'font-bold mr-8' : 'mr-8 text-black'} block`}>
-                Explore Blogs
+                {t('Explore Blogs')}
               </Link>
               <Link href='/saved-blogs' className={`${pathname === '/saved-blogs' ? 'font-bold mr-8' : 'mr-8 text-black'} block`}>
-                View Saved Blogs
+                {t('Your Blogs')}
               </Link>
               <Link href='/create-blog' className={`${pathname === '/create-blog' ? 'font-bold mr-8' : 'mr-8 text-black'} block`}>
-                Create New Blog
+                {t('Create New Blog')}
               </Link>
               <SignedOut>
                 <SignInButton mode='modal'>
-                  <button className='font-bold cursor-pointer block'>Sign In</button>
+                  <button className='font-bold cursor-pointer block'>{t('Sign In')}</button>
                 </SignInButton>
               </SignedOut>
               <SignedIn>

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
 import { handleLike, handleUnlike } from '@/app/actions';
+import { useTranslations } from 'next-intl';
 
 interface LikeButtonProps {
   blogId: number;
@@ -13,6 +14,7 @@ interface LikeButtonProps {
 }
 
 export const LikeButton = ({ blogId, userId, liked, likes }: LikeButtonProps) => {
+  const t = useTranslations('LikeButton')
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -26,14 +28,14 @@ export const LikeButton = ({ blogId, userId, liked, likes }: LikeButtonProps) =>
         if (result && result.error) {
           toast(result.error);
         } else {
-          toast('Blog has been unliked');
+          toast(t('Blog has been unliked'));
         }
       } else {
         const result = await handleLike(blogId, userId);
         if (result && result.error) {
           toast(result.error);
         } else {
-          toast('Blog has been liked');
+          toast(t('Blog has been liked'));
         }
       }
       router.refresh();

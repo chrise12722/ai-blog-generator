@@ -1,18 +1,19 @@
+import {NextConfig} from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
+ 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 
-          '127.0.0.1',
+        protocol: 'https',
+        hostname: 'nfnvvrtdmfxntevegtyn.supabase.co',
         pathname: '/storage/v1/object/public/aiimage/**'
-
-      }],
-  },
-  experimental: {
-    serverComponentsHmrCache: false, // defaults to true
+      }
+    ],
   },
 }
- 
-module.exports = nextConfig
+
+const withNextIntl = createNextIntlPlugin();
+
+export default withNextIntl(nextConfig);

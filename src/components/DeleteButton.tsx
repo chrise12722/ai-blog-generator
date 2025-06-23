@@ -3,6 +3,7 @@ import React from "react";
 import { deleteBlog } from "@/app/actions";
 import { useRouter } from "next/navigation";
 import { toast } from 'sonner';
+import { useTranslations } from "next-intl";
 
 interface DeleteButtonProps {
   blogId: number;
@@ -10,6 +11,7 @@ interface DeleteButtonProps {
 }
 
 export const DeleteButton = ({ blogId, userId }: DeleteButtonProps) => {
+  const t = useTranslations('DeleteButton')
   const router = useRouter();
 
   const deleteUserBlog = async () => {
@@ -18,12 +20,12 @@ export const DeleteButton = ({ blogId, userId }: DeleteButtonProps) => {
       toast(result.error);
     } else {
       router.push('/saved-blogs');
-      toast("Blog has been successfully deleted");
+      toast(t("Blog has been successfully deleted"));
     }
   }
   return (
     <button className='rounded-xl bg-red-500 hover:bg-red-400 text-white p-2 sm:p-3 cursor-pointer' onClick={deleteUserBlog}>
-      Delete Blog
+      {t('Delete Blog')}
     </button>
   );
 }

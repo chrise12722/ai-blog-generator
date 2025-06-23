@@ -1,5 +1,4 @@
 import {createClient} from '@supabase/supabase-js'
-import { User } from 'lucide-react'
 import { redirect } from 'next/navigation'
 
 const supabaseUrl = process.env.SUPABASE_URL as string

@@ -4,9 +4,13 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDebounce } from 'use-debounce'
+import { useTranslations } from 'next-intl'
+import { usePathname } from 'next/navigation'
 
-export const Search = ({ search, url }: { search?: string, url: string }) => {
+export const Search = ({ search }: { search?: string }) => {
+  const t = useTranslations('Search')
   const router = useRouter();
+  const pathname = usePathname()
   const [text, setText] = useState(search ? search : '');
   const [query] = useDebounce(text, 750);
   const initialRender = useRef(true);
@@ -17,10 +21,10 @@ export const Search = ({ search, url }: { search?: string, url: string }) => {
       return;
     }
     if (!query) {
-      router.push(`/${url}`);
+      router.push(`${pathname}`);
     }
     else {
-      router.push(`/${url}?search=${text}`);
+      router.push(`${pathname}?search=${text}`);
     }
   }, [query])
 
@@ -32,10 +36,10 @@ export const Search = ({ search, url }: { search?: string, url: string }) => {
       <input
         name='search-input'
         value={text}
-        placeholder='Search Blogs...'
+        placeholder={`${t('Search Blogs')}...`}
         onChange={e => setText(e.target.value)}
         className='block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300
-          placeholder:text-gray-400 focus:ring02 focus:ring-sky-600 sm:text-sm sm:leading-6'
+        placeholder:text-gray-400 focus:ring02 focus:ring-sky-600 sm:text-sm sm:leading-6'
       />
     </div>
   );

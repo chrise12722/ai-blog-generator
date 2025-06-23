@@ -1,35 +1,40 @@
-import Link from 'next/link'
+import { Link } from '../../../../../i18n/navigation'
 import Image from 'next/image'
 import Markdown from 'react-markdown'
+import React from 'react'
 import { getSharedBlogById } from '@/utils/supabase'
 import { ChevronLeft } from 'lucide-react'
 import { currentUser } from '@clerk/nextjs/server'
 import { LikeButton } from '@/components/LikeButton'
+import { getTranslations } from 'next-intl/server'
+import { notFound } from 'next/navigation'
 
 
 
-export default async function Nonuser_Blog({ params }: { params: { id: string } }) {
+export default async function NonuserBlog({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const t = await getTranslations('NonuserBlog/UserBlog')
   const user = await currentUser();
   if (!user) {
     return <div>User not authenticated</div>;
   }
 
-  const blogId = Number(params.id);
+  const blogId = Number(id);
   const blog = await getSharedBlogById(blogId);
 
   if (!blog.content || !blog.image_url) {
-    return <div>Blog not found</div>;
+    notFound();
   }
 
   return (
     <section>
       <div className='flex justify-between mr-2 mb-2'>
         <Link
-          href='/explore-blogs'
+          href={`/explore-blogs`}
           className='ml-2 inline-flex items-center text-sm font-light text-gray'
         >
           <ChevronLeft strokeWidth={1} size={20} />
-          <span>Go Back</span>
+          <span>{t('Go Back')}</span>
         </Link>
         <div className='rounded-xl p-2'>
           <LikeButton blogId={blogId} userId={user.id} liked={blog.user_likes.some((like) => like.user_id === user.id)} likes={blog.likes} />

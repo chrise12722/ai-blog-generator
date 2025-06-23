@@ -9,19 +9,21 @@ import { Card, CardContent } from '@/components/ui/card';
 import { getAllUserBlogs, isBlogShared, viewLikes } from '@/utils/supabase';
 import { currentUser } from '@clerk/nextjs/server';
 import { BlogStructure } from '@/interfaces';
+import { getTranslations } from 'next-intl/server';
 
 
-export default async function Saved_Blogs({
-  searchParams }: {
-    searchParams: { [key: string]: string | string[] | undefined }
-  }) {
-  const params = await searchParams;
-  // Params for getAllUserBlogs function
-  const page = typeof params.page === 'string' ? Number(params.page) : 1
-  const limit = typeof params.limit === 'string' ? Number(params.limit) : 12
-  const search = typeof params.search === 'string' ? params.search : undefined
-  // Used for dynamic Search component
-  const url = 'saved-blogs'
+export default async function SavedBlogs({
+  searchParams
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>,
+}) {
+  const searchParamsObj = await searchParams;
+  // Params for getAllSharedBlogs function
+  const page = typeof searchParamsObj.page === 'string' ? Number(searchParamsObj.page) : 1;
+  const limit = typeof searchParamsObj.limit === 'string' ? Number(searchParamsObj.limit) : 12;
+  const search = Array.isArray(searchParamsObj.search) ? searchParamsObj.search[0] : searchParamsObj.search;
+
+  const t = await getTranslations('SavedBlogs')
 
   const user = await currentUser();
   if (!user) {
@@ -40,9 +42,9 @@ export default async function Saved_Blogs({
   return (
     <>
       <div className='mt-5 ml-5 sm:flex sm:justify-between mr-2'>
-        <h1 className='font-bold text-2xl/6 md:text-3xl lg:text-4xl'>View All of Your Saved Blogs</h1>
+        <h1 className='font-bold text-2xl/6 md:text-3xl lg:text-4xl'>{t('View All of Your Saved Blogs')}</h1>
         <div className='flex flex-col gap-2 sm:flex-row mt-4'>
-          <Search search={search} url={url} />
+          <Search search={search} />
           <div className='flex flex-row justify-center gap-2'>
             <Link
               href={{
@@ -55,7 +57,7 @@ export default async function Saved_Blogs({
               className={clsx('rounded border bg-gray-100 px-2 py-1 text-sm text-gray-800',
                 page <= 1 && 'pointer-events-none opacity-50'
               )}>
-              Previous
+              {t('Previous')}
             </Link>
             <Link
               href={{
@@ -69,7 +71,7 @@ export default async function Saved_Blogs({
                 hitLimit && 'pointer-events-none opacity-50'
               )}
             >
-              Next
+              {t('Next')}
             </Link>
           </div>
         </div>
@@ -105,7 +107,7 @@ export default async function Saved_Blogs({
           ))
         ) : (
           <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-            <h1 className='text-2xl'>Content Not Found</h1>
+            <h1 className='text-2xl'>{t('Content Not Found')}</h1>
           </div>
         )}
       </div>

@@ -2,6 +2,7 @@
 import openai from '../utils/openai';
 import { supabase } from '../utils/supabase';
 import { currentUser } from '@clerk/nextjs/server'
+import { ChatCompletion } from 'openai/resources/chat/completions';
 import { BlogStructure } from '@/interfaces';
 import { incrementLikes, decrementLikes, isBlogLiked, viewLikes } from '@/utils/supabase';
 
@@ -12,7 +13,7 @@ export async function createCompletion(topic: string, keywords: string, length: 
   }
 
   // Generate blog post using openai
-  const completion: any = await openai.chat.completions.create({
+  const completion: ChatCompletion = await openai.chat.completions.create({
     model: 'gpt-4o-mini',
     messages: [
       {

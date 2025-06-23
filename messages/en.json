@@ -1,0 +1,64 @@
+{
+  "Home": {
+    "Get Started With Generating AI Blogs Today": "Get Started With Generating AI Blogs Today",
+    "Sign In": "Sign In",
+    "Create a Blog": "Create a Blog",
+    "Check Out The Most Popular Generated Blogs": "Check Out The Most Popular Generated Blogs",
+    "Content Not Found": "Content Not Found"
+  },
+  "CreateBlog": {
+    "Create a Blog": "Create a Blog",
+    "Blog Topic": "Blog Topic",
+    "Keywords(optional)": "Keywords(optional)",
+    "Length": "Length",
+    "Short": "Short",
+    "Medium": "Medium",
+    "Long": "Long",
+    "300 words": "300 words",
+    "600 words": "1000 words",
+    "1000 words": "1000 words",
+    "Generate Blog": "Generate Blog",
+    "Generating": "Generating",
+    "Generated Blog": "Generated Blog"
+  },
+  "Navigation": {
+    "Home": "Home",
+    "Explore Blogs": "Explore Blogs",
+    "Your Blogs": "Your Blogs",
+    "Create New Blog": "Create New Blog",
+    "Sign In": "Sign In"
+  },
+  "ExploreBlogs": {
+    "Explore Shared Blogs": "Explore Shared Blogs",
+    "Previous": "Previous",
+    "Next": "Next",
+    "Content Not Found": "Content Not Found",
+    "Please sign in to view this page": "Please sign in to view this page"
+  },
+  "LikeButton": {
+    "Blog has been unliked": "Blog has been unliked",
+    "Blog has been liked": "Blog has been liked"
+  },
+  "NonuserBlog/UserBlog": {
+    "Go Back": "Go Back"
+  },
+  "SavedBlogs": {
+    "View All of Your Saved Blogs": "View All of Your Saved Blogs",
+    "Previous": "Previous",
+    "Next": "Next",
+    "Content Not Found": "Content Not Found"
+  },
+  "ShareButtons": {
+    "Blog has been shared": "Blog has been shared",
+    "Blog has been made private": "Blog has been made private",
+    "Share Blog": "Share Blog",
+    "Unshare Blog": "Unshare Blog"
+  },
+  "DeleteButton": {
+    "Delete Blog": "Delete Blog",
+    "Blog has been successfully deleted": "Blog has been successfully deleted"
+  },
+  "Search": {
+    "Search Blogs": "Search Blogs"
+  }
+}

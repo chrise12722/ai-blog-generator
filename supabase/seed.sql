@@ -5,11 +5,12 @@ SET session_replication_role = replica;
 --
 
 -- Dumped from database version 15.8
--- Dumped by pg_dump version 15.8
+-- Dumped by pg_dump version 17.4
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -113,880 +114,61 @@ SET row_security = off;
 --
 
 INSERT INTO "public"."blogs" ("id", "created_at", "title", "content", "image_url", "user_id", "is_shared", "likes") VALUES
-	(33, '2025-05-18 16:19:21.595107+00', 'Anime', '**Understanding Anime: A Cultural Phenomenon**
+	(68, '2025-06-07 20:00:54.925045+00', 'Jobs', '**Understanding the Global Job Market: Trends and Opportunities**
 
-Anime is a style of animation that originated in Japan and has since gained immense popularity worldwide. Characterized by vibrant art, fantastical themes, and colorful characters, anime encompasses a wide variety of genres and appeals to audiences of all ages.
+In today’s dynamic world, jobs are more than just a means of earning a living; they play a crucial role in shaping one''s identity and the economy. Understanding the job market is essential for both job seekers and employers.
 
-The term "anime" itself is derived from the English word "animation" and refers specifically to the animation techniques that are unique to Japanese culture. Unlike Western animation, which often targets a younger audience, anime spans genres, ranging from action and adventure to romance and horror, allowing for a diverse viewership.
+### The Changing Landscape of Jobs
 
-One primary aspect that sets anime apart is its storytelling. Many anime series delve into complex narratives that explore philosophical themes, societal issues, and character development, often drawing upon elements of Japanese folklore and mythology. Series like "Attack on Titan" and "Naruto" not only entertain but also provoke thought and reflection on deeper social constructs.
+The job market is constantly evolving due to technological advancements, globalization, and changing societal norms. Traditional jobs are being transformed by artificial intelligence (AI) and automation, prompting a shift toward more specialized fields. Industries like technology, healthcare, and renewable energy are witnessing a robust increase in job opportunities, reflecting a global drive towards innovation and sustainability.
 
-Visual style is another critical element of anime. Distinctive features such as exaggerated facial expressions, vibrant colors, and intricate backgrounds create a visually engaging experience. Viewers are often captivated by the anime aesthetic, which varies significantly between different series and films.
+### Job Types and Categories
 
-Anime is not limited to television; it has also made remarkable strides in film. Renowned filmmakers like Hayao Miyazaki have contributed to the global appreciation of anime through masterpieces such as "Spirited Away," which introduces viewers to the beauty and depth of Japanese animation.
+Jobs can be broadly classified into several categories:
 
-The rise of streaming platforms like Crunchyroll and Funimation has further propelled anime into mainstream culture, providing easy access to both classic and new titles. Conventions and communities dedicated to anime have blossomed, fostering friendships and a sense of belonging among fans worldwide.
+1. **Full-Time vs. Part-Time:** Full-time jobs offer stability and benefits, while part-time positions offer flexibility.
+2. **Remote vs. Onsite:** The COVID-19 pandemic has accelerated the trend of remote work, making it a preferred choice for many employees.
+3. **Freelance vs. Permanent:** Freelancing allows for independence and variety, whereas permanent jobs provide job security and career growth.
 
-In conclusion, anime is not just a form of entertainment; it is a rich cultural tapestry that reflects the intricacies of life, art, and storytelling. Whether you are a long-time fan or a curious newcomer, there is always something new to discover in the vibrant world of anime.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747585159213.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', false, 0),
-	(30, '2025-05-18 16:17:11.466876+00', 'Airplanes', '**All About Airplanes: A Journey Through the Skies**
+### Skills in Demand
 
-Airplanes have transformed the way we travel, making global distances feel smaller and connecting people from every corner of the world. They are marvels of engineering, capable of soaring through the skies, and they play a significant role in both commercial aviation and personal leisure.
+Today''s job market places a premium on skills that promote adaptability and problem-solving. Critical thinking, effective communication, and proficiency in technology are vital. Furthermore, soft skills like emotional intelligence are increasingly recognized as essential for collaboration and leadership.
 
-### History of Airplanes
+### Finding a Job
 
-The journey of airplanes began with pioneers like the Wright brothers. On December 17, 1903, Orville and Wilbur Wright made their first powered flight in Kitty Hawk, North Carolina, successfully ushering in the age of aviation. Over the decades, aircraft design evolved from simple biplanes to the sophisticated jets we see today.
-
-### How Airplanes Work
-
-The basic principles of flight revolve around four forces: lift, weight, thrust, and drag. Lift is generated by the wings, allowing the airplane to rise into the air. Engines provide the necessary thrust to propel the aircraft forward, while weight, caused by gravity, pulls it downward. Finally, drag is the resistance an airplane experiences as it moves through the air.
-
-### Types of Airplanes
-
-Airplanes come in various types, including commercial airliners, cargo planes, military jets, and private aircraft. Commercial airliners are designed to transport passengers and cargo, while cargo planes are optimized for freight. Military jets serve defense purposes and can perform various roles, from surveillance to combat. Additionally, private airplanes cater to individual travelers, providing a more personalized flight experience.
-
-### The Future of Aviation
-
-Looking forward, the future of aviation is set to embrace technological advancements. Innovations such as electric and hybrid planes could revolutionize the industry, making air travel more sustainable. Furthermore, the development of urban air mobility vehicles, like drones and flying taxis, promises to reshape our commuting landscape.
+Job searching can be daunting, but leveraging online platforms like LinkedIn, Indeed, and Glassdoor can ease the process. Networking, both online and offline, remains a powerful tool for discovering hidden opportunities.
 
 ### Conclusion
 
-Airplanes have not only transformed transportation but have also facilitated globalization and cultural exchange. As we look to the future, the aviation industry is poised for exciting innovations that will continue to make the world more connected and accessible. Whether you’re a frequent flyer or someone dreaming of their first flight, the allure of airplanes remains timeless.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747585029154.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', false, 0),
-	(31, '2025-05-18 16:17:51.177482+00', 'American Revolution', '**The American Revolution: A Turning Point in History**
+As the job market continues to evolve, staying informed about trends and developing relevant skills will ensure that individuals are not only employable but also positioned for long-term career success. Embracing change and being open to new opportunities are key to thriving in this ever-competitive landscape. Whether you’re a recent graduate or a seasoned professional, understanding these dynamics can enhance your ability to navigate today’s job market effectively.', 'https://nfnvvrtdmfxntevegtyn.supabase.co/storage/v1/object/public/aiimage/blog-1749326453218.png', 'user_2y9DxMMv8cVAvRdOURWivAwsTLa', true, 11),
+	(69, '2025-06-07 20:47:58.370611+00', 'NextJS', '**Understanding Next.js: The Future of React Applications**
 
-The American Revolution, which spanned from 1775 to 1783, marked a pivotal juncture in history as the thirteen American colonies broke free from British rule to establish the United States of America. This long-standing conflict was not merely a battle for independence but also a struggle with significant political, social, and economic implications.
+Next.js is a powerful and popular React framework that simplifies the development of web applications. Launched by Vercel, Next.js provides developers with a comprehensive toolkit for building fast, user-friendly applications while leveraging the rich features of React.
 
-The roots of the American Revolution can be traced back to the growing discontent among colonists towards British governance. After the French and Indian War (1754-1763), Britain sought to recoup debts incurred during the conflict by imposing taxes on the colonies, such as the Stamp Act and the Townshend Acts. These legislative measures incited outrage among colonists, who began to rally around the slogan, "No taxation without representation." 
+One of the standout features of Next.js is its ability to perform server-side rendering (SSR). This means that HTML is generated on the server for each request, which can significantly improve page load times and SEO (Search Engine Optimization). Search engines can easily crawl and index the page because the content is available on the initial load, providing an edge over single-page applications (SPAs) that rely solely on client-side rendering.
 
-As tensions escalated, skirmishes broke out, notably at Lexington and Concord in April 1775, marking the official start of armed conflict. Leaders such as George Washington, Thomas Jefferson, and Benjamin Franklin emerged, advocating for independence and rallying support. The Continental Congress was formed, ultimately adopting the Declaration of Independence on July 4, 1776. This document articulated the colonies'' desire for free governance, emphasizing unalienable rights such as life, liberty, and the pursuit of happiness.
+Next.js also supports Static Site Generation (SSG). This allows developers to pre-render pages at build time, delivering static HTML files that can be served efficiently. This is particularly useful for sites that don''t change often or require fast loading times. Combining SSR and SSG gives developers the flexibility to choose the best method based on each page''s specific requirements.
 
-The American Revolution comprised several key battles, including the Battle of Bunker Hill, Battle of Saratoga, and the Siege of Yorktown. The latter resulted in a decisive victory for the Americans and marked the beginning of the end for British territorial claims in America. Internationally, the revolution gained traction, with France entering the war as an ally to the colonies in 1778, viewing it as an opportunity to weaken British influence.
+Routing in Next.js is intuitive. Developers can create routes simply by adding files to the `pages` directory. Each file corresponds to a route in the application, making it easier to manage complex applications. Dynamic routing is also supported, allowing developers to create routes based on data.
 
-The conclusion of the Revolution came with the Treaty of Paris in 1783, which recognized American independence and established new borders. The aftermath of the conflict saw the emergence of the United States as a sovereign entity, leading to the drafting of the Constitution in 1787.
+Next.js boasts built-in CSS and Sass support, optimizing styles for performance. Developers can import styles from CSS or Sass files directly into their components, making it easier to manage styles across large projects.
 
-The American Revolution was not only a significant event in U.S. history but also inspired revolutionary movements worldwide. Its ideals of democracy and freedom continue to resonate today, reflecting the enduring legacy of a nation forged in the pursuit of liberty.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747585069168.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', false, 0),
-	(32, '2025-05-18 16:18:37.137307+00', 'AI', '**Understanding Artificial Intelligence: Transforming Our World**
+Another advantage of Next.js is its API routes feature. Developers can create backend API endpoints within the same project, simplifying the process of building full-stack applications. This allows for a cohesive development experience without the need to manage a separate backend service.
 
-Artificial Intelligence (AI) is revolutionizing various sectors, from healthcare to finance and beyond. At its core, AI refers to the simulation of human intelligence in machines programmed to think and learn like humans. 
+In conclusion, Next.js is an excellent framework for developers looking to streamline their React applications. With its focus on performance, flexibility in rendering methods, and intuitive routing, it stands out as a robust option for modern web development. Whether you''re building a blog, an e-commerce site, or a complex web application, Next.js provides the tools necessary to create efficient, high-performance user experiences.', 'https://nfnvvrtdmfxntevegtyn.supabase.co/storage/v1/object/public/aiimage/blog-1749329276466.png', 'user_2y9DxMMv8cVAvRdOURWivAwsTLa', true, 15),
+	(67, '2025-06-06 19:43:02.861241+00', 'Samsung', '**Samsung: A Tech Giant Shaping the Future**
 
-### What is AI?
+Samsung, a name synonymous with innovation and technology, has solidified its position as a global leader in consumer electronics, mobile devices, and various other technological sectors. Established in 1938 in South Korea, the company initially started as a trading business, but over the decades, it has pivoted towards manufacturing and technology solutions.
 
-AI comprises several subfields, including machine learning, natural language processing, robotics, and computer vision. Machine learning, a prominent area within AI, enables systems to learn from data patterns without explicit programming. For example, algorithms can predict user preferences on streaming platforms or personalize marketing strategies based on consumer behavior.
+One of the most notable aspects of Samsung is its diverse product range. Samsung is perhaps best known for its Galaxy series of smartphones, which have consistently held their ground against competitors like Apple. The Galaxy S and Galaxy Note lines are particularly popular for their cutting-edge features, vibrant displays, and user-friendly interfaces.
 
-### Types of AI
+Beyond smartphones, Samsung has a strong presence in the television market. Their QLED technology enables stunning picture quality that enhances the viewing experience, solidifying their place as a top choice for consumers seeking the best in home entertainment. Additionally, Samsung''s Smart TV line integrates seamlessly with various streaming services, featuring intuitive interfaces and voice recognition.
 
-AI can be categorized into two main types: narrow AI and general AI. Narrow AI is designed for specific tasks, such as virtual assistants like Siri or chatbots that provide customer support. In contrast, general AI, which remains theoretical, would possess the ability to perform any intellectual task that a human can do.
+Samsung''s commitment to innovation is evident in its investment in research and development. The company spends billions annually to stay at the forefront of technology. Their advancements in semiconductors, displays, and artificial intelligence exemplify their dedication to pushing boundaries. The company is also exploring the realms of smart home technologies and wearables, such as the Galaxy Watch, expanding its ecosystem.
 
-### Applications of AI
+Sustainability is increasingly important in today’s market, and Samsung has taken steps to integrate eco-friendly practices into its operations. From energy-efficient appliances to sustainable packaging, the company is focused on reducing its environmental impact.
 
-AI is increasingly integrated into our daily lives. In healthcare, it aids in diagnosing diseases through imaging analysis and predicting patient outcomes. In finance, AI systems detect fraud by analyzing transaction patterns in real-time. Moreover, industries like transportation are seeing the emergence of autonomous vehicles that rely on AI to navigate safely.
-
-### Ethical Considerations
-
-Despite its benefits, the rise of AI also poses ethical challenges. Concerns about job displacement, data privacy, and decision-making transparency require attention as we integrate AI into society. Regulations and ethical frameworks are essential to ensure that AI serves humanity positively and equitably.
-
-### The Future of AI
-
-The future of AI is promising, with ongoing advancements expected to enhance its capabilities exponentially. As AI continues to develop, it will transform industries, create new job opportunities, and fundamentally alter how we interact with technology. The key is to harness its potential responsibly, ensuring that we create innovative solutions while safeguarding the values and rights of individuals.
-
-In summary, AI is more than just a technological trend; it is an integral part of our evolving landscape. Recognizing its implications and fostering a balanced approach will be crucial as we advance into this AI-powered future.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747585114905.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', true, 5),
-	(34, '2025-05-18 16:20:14.966597+00', 'Florida Panthers', '**Florida Panthers: A Rising Force in the NHL**
-
-The Florida Panthers, established in 1993, are a professional ice hockey team based in Sunrise, Florida. They compete in the Atlantic Division of the Eastern Conference in the National Hockey League (NHL). Over the years, the Panthers have built a passionate fan base despite facing challenges typical of expansion teams.
-
-In terms of performance, the Panthers experienced their most significant success in the mid-1990s, when they reached the Stanley Cup Finals in 1996, only to be swept by the Colorado Avalanche. Although they struggled in the following years, the team has shown marked improvement in recent seasons, establishing itself as a contender in the league.
-
-The Panthers play their home games at the BB&T Center, a modern arena that has undergone multiple renovations to enhance the fan experience. The atmosphere during a game is electric, with a committed fan base that engages deeply with the team, particularly during playoff runs.
-
-The team''s logo, featuring a stylized panther ready to pounce, reflects the state’s wildlife and the aggressive style of play the Panthers strive for. Players like Aleksander Barkov and Jonathan Huberdeau have become fan favorites, showcasing skill and determination on the ice.
-
-In recent years, the Panthers have embraced a more aggressive and fast-paced style of play, often characterized by high scoring and tight defense. The hiring of head coach Paul Maurice in 2022 marked a pivotal moment for the franchise, as he brought in experience and a fresh tactical approach to maximize player potential.
-
-Looking ahead, the Florida Panthers are motivated to build on recent successes and are committed to winning their first Stanley Cup. With a solid roster and growing fan support, the Panthers are poised to make a lasting impact in the NHL, ensuring that Florida remains a hotbed for hockey enthusiasm. Whether you’re a long-time fan or a newcomer, the Panthers are an exciting team to follow as they pursue their championship dreams.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747585213078.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', true, 101),
-	(36, '2025-05-18 18:09:05.203648+00', 'NextJS', '**Exploring Next.js: The Powerful React Framework**
-
-Next.js has emerged as a standout framework for building modern web applications with React. Developed by Vercel, it offers a range of features that simplify the development process while enhancing performance and scalability. Let''s delve into the core aspects that make Next.js a compelling choice for developers.
-
-### What is Next.js?
-
-Next.js is a React-based framework that allows developers to build server-side-rendered (SSR) or static web applications effortlessly. It provides a powerful set of tools that streamline the development process, enabling features like automatic code splitting, optimized loading, and easy integration with APIs.
-
-### Key Features
-
-1. **Server-side Rendering**: Next.js supports server-side rendering out of the box. This means the HTML is generated on the server, providing better SEO and faster initial load times compared to traditional client-side rendering.
-
-2. **Static Site Generation**: With the ability to generate static pages at build time, Next.js allows for the creation of lightning-fast websites. Developers can choose between SSR and static site generation on a per-page basis, granting them flexibility based on project requirements.
-
-3. **File-based Routing**: Next.js utilizes a straightforward file-based routing system. By simply creating files in the `pages` directory, developers can create routes without writing additional configuration.
-
-4. **API Routes**: It’s possible to create API with Next.js, enabling backend features directly within your application. This reduces the complexity of setting up a separate server and allows developers to handle API requests alongside their React components.
-
-5. **Image Optimization**: Next.js comes with built-in image optimization capabilities, automatically serving images in the most efficient format and size, which enhances performance and user experience.
-
-### Advantages of Using Next.js
-
-- **Improved SEO**: By offering SSR and static site generation, Next.js can render pages in a way that is more favorable for search engine indexing.
-- **Faster Performance**: Optimized loading via automatic code splitting and image optimization leads to faster application performance.
-- **Developer Experience**: With features like hot reloading and an easy-to-use routing system, Next.js greatly enhances the developer experience, allowing for efficient prototyping and iteration.
-
-### Conclusion
-
-Next.js has solidified its position as a leading framework in the React ecosystem, offering developers the tools they need to build efficient, scalable, and high-performing web applications. Whether you are starting a new project or updating an existing one, considering Next.js could provide significant benefits in terms of performance and development speed. With its robust features and ease of use, it''s clearly a framework worth exploring.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747591743491.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(37, '2025-05-18 18:10:37.193641+00', 'Akihabara', '**Exploring Akihabara: The Electric Town of Tokyo**
-
-Nestled in the heart of Tokyo, Akihabara is a vibrant district known for its unique blend of modern pop culture, technology, and history. Often referred to as "Electric Town," it has become a haven for otaku culture and a paradise for anime, manga, and gaming enthusiasts. 
-
-Originally, Akihabara was famous for its electronics stores, selling everything from appliances to high-end gadgets. While the area still boasts numerous shops dedicated to electronics, it has evolved into a bustling center for otaku culture since the 1990s. Today, the streets are lined with countless shops featuring anime merchandise, manga, and video games. Iconic stores like Animate, Mandarake, and Yodobashi Camera attract visitors from around the globe, eager to explore the latest in technology and fan gear.
-
-One of Akihabara''s most unique aspects is its numerous themed cafes. Maid cafes, where waitresses dress in cute maid costumes, serve food and drinks with a playful twist, providing a distinctly immersive experience. Additionally, themed cafes dedicated to popular franchises, such as cat cafes or video game-inspired venues, offer a chance for fans to engage with their favorite characters in a cozy setting.
-
-The area also hosts many events and pop-up shops, especially surrounding anime and gaming releases. These events often feature exclusive merchandise and appearances from voice actors, drawing considerable crowds. Visitors can immerse themselves in a variety of exhibitions and seasonal events, making each trip to Akihabara a unique experience.
-
-For those looking to delve deeper into Japan''s pop culture, Akihabara is home to several museums and galleries. The Akihabara UDX and the nearby 3331 Arts Chiyoda often showcase art exhibits that explore various aspects of anime, including character design and production art.
-
-Whether you are a die-hard otaku or just a curious traveler, Akihabara is not to be missed. Its eclectic mix of technology, pop culture, and distinct experiences makes it a must-visit destination for anyone exploring Tokyo. So grab your camera, prepare your wallet, and immerse yourself in the electric energy of Akihabara!', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747591832531.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(40, '2025-05-18 18:15:41.13265+00', 'Computers', '**Understanding Computers: An Overview of Their Functionality and Importance**
-
-In today''s digital age, computers have become an integral part of our lives, transforming how we work, communicate, and access information. From basic calculations to complex data processing, computers serve various purposes, making them essential tools in both personal and professional realms.
-
-### What is a Computer?
-
-A computer is an electronic device that processes data, following a set of instructions known as software. It operates on binary code, using a series of 0s and 1s to perform calculations and execute commands. The main components of a computer include:
-
-1. **Hardware**: This consists of the physical components, such as the CPU (central processing unit), memory (RAM), storage devices (HDD or SSD), and input/output devices (keyboard, mouse, monitor).
-   
-2. **Software**: These are the programs and operating systems that instruct the hardware on what tasks to perform. Examples include operating systems like Windows, macOS, and Linux, as well as applications like Microsoft Office and web browsers.
-
-### Types of Computers
-
-Computers come in various forms to cater to different needs:
-
-- **Personal Computers (PCs)**: Designed for individual use, they can be desktops or laptops.
-- **Tablets and Smartphones**: Portable devices that combine computing and telecommunication.
-- **Servers**: Powerful machines designed to host services and manage networks.
-- **Mainframes and Supercomputers**: High-performance computers used for complex computations, mostly in scientific research and large organizations.
-
-### The Impact of Computers on Society
-
-The evolution of computers has led to significant changes in many aspects of life:
-
-1. **Communication**: Computers enable instant messaging, emails, and video conferencing, bridging gaps across distances.
-2. **Education**: Online learning platforms and resources improve access to knowledge and education worldwide.
-3. **Business**: Computers streamline processes, enhance productivity, and support data management and analysis.
-
-In conclusion, understanding computers is fundamental in our increasingly technology-driven society. Their capabilities continue to expand, shaping our future and redefining everyday tasks. As we navigate this digital landscape, being aware of how computers function and their significance will empower us to harness their full potential.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747592138881.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(42, '2025-05-18 18:30:03.495102+00', 'Roman Empire', '**The Rise and Fall of the Roman Empire**
-
-The Roman Empire stands as one of the most powerful and influential civilizations in history. At its zenith, it encompassed vast territories across Europe, North Africa, and parts of Asia, serving as a rigorously structured society that laid the groundwork for modern governance, law, engineering, and culture.
-
-**Rise of the Empire**
-
-The Roman Empire''s foundation dates back to 753 BC with the establishment of Rome itself. Initially a republic, Rome grew through military conquests, political alliances, and strategic colonization. The pivotal moment for the transformation into an empire occurred in 27 BC when Augustus (formerly known as Octavian) became the first emperor. His reign marked the beginning of the Pax Romana, a 200-year period of relative peace and stability across the empire.
-
-**Governance and Legal Legacy**
-
-Roman governance was characterized by a sophisticated legal system, with principles such as “innocent until proven guilty” that still resonate in modern law. The Codex Justinianus, compiled in the 6th century AD, remains a significant reference point for contemporary legal systems. The Senate, though diminished in power during the Empire, initially played a crucial role in governance, influencing political decisions and representing the aristocracy''s interests.
-
-**Cultural Influences**
-
-Roman culture was heavily influenced by the Greeks, especially in art, architecture, and philosophy. Structures like the Colosseum and aqueducts exemplify their architectural prowess, while Latin, the language of the Romans, is the root of many modern languages. Roman literature flourished with authors such as Virgil and Cicero, who contributed significantly to philosophy and poetry.
-
-**Decline and Fall**
-
-The decline of the Roman Empire was a complex process influenced by economic troubles, military overextension, and internal strife. The split into the Western and Eastern Roman Empires in AD 395 further weakened the empire. The Western Roman Empire ultimately fell in 476 AD when the last emperor, Romulus Augustulus, was deposed, while the Eastern half, known as the Byzantine Empire, continued for nearly another thousand years.
-
-**Legacy**
-
-The legacy of the Roman Empire is profound and enduring. Its contributions to law, government, and infrastructure continue to shape contemporary society. The empire’s rise and fall serve as a poignant reminder of the complexities of power, culture, and human achievement throughout history. Understanding the Romans invites us to reflect on our societal foundations and the continuous evolution of civilizations.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747593000703.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(43, '2025-05-20 19:40:10.6825+00', 'Dogs', '**The Incredible World of Dogs: Our Loyal Companions**
-
-Dogs have been our companions for thousands of years, known for their loyalty, intelligence, and affectionate nature. As one of the first domesticated animals, they have evolved alongside humans, becoming integral to our daily lives. In this blog post, we''ll explore the fascinating world of dogs, their various breeds, their roles in society, and the joy they bring to our lives.
-
-### The Rich History of Dogs
-
-The domestication of dogs dates back to at least 15,000 years, when they were first bred from wolves. Their ability to form close bonds with humans made them ideal companions for hunting and herding. Over the centuries, selective breeding has resulted in the diverse range of dog breeds we see today, each with unique traits and characteristics.
-
-### Understanding Breeds
-
-Dogs come in a myriad of breeds, each with its own personality, size, and energy levels. Some popular breeds include:
-
-- **Labrador Retriever**: Known for their friendly nature and intelligence, they excel as service dogs and family pets.
-- **German Shepherd**: Highly intelligent and versatile, they make excellent working dogs for police and rescue operations.
-- **Bulldog**: Gentle and affectionate, bulldogs have a distinct appearance and are known for their laid-back demeanor.
-- **Poodle**: Available in three sizes (standard, miniature, and toy), poodles are intelligent, trainable, and hypoallergenic.
-
-Each breed has specific needs, so it’s essential for potential dog owners to research and choose a breed that fits their lifestyle.
-
-### The Role of Dogs in Society
-
-Dogs serve various roles in modern society beyond just being pets. They work as:
-
-- **Service Animals**: Assisting individuals with disabilities, particularly guide dogs for the visually impaired.
-- **Therapy Dogs**: Providing comfort and emotional support in hospitals, schools, and nursing homes.
-- **Search and Rescue Dogs**: Alerting authorities during natural disasters and locating missing persons.
-- **Detection Dogs**: Used in law enforcement to detect drugs, explosives, and contraband.
-
-### The Joy of Owning a Dog
-
-Bringing a dog into your home can lead to an immensely rewarding experience. Studies suggest that owning a dog leads to improved mental health, increased physical activity, and enhanced social interactions. Dogs encourage their owners to participate in outdoor activities and create countless opportunities for social connections, whether at the dog park or during training classes.
-
-### Training and Care
-
-Training and socialization are crucial for any dog. Early training can help reinforce good behavior and alleviate potential issues. Basic commands such as sit, stay, and come are essential for building a strong bond between dog and owner, establishing trust and communication.
-
-Caring for a dog involves providing proper nutrition, regular exercise, grooming, and routine veterinary check-ups. Ensuring your dog''s health and well-being is a lifelong responsibility that every dog owner must embrace.
-
-### Conclusion
-
-Dogs bring joy, companionship, and countless benefits into our lives. Their diverse breeds and unique personalities allow them to fit perfectly into varied households, making them beloved family members. Whether you''re considering adopting your first dog or looking to add to your pack, understanding the responsibilities and joy that come with dog ownership is essential. Embrace the bond with your furry friend, and enjoy the unconditional love and loyalty they offer! 
-
-In a world that''s constantly changing, dogs remind us of the simple pleasures in life and the importance of companionship. Through thick and thin, they remain our ever-loyal friends.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747770008865.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(44, '2025-05-20 20:24:30.115928+00', 'Javascript', '**Understanding JavaScript: The Language of the Web**
-
-JavaScript (JS) is a powerful, high-level programming language primarily used for creating dynamic and interactive content on the web. Alongside HTML and CSS, it forms the triumvirate of web technologies that power virtually all websites today. 
-
-### A Brief History
-
-Developed by Brendan Eich in 1995, JavaScript was initially designed to add simple interactivity to web pages. Over the years, it has evolved significantly. With the emergence of frameworks like Node.js, JavaScript is no longer limited to client-side scripting and is now widely used for server-side development as well.
-
-### Core Features
-
-1. **Dynamic and Versatile**: JavaScript can manipulate HTML documents (the Document Object Model), making real-time updates without a page reload. This leads to a better user experience.
-
-2. **Event-Driven**: JS reacts to user interactions, such as clicks or keyboard inputs, enhancing the interactive experience of web applications.
-
-3. **Asynchronous Programming**: JavaScript supports asynchronous operations through callbacks, promises, and async/await syntax, allowing for smoother execution and improved user experience.
-
-### Modern Ecosystem
-
-With a rich ecosystem of libraries and frameworks, such as React, Angular, and Vue.js, JavaScript empowers developers to create robust applications more efficiently. Additionally, package managers like npm enable easy management of code libraries and dependencies.
-
-### Conclusion
-
-JavaScript has cemented its place as a foundational element of web development. Whether you are building simple websites or complex web applications, mastering JavaScript is essential for any aspiring developer. Its versatility and broad applicability make it a must-learn language in today''s tech landscape. 
-
-As the web continues to grow and evolve, so too will JavaScript, making it an exciting language to watch in the coming years.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747772666954.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(46, '2025-05-20 20:27:14.383853+00', 'Youtube', '**Exploring the Phenomenon of YouTube**
-
-YouTube has transformed the way we consume and share video content since its launch in 2005. With over two billion logged-in monthly users, it is the world''s largest video-sharing platform, offering an eclectic mix of entertainment, education, news, and more.
-
-### What is YouTube?
-
-At its core, YouTube allows users to upload, view, and share videos. Content creators, known as YouTubers, can upload videos ranging from vlogs and tutorials to music videos and documentaries, catering to diverse interests and age groups. The platform is free to use, with the option for users to subscribe to channels, like videos, and leave comments, fostering a community around shared interests.
-
-### Features of YouTube
-
-YouTube includes several features that enhance user experience:
-
-1. **YouTube Shorts**: Launched to compete with TikTok, Shorts allows creators to produce and share brief video clips (under 60 seconds), providing a rapid consumption method for viewers.
-
-2. **Live Streaming**: Creators can broadcast live, interact with viewers in real-time, and engage their audience in a dynamic way.
-
-3. **YouTube Premium**: This subscription service offers ad-free viewing, access to exclusive content, and offline viewing, creating a seamless experience for heavy users.
-
-4. **Monetization**: Many creators earn revenue through ads, memberships, and merchandise sales, turning their passion into a viable career.
-
-### The Cultural Impact
-
-YouTube has not only changed individual entertainment experiences but also influenced culture and society. Viral challenges, music hits, and social movements often find their beginnings on this platform. Moreover, it serves as a powerful educational tool, with countless tutorials and educational channels available for free, making learning accessible to all.
-
-### Conclusion
-
-In summary, YouTube is more than just a video platform; it’s a global community with a profound impact on content creation, consumption, and culture. As it continues to evolve, it remains a place where creativity thrives, allowing anyone with access to a camera and an internet connection to share their voice and connect with millions around the world. Whether you’re a content creator or a passionate viewer, YouTube is shaping the digital landscape like never before.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747772831716.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(41, '2025-05-18 18:17:05.276739+00', 'Anime', '**The Vibrant World of Anime: A Cultural Phenomenon**
-
-Anime, a style of animation that originated in Japan, has grown into a global cultural powerhouse, enchanting audiences of all ages and backgrounds. Characterized by colorful artwork, imaginative themes, and fantastic storytelling, anime spans a wide array of genres, making it a versatile medium for entertainment.
-
-The origins of anime can be traced back to the early 20th century, with the first recognized works emerging in the 1910s. However, it wasn''t until the 1960s that anime began to flourish as a distinctive art form, thanks to pioneers like Osamu Tezuka, often referred to as the "God of Manga." His series "Astro Boy" laid the foundation for much of modern anime, popularizing its unique visual style.
-
-Anime is not just a form of entertainment but a significant cultural export for Japan. It has influenced various aspects of global pop culture, inspiring countless artists, musicians, and storytellers outside of Japan. From the iconic "Naruto" to the emotionally charged "Your Name," anime has something for everyone, whether you’re a fan of action, romance, fantasy, or horror.
-
-The impact of anime extends beyond mere entertainment; it fosters community. Anime conventions, cosplay events, and online forums enable fans to connect, share their passions, and celebrate their favorite series. Platforms like Crunchyroll and Funimation have made accessing anime easier than ever, allowing fans to enjoy both new releases and classic series from the comfort of their homes.
-
-Moreover, anime often delves into complex themes, offering social commentary on issues like war, identity, and environmentalism. Series like "Attack on Titan" can spark thought-provoking discussions, making them not just sources of escapism but vehicles for deeper understanding.
-
-In conclusion, anime represents much more than just animated content; it is a multifaceted cultural phenomenon that continues to captivate audiences around the world. Its rich history, diverse genres, and ability to foster community make it a significant part of modern entertainment and a vital piece of cultural exchange. Whether you''re a long-time aficionado or a newcomer, anime offers a unique lens through which to explore storytelling and artistry.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747592222867.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', true, 22),
-	(48, '2025-05-22 18:10:56.020617+00', 'Marvel', '**The Marvel Universe: A Journey Through Heroism and Imagination**
-
-The Marvel Universe is a rich tapestry of storytelling that brings to life a vast array of characters, narratives, and adventures. Established in 1939, Marvel Comics has evolved from small comic book publications into a multi-faceted entertainment powerhouse, encompassing movies, television shows, merchandise, and more.
-
-At the core of the Marvel Universe are its iconic characters. Superheroes like Spider-Man, Iron Man, Captain America, and Black Widow have not only captured the imaginations of comic book fans but also have become cultural symbols recognized around the globe. These characters are often depicted as flawed individuals who face personal challenges while fighting against formidable villains, making them relatable and human.
-
-The interconnectedness of the Marvel Universe is another noteworthy aspect. Initially introduced through comic book series, Marvel successfully adapted its expansive universe into the Marvel Cinematic Universe (MCU) beginning with "Iron Man" in 2008. The MCU has since produced a plethora of films and TV shows, creating a shared world where characters from different stories intersect, collaborate, and sometimes clash. This intricate web of interconnections has kept fans engaged for over a decade, building anticipation for upcoming titles and crossovers.
-
-In addition to films, Marvel has utilized various media to tell its stories. Animated series, video games, and even theatrical performances have expanded the reach of its narratives, allowing fans of all ages to engage with the characters in unique ways. Marvel also places a strong emphasis on diversity and representation, introducing characters from different backgrounds and cultures, thereby enriching its narrative landscape.
-
-In conclusion, the Marvel Universe is much more than just a collection of comic books and movies; it''s a dynamic world filled with heroes, complex storylines, and cultural significance. As Marvel continues to evolve and expand into new frontiers, one thing remains certain: its influence on pop culture and storytelling will resonate for generations to come.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747937454059.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(50, '2025-05-22 18:39:38.017853+00', 'FIU', '**Florida International University: A Gateway to Academic Excellence**
-
-Florida International University (FIU) stands as one of the most prominent public research universities in the United States. Established in 1965, FIU is located in Miami, Florida, and has grown to be a vibrant hub of academic innovation, community engagement, and multiculturalism.
-
-FIU is known for offering a diverse range of degree programs from undergraduate to doctoral levels across various disciplines including business, engineering, health sciences, arts, and humanities. With more than 58,000 students from over 100 countries, the university fosters a multicultural environment that enriches the academic experience.
-
-One of FIU’s standout features is its commitment to research. The university is classified as a “R1: Doctoral Universities – Very High Research Activity” institution, and it is a member of the Association of American Universities. This classification highlights FIU’s dedication to advancing knowledge and innovation, with research initiatives spanning critical areas like environmental science, public health, and cybersecurity.
-
-In addition to its academic strengths, FIU is renowned for its lively campus life. The university boasts over 300 student organizations, ranging from cultural clubs to academic societies, ensuring that students can find their niche and engage socially and academically. FIU’s Division of Athletics also provides vibrant opportunities for students to showcase their talents in sports, fostering school spirit and community pride.
-
-One of the driving forces behind FIU''s rapid growth and success is its commitment to providing access to education for all. Through various outreach programs and scholarships, FIU aims to break down barriers to higher education, making it a model of inclusiveness and accessibility.
-
-In summary, Florida International University is more than just an educational institution; it is a community of diverse learners, a hub for groundbreaking research, and an advocate for accessible education. Whether you’re a prospective student considering your options or a community member looking to engage with a dynamic institution, FIU offers boundless opportunities for growth and exploration.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747939175409.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(51, '2025-05-22 23:32:06.377692+00', 'New York', '**Exploring the Vibrant City of New York**
-
-New York City, often referred to as "The Big Apple," is one of the most iconic and dynamic cities in the world. Known for its towering skyscrapers, diverse culture, and vibrant arts scene, it serves as a global hub for finance, fashion, and entertainment.
-
-Located in the northeastern United States, New York City is made up of five boroughs: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island. Each borough boasts its own unique character and attractions, making the city a mosaic of cultures and experiences. Manhattan is famous for landmarks such as Times Square, Central Park, and the Statue of Liberty, while Brooklyn is celebrated for its picturesque neighborhoods and the iconic Brooklyn Bridge.
-
-New York City is home to an array of world-class museums, including the Metropolitan Museum of Art and the Museum of Modern Art (MoMA). Art enthusiasts and history buffs alike can spend days exploring the vast collections and exhibits these institutions offer. Beyond museums, the city''s theater scene is unparalleled, epitomized by Broadway shows that attract millions of visitors each year.
-
-Food lovers will find themselves in paradise as New York City offers a culinary landscape that reflects its multicultural population. From street food carts serving hot dogs and pretzels to upscale dining in Michelin-starred restaurants, the options are limitless. Don''t forget to indulge in classic New York-style pizza and bagels, both of which hold a special place in the city''s gastronomic culture.
-
-Shopping in New York City is an adventure in itself, with everything from high-end designer boutiques on Fifth Avenue to unique finds in the bustling markets of Brooklyn. Visitors often flock to iconic department stores like Macy''s and Saks Fifth Avenue to experience the allure of retail in the heart of the city.
-
-With its rich history, diverse population, and endless opportunities for exploration, New York City remains a top destination for travelers from all over the globe. Whether you''re visiting for a weekend or planning an extended stay, the electric energy of New York will leave a lasting impression. Embrace the adventure and immerse yourself in the vibrant culture that makes New York a true gem of America.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747956722397.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(55, '2025-05-22 23:38:12.056325+00', 'Hockey', '**Hockey: A Fast-Paced, Thrilling Sport on Ice**
-
-Hockey, known for its speed, skill, and excitement, is a sport rich in history and tradition. Originating in the 18th century, hockey has evolved into one of the most popular sports worldwide, particularly in countries like Canada, the United States, Russia, and Sweden. This blog post delves into what makes hockey such an exhilarating sport and explores its rules, equipment, and the vibrant culture surrounding it.
-
-At its core, hockey is played on an ice rink, where two teams compete to score goals by shooting a puck into the opposing team''s net. Each team consists of six players: three forwards, two defensemen, and a goaltender. The game is split into three periods, typically lasting 20 minutes each, with breaks between them. The objective is simple: score more goals than the opposing team.
-
-One of the defining features of hockey is the unique equipment used by players. This includes skates, sticks, helmets, and protective gear such as shoulder pads, shin guards, and gloves. Skating skills are crucial, as players must move swiftly on ice while maintaining control of the puck. The stick, typically made of composite materials, allows players to shoot, pass, and handle the puck with remarkable precision.
-
-The rules of hockey, while straightforward, can be complex. Penalties are commonly enforced for various infractions, such as tripping or high-sticking, which result in temporary player disadvantage. The quick pace of the game means that players must be agile, both physically and mentally, to adapt and strategize on-the-fly.
-
-Hockey also boasts a rich cultural aspect, with fervent fan communities and passionate rivalries. In North America, leagues like the National Hockey League (NHL) dominate, featuring teams with storied histories and dedicated followings. The Stanley Cup playoffs, a highlight of the hockey calendar, showcase some of the sport''s most intense competition and exhilarating moments. 
-
-In conclusion, hockey is more than just a game; it''s a thrilling experience that encapsulates speed, strategy, and a sense of community. Whether you''re a player, a fan, or a newcomer to the sport, there''s always something special about witnessing the graceful artistry and raw energy of a hockey match. So, grab your skates and stick, and embark on an adventure in the exhilarating world of hockey!', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747957088519.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(53, '2025-05-22 23:37:08.327624+00', 'Hockey', '**The Thrilling World of Hockey**
-
-Hockey is a dynamic sport that captivates millions around the globe with its blend of speed, skill, and strategy. Originating in the British Isles and evolving over centuries, hockey now comes in several formats, including ice hockey, field hockey, and roller hockey. Each version has its unique charm and challenges but shares a common goal: to score more goals than the opposing team.
-
-### Ice Hockey
-
-Ice hockey is perhaps the most popular variant, particularly in North America and Europe. Played on an ice rink, two teams of skaters use sticks to control and shoot a puck into the opponent''s net. The National Hockey League (NHL) is the premier professional league, showcasing incredible talent and fierce rivalries. Key elements of ice hockey include speed, teamwork, and physicality, making it a thrilling spectator sport. Players like Wayne Gretzky and Sidney Crosby have left an indelible mark on the game.
-
-### Field Hockey
-
-Field hockey, on the other hand, is predominantly played on grass or artificial turf. With its roots tracing back to the 12th century, this Olympic sport involves two teams of eleven players who aim to score goals using curved sticks. It’s particularly popular in countries like India, Pakistan, Australia, and the Netherlands. Unlike ice hockey, field hockey emphasizes cardiovascular endurance, precision passing, and tactical awareness.
-
-### The Essence of the Game
-
-At its core, hockey is about teamwork and strategy. Each player has a specific role, whether it’s the enforcer who protects teammates, the playmaker who sets up scoring opportunities, or the goalie who guards the net. The fast-paced nature of the game keeps fans on the edge of their seats, as split-second decisions can change the outcome.
-
-### Conclusion
-
-Whether you''re a fan of the slap shots of ice hockey or the intricate plays of field hockey, the sport offers excitement, athleticism, and a sense of community. Join the ranks of fans who celebrate this exhilarating game, and immerse yourself in the culture of hockey—a sport uniting players and spectators alike in its passionate pursuit of victory.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747957025329.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', true, 0),
-	(54, '2025-05-22 23:37:36.459584+00', 'Hockey', '**The Thrilling World of Hockey: A Comprehensive Overview**
-
-Hockey, often called "the fastest game on ice," is a dynamic and exhilarating team sport that captures the hearts of millions around the globe. This high-paced game involves two teams, each aiming to score goals by hitting a puck into their opponent''s net using sticks. While the most popular form of the sport is ice hockey, other variations such as field hockey and roller hockey also exist.
-
-### A Brief History
-
-Hockey''s origins are somewhat murky, but it is believed to have evolved from various stick-and-ball games played in Europe. The modern version of ice hockey began to take shape in late 19th century Canada, drawing inspiration from sports like lacrosse and rugby.
-
-### The Game''s Structure
-
-A standard ice hockey game consists of three periods, each lasting 20 minutes. Teams are comprised of six players, including a goaltender. The objective is simple: score more goals than the opposing team. The game''s fast pace is defined by skillful skating, strategic passing, and fierce competition.
-
-### Key Skills
-
-To excel in hockey, players must possess a diverse set of skills. These include:
-
-- **Skating:** The ability to glide and maneuver quickly on the ice is essential.
-- **Stickhandling:** Controlling the puck with a hockey stick to evade opponents.
-- **Shooting:** Various shooting techniques, such as wrist shots and slap shots, are necessary to score goals.
-- **Teamwork:** Coordinating plays with teammates is vital for success.
-
-### Major Leagues and Tournaments
-
-The National Hockey League (NHL) is the premier professional league in North America, showcasing the world''s top talent. Hockey tournaments, such as the Winter Olympics and the IIHF World Championships, further highlight the sport''s international appeal.
-
-### Conclusion
-
-Hockey is more than just a sport; it embodies a culture of passion, dedication, and camaraderie. Whether playing in your local rink or cheering on your favorite team at a massive arena, the excitement of hockey is infectious. As we continue to witness the evolution of this sport, it’s clear that hockey will remain a beloved pastime for generations to come.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747957053411.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', true, 0),
-	(56, '2025-05-22 23:38:50.194356+00', 'Basketball', '**The Thrilling World of Basketball: A Comprehensive Overview**
-
-Basketball, a fast-paced sport invented in 1891 by Dr. James Naismith, has transformed into one of the most popular games globally. Played on a rectangular court with two teams of five players each, the objective is simple: score points by shooting the basketball through the opponent’s hoop, which is mounted 10 feet high.
-
-### The Basics of Basketball
-
-A standard basketball game consists of four quarters, typically lasting 12 minutes each at the professional level, with variations in other leagues. Teams score by making field goals (worth two points) or three-point shots (worth three points), and free throws (worth one point), awarded after certain fouls. 
-
-### Key Positions
-
-Each team features specific player positions, including:
-
-- **Point Guard**: Often seen as the team’s leader, responsible for directing plays and distributing the ball.
-- **Shooting Guard**: Primarily focused on scoring points, adept at shooting from long ranges.
-- **Small Forward**: Versatile players who can score, defend, and excel in multiple play positions.
-- **Power Forward**: Powerful, often playing close to the basket, combining physical play with scoring ability.
-- **Center**: Typically the tallest player, focused on blocking shots and rebounding.
-
-### The Professional Scene
-
-The NBA (National Basketball Association) is the premier professional basketball league, showcasing elite talent from around the world. With global stars like LeBron James and Stephen Curry, the league has broadened basketball’s appeal and fostered a dedicated fanbase. 
-
-### Cultural Impact and Global Reach
-
-Basketball has transcended the boundaries of sports. It’s not just a game; it’s a cultural phenomenon, influencing music, fashion, and social issues worldwide. From street basketball courts in urban neighborhoods to international competitions, the sport fosters community and showcases diversity.
-
-In summary, basketball is not just an athletic pursuit; it’s a dynamic and influential cultural force that continues to captivate millions. Whether you''re a casual fan or a dedicated player, the beautiful game of basketball offers excitement, community, and a thrilling experience on and off the court.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747957127391.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(59, '2025-05-22 23:42:05.622338+00', 'World War II', '**A Brief Overview of World War II**
-
-World War II, one of the most significant events in modern history, lasted from 1939 to 1945 and involved many of the world’s great powers. This global conflict stemmed from unresolved issues from World War I and the rise of tyrannical regimes across Europe and Asia. 
-
-The war began on September 1, 1939, when Germany, led by Adolf Hitler, invaded Poland. This aggressive act prompted Britain and France to declare war on Germany. They formed the Allies, which would grow to include countries like the United States, the Soviet Union, and China. On the opposing side were the Axis powers, primarily Germany, Italy, and Japan.
-
-Throughout the war, numerous battles were fought, each marked by significant strategies and stakes. Major battles included the Battle of Britain, where the Royal Air Force defended the UK against the German Luftwaffe, and the Battle of Stalingrad, a turning point on the Eastern Front that saw the Soviet army defeat German forces.
-
-The war extended beyond Europe, with significant campaigns in North Africa and the Pacific Theater. The attack on Pearl Harbor by Japan in December 1941 brought the United States into the conflict, significantly altering the momentum of the war. 
-
-One of the most harrowing aspects of World War II was the Holocaust, where six million Jews, along with millions of others persecution victims, were systematically exterminated by the Nazi regime. This act of genocide serves as a solemn reminder of the horrors of war and intolerance.
-
-The war concluded with the unconditional surrender of the Axis powers in 1945. Germany surrendered in May, followed by Japan in September after the U.S. dropped atomic bombs on Hiroshima and Nagasaki. 
-
-World War II reshaped international relations, leading to the establishment of the United Nations and a new geopolitical landscape during the Cold War era. Its effects are still felt today, reminding us of the capacity for both destruction and resilience in humanity.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747957321405.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(60, '2025-05-22 23:44:25.124001+00', 'Internet', '**The Internet: Connecting the World**
-
-The Internet has transformed the way we live, work, and communicate. Initially developed in the late 1960s as a project for military communication, it has evolved into a global network that connects millions of devices, providing endless possibilities for information exchange and interaction.
-
-At its core, the Internet is a network of networks that uses standardized protocols to allow computers and devices to communicate with each other. This infrastructure facilitates various services, including email, social media, websites, and real-time communication applications like video conferencing.
-
-One of the most profound impacts of the Internet is its ability to democratize information. With just a few clicks, individuals can access vast amounts of data on almost any topic. This has led to an increase in educational opportunities and informed decision-making, empowering users to learn and share knowledge globally.
-
-Social connectivity is another significant aspect of the Internet. Platforms like Facebook, Twitter, and Instagram enable people to maintain relationships regardless of geographical boundaries. Sharing experiences, collaborating on projects, and engaging in discussions are now more effortless than ever, shaping a new paradigm of social interaction.
-
-However, the Internet is not without its challenges. Issues of privacy and security have emerged as significant concerns, with data breaches and cyber-attacks becoming more frequent. Users must navigate the digital space cautiously, understanding the importance of safeguarding their personal information.
-
-Additionally, the digital divide remains a pressing issue. While many have access to the Internet, millions worldwide still lack basic connectivity. This disparity can exacerbate existing inequalities in education, healthcare, and economic opportunities.
-
-In conclusion, the Internet is a powerful tool that has revolutionized the way we operate in countless aspects of our lives. While it offers tremendous benefits, it also presents challenges that require collective effort to address. As we continue to innovate and connect, it is crucial to embrace both the opportunities and responsibilities that come with being a part of this digital landscape.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747957460023.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(61, '2025-05-22 23:46:55.068726+00', 'Geico', '**Understanding Geico: An Overview of the Insurance Giant**
-
-Geico, short for Government Employees Insurance Company, has become a household name in the United States due to its innovative marketing strategies and competitive insurance rates. Established in 1936, Geico originally aimed to offer auto insurance primarily to federal employees and military personnel. Over the years, it has expanded its services to cover a broader audience.
-
-### Focus on Affordability
-
-One of Geico''s major selling points is its ability to provide affordable insurance options. By leveraging technology and direct sales methods, Geico has minimized overhead costs, allowing them to pass savings onto customers through lower premiums. Their famous slogan, "15 minutes could save you 15% or more on car insurance," highlights this focus on affordability and has contributed significantly to their brand recognition.
-
-### Diverse Offerings
-
-While auto insurance is the backbone of Geico''s business, the company also provides a myriad of other insurance products. These include homeowners, renters, motorcycle, and even pet insurance. This diversification not only enhances customer retention–offering a one-stop shop for various insurance needs–but also contributes to the company''s bottom line.
-
-### Customer Service and Technology
-
-In addition to competitive rates, Geico distinguishes itself through exceptional customer service and the use of technology. Their user-friendly website and mobile app allow customers to easily manage their policies, file claims, and access assistance whenever needed. Further, their commitment to customer satisfaction has earned them a loyal following, reflected in various industry awards and high ratings from organizations like J.D. Power.
-
-### Unique Marketing Strategies
-
-Geico''s advertising strategy is another key factor in its success. The company is known for its memorable commercials that often feature anthropomorphic characters such as the Geico Gecko and the infamous cavemen. These advertisements not only entertain but also consistently reinforce Geico''s brand messaging, enhancing consumer recall.
-
-### Conclusion
-
-In an ever-evolving insurance marketplace, Geico has managed to establish itself as a leader through its focus on affordability, diverse offerings, exceptional customer service, and inventive marketing techniques. As consumers continue to seek better rates and service, Geico is well-positioned to adapt and meet the needs of modern policyholders, ensuring its relevance for years to come.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747957613284.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(57, '2025-05-22 23:39:10.637272+00', 'Football', '**The Fascinating World of Football**
-
-Football, often referred to as soccer in some regions, is one of the most popular sports globally, captivating millions of fans and players alike. Originating from ancient games played in different cultures, modern football as we know it today took shape in the mid-19th century in England. The sport has evolved into a massive cultural phenomenon, encompassing local, national, and international competitions that draw enormous audiences.
-
-At its core, football is a team sport where two teams, consisting of eleven players each, compete to score goals by getting a ball into the opposing team’s net. The game is played on a rectangular field, known as a pitch, with goals at each end. The simplicity of its rules and the minimal requirement of equipment—typically a ball and a pair of goals—makes it accessible to players of all ages and backgrounds.
-
-One of the most significant tournaments in the sport is the FIFA World Cup, held every four years, where national teams from around the globe compete for the prestigious title. The World Cup not only showcases elite talent but also unites diverse cultures and communities, fostering a sense of global camaraderie.
-
-In addition to the international stage, club football has gained tremendous popularity, with top-tier leagues like the English Premier League, La Liga in Spain, and Serie A in Italy attracting talent from all over the world. This allows fans to support their favorite clubs year-round, leading to fierce rivalries and memorable matches.
-
-As football continues to grow in popularity, it also embraces innovation. Advances in technology, such as VAR (Video Assistant Referee), influence the game''s dynamics, ensuring better decision-making. Furthermore, with social media, fans can engage with the sport more than ever, sharing insights, opinions, and celebrating unforgettable moments.
-
-In conclusion, football''s rich history, combined with its ability to connect people and inspire passion, secures its status as the world''s beautiful game. Whether played casually in local parks or on global stages, football thrives on its spirited competition and the joy it brings to players and fans alike.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747957147491.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', true, 0),
-	(62, '2025-05-23 15:38:16.903437+00', 'Tigers', '**The Majestic World of Tigers**
-
-Tigers are among the most fascinating and magnificent creatures on our planet. These big cats, belonging to the species Panthera tigris, are renowned for their strength, beauty, and striking appearance. With their distinctive orange and black striped coats, tigers are not only visually stunning but also represent the true essence of wildlife.
-
-### Physical Characteristics
-
-Tigers are the largest members of the cat family and can weigh between 220 to 660 pounds. Their beautiful fur not only serves as camouflage in their natural habitat but also highlights their status as apex predators. One of the most interesting features is their stripes; no two tigers have the same pattern, making each individual unique.
-
-### Habitat and Distribution
-
-Historically, tigers roamed across Asia, from India to Siberia. Today, they have lost a significant portion of their habitat due to human activities such as deforestation and poaching. Tigers primarily inhabit grasslands, savannas, and forests, where they can effectively hunt their prey, including deer, boar, and other animals.
-
-### Behavior and Social Structure
-
-Unlike many other big cats, tigers are largely solitary animals. They establish large territories that they mark with scent and scratch marks to ward off rivals. Tigers are primarily nocturnal hunters, relying on their keen senses and stealth to stalk and ambush prey.
-
-### Conservation Status
-
-Tragically, tigers are classified as endangered, with an estimated population of only around 3,900 individuals left in the wild. Conservation efforts are crucial to their survival, focusing on habitat protection, anti-poaching laws, and supporting local communities to reduce human-wildlife conflict.
-
-### Conclusion
-
-Tigers are not just a symbol of strength and power but also a critical part of biodiversity. Protecting these magnificent creatures ensures not only their survival but also the health of the ecosystems they inhabit. Supporting conservation efforts can help ensure that future generations can admire and appreciate the beauty of tigers in the wild. Let''s work together to safeguard their future!', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1748014695146.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', false, 0),
-	(39, '2025-05-18 18:13:59.515437+00', 'Chihuahuas', '**The Fascinating World of Chihuahuas**
-
-Chihuahuas are one of the most popular dog breeds, known for their petite size and vibrant personality. Originating from Mexico, these tiny dogs are packed with energy and charm, making them beloved companions for many.
-
-One of the key aspects to note about Chihuahuas is their **lifespan**. On average, these little dogs live between 12 to 20 years, with proper care and a healthy lifestyle significantly influencing their longevity. Factors such as diet, exercise, and regular veterinary check-ups can help them remain healthy and energetic throughout their lives. A well-cared-for Chihuahua can become a loving member of your family for many years.
-
-In terms of **personality**, Chihuahuas are known for their bold and confident demeanor. Despite their small size, they often have larger-than-life personalities, exhibiting traits such as loyalty, playfulness, and intelligence. They can be quite protective of their owners, often forming strong bonds with them. However, this loyalty can sometimes manifest as a tendency to be territorial or wary of strangers. Socialization from an early age is key to nurturing a well-rounded Chihuahua that is comfortable around other pets and people.
-
-Chihuahuas come in a variety of colors and coat types, offering a little something for everyone. Whether you prefer a short-haired or long-haired Chihuahua, each has its unique characteristics and care needs. Regular grooming, a balanced diet, and plenty of exercise are essential to keep your Chihuahua healthy and happy.
-
-In conclusion, Chihuahuas are not just cute little dogs; they pack a lot of personality and charm into their small frames. With a long lifespan and a vibrant disposition, they make wonderful companions for those willing to understand their needs and quirks. If you’re considering adding a Chihuahua to your family, prepare for a loving and spirited companion that will fill your life with joy.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747592037502.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', true, 8),
-	(29, '2025-05-18 16:16:34.166213+00', 'Dogs', '**All About Dogs: Man''s Best Friend**
-
-Dogs have been cherished companions to humans for thousands of years. As one of the first domesticated animals, dogs have evolved from wild wolves to loyal partners, serving various roles in our lives, from working dogs to beloved pets.
-
-### The Breeds
-
-With over 340 recognized dog breeds worldwide, each breed boasts unique characteristics, temperaments, and appearances. Breeds like the Golden Retriever are known for their friendly demeanor, making them excellent family pets, while German Shepherds are often employed in police work due to their intelligence and courage. Small breeds, such as Chihuahuas, provide companionship, and their size makes them suitable for urban living. Understanding the breed characteristics can significantly impact your experience as a dog owner.
-
-### Health and Care
-
-Proper care for a dog includes regular veterinary check-ups, vaccinations, and a balanced diet tailored to their age, size, and breed. Exercise is also crucial; most dogs require daily walks and playtime to stay healthy and happy. Grooming needs vary by breed, with long-haired dogs needing more frequent brushing.
-
-### Training and Behavior
-
-Training is essential for nurturing a well-behaved dog. Basic commands, socialization, and positive reinforcement lead to a trusting relationship. Training helps reduce behavioral issues and ensures your dog adapts well to various situations. 
-
-### The Joys of Owning a Dog
-
-The bond between humans and dogs is undeniably strong. Dogs provide emotional support, companionship, and even health benefits, such as reducing stress and encouraging physical activity. Their unconditional love and loyalty enrich our lives in ways we often can''t describe.
-
-### Conclusion
-
-Whether you''re considering adopting a dog or already have one, understanding their needs, characteristics, and behaviors will enhance your relationship. Dogs truly are remarkable creatures that bring joy, love, and a sense of purpose into our lives.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747584992279.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', true, 10),
-	(45, '2025-05-20 20:25:13.48625+00', 'Typescript', '**Understanding TypeScript: A Comprehensive Overview**
-
-TypeScript is an open-source programming language developed and maintained by Microsoft. It is a superset of JavaScript, meaning that any valid JavaScript code is also valid TypeScript code. TypeScript introduces static typing to JavaScript, allowing developers to add type annotations to their variables, function parameters, and return values. This feature is beneficial because it catches errors early in the development process, leading to more robust and maintainable code.
-
-### Why Use TypeScript?
-
-1. **Static Typing**: One of the most significant advantages of TypeScript is its static typing. By defining types, developers can avoid common runtime errors associated with type coercion in JavaScript. This improves code quality and readability.
-
-2. **Enhanced Tooling**: TypeScript offers powerful tooling support. IDEs (Integrated Development Environments) provide better autocompletion, refactoring, and navigation features when working with TypeScript. This can boost developer productivity and reduce the time spent debugging.
-
-3. **Support for Modern JavaScript Features**: TypeScript embraces new JavaScript features and syntax, allowing developers to use ES6+ features while still supporting older browsers through transpilation. 
-
-4. **Improved Code Organization**: TypeScript allows for better organization of code through its module system, making it easier to manage large codebases. 
-
-### Getting Started with TypeScript
-
-To start using TypeScript, you need to install it globally using npm:
-
-```bash
-npm install -g typescript
-```
-
-Once installed, you can compile TypeScript files with the `tsc` command. Create a `.ts` file, write some TypeScript code, and compile it to JavaScript:
-
-```bash
-tsc filename.ts
-```
-
-### Conclusion
-
-In summary, TypeScript enhances JavaScript by introducing static typing, improved tooling, and modern features, making it a valuable language for developers. Its ability to catch errors early and promote better code structure makes TypeScript an excellent choice for both small and large projects. As JavaScript continues to dominate web development, TypeScript is becoming increasingly popular among developers looking to improve their coding experience and output.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747772711041.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', true, 2),
-	(47, '2025-05-22 17:42:02.822775+00', 'Stanley Cup', '**The Stanley Cup: A Glorious Tradition in Ice Hockey**
-
-The Stanley Cup is more than just a trophy; it is the pinnacle of achievement in professional ice hockey. Named after Lord Stanley of Preston, the Governor General of Canada who donated the trophy in 1892, the Cup has become a symbol of excellence in the National Hockey League (NHL).
-
-Each year, the Stanley Cup playoffs begin after the regular NHL season, typically in April. Sixteen teams, eight from the Eastern Conference and eight from the Western Conference, qualify to compete for the coveted title. The playoffs consist of a series of best-of-seven rounds, where teams face off in a matrix of excitement, skill, and resilience. The journey to capturing the Cup is grueling, often testing the physical and mental fortitude of every player involved.
-
-One of the unique aspects of the Stanley Cup is its rich history. Unlike many trophies in professional sports, the Cup has a rotating design, where the names of the players and staff of the winning team are engraved on it. This tradition creates a lasting legacy for the champions, allowing them to be remembered for years to come.
-
-The Cup has been won by a multitude of teams over its long history, with the Montreal Canadiens holding the record for the most championships, followed closely by the Toronto Maple Leafs and the Detroit Red Wings. The intense rivalry amongst these teams adds to the allure of the Cup, making each playoff season an anticipation-filled event for fans.
-
-Another interesting aspect of the Stanley Cup is its unique celebration ritual. When a team wins, the players are allowed to take the Cup to their hometowns, share it with their communities, and even enjoy a personal day with it. This exceptional privilege highlights both the trophy''s significance and the joyous occasion of becoming a champion.
-
-In conclusion, the Stanley Cup represents not just victory in hockey, but a tradition steeped in history, competition, and community spirit. Whether you''re a hardcore hockey fan or a casual observer, the allure of the Cup is undeniably powerful, making each playoff season a thrilling spectacle in the world of sports.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747935720353.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', true, 0),
-	(52, '2025-05-22 23:35:59.793105+00', 'Siberian Husky', '**Understanding the Siberian Husky: A Majestic Breed**
-
-The Siberian Husky is a strikingly beautiful breed known for its remarkable looks and friendly demeanor. Originally bred by the Chukchi people of Siberia for sledding and companionship, these dogs are characterized by their wolf-like appearances, with thick fur, erect ears, and captivating blue or multicolored eyes.
-
-One of the most notable traits of the Siberian Husky is its energy level. Huskies are highly active and require plenty of exercise to stay healthy and happy. Daily walks, playtime in a secure yard, and interactive games are essential to fulfill their high energy needs. Without adequate exercise, Huskies can become bored, leading to undesirable behaviors such as excessive barking or destructive tendencies.
-
-In addition to their physical needs, Siberian Huskies are known for their independent nature. They are intelligent dogs but possess a stubborn streak that can make training a bit of a challenge. Consistent and positive reinforcement is key to successful training. Early socialization is crucial, as it helps them grow into well-rounded adults.
-
-Grooming a Siberian Husky is relatively manageable, thanks to their double coat which helps protect them from harsh weather. However, they do shed seasonally, requiring regular brushing to keep loose fur at bay. A proper grooming routine not only maintains their coat but also provides an opportunity for bonding.
-
-When it comes to family life, Huskies are generally friendly and good-natured, making them excellent companions for active families. They tend to get along well with children and other pets if introduced properly. However, their strong prey drive means caution should be exercised when around smaller animals.
-
-In summary, the Siberian Husky is a playful, energetic, and loving breed that thrives in an active environment. With adequate exercise, consistent training, and proper care, they make wonderful companions for those willing to embrace their spirited nature.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747956957518.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', true, 0),
-	(35, '2025-05-18 18:07:58.682711+00', 'GTA 6', '**All You Need to Know About GTA 6**
-
-The anticipation surrounding Grand Theft Auto VI, popularly known as GTA 6, is palpable among gaming enthusiasts. Since the release of GTA V in 2013, fans have eagerly awaited the next installment in Rockstar Games'' iconic franchise, and recent developments have only heightened expectations.
-
-### Release Date and Development
-
-While an official release date for GTA 6 has not been confirmed, Rockstar has teased fans with updates that suggest the game is in active development. Following years of speculation and numerous leaks, the company finally acknowledged that they were working on a new title in early 2022. Recent rumors suggest a potential release in late 2024, but until Rockstar makes an official announcement, it''s mainly conjecture.
-
-### Setting and Characters
-
-One of the most exciting aspects of GTA 6 is its rumored setting. Speculation points towards a fictional version of Vice City, the series'' homage to Miami, along with various other regions. Additionally, sources have hinted at multiple protagonists, similar to the structure found in GTA V. This narrative style allows players to experience the plot from different perspectives, enhancing gameplay and storytelling.
-
-### Gameplay Innovations
-
-GTA 6 promises to bring groundbreaking gameplay improvements. While details remain scarce, fans are hoping for enhanced graphics, more realistic physics, and an expansive open world that encourages exploration and immersion. The addition of new features, including a day-night cycle and dynamic weather, are also expected to elevate the gaming experience.
-
-### Online Component
-
-Given the success of GTA Online, it’s reasonable to assume that GTA 6 will include a robust online component. Rockstar has dedicated substantial resources to expand and support GTA Online, which has continued to thrive years after its initial launch. Players can expect new multiplayer modes, activities, and possibly a reimagined approach to online interactions in the new game.
-
-### Conclusion
-
-GTA 6 presents an exciting opportunity for both new and returning players. With its anticipated release, players are eager to explore the innovative gameplay, engaging stories, and vast new landscapes that Rockstar has in store. As the gaming community buzzes with speculation, only time will tell how GTA 6 will redefine the open-world genre once again. Stay tuned for more updates as the story unfolds!', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747591675296.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', true, 4);
-
-
---
--- Data for Name: shared-blogs; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-INSERT INTO "public"."shared-blogs" ("id", "created_at", "title", "content", "image_url", "user_id", "likes") VALUES
-	(40, '2025-05-18 18:15:41.13265+00', 'Computers', '**Understanding Computers: An Overview of Their Functionality and Importance**
-
-In today''s digital age, computers have become an integral part of our lives, transforming how we work, communicate, and access information. From basic calculations to complex data processing, computers serve various purposes, making them essential tools in both personal and professional realms.
-
-### What is a Computer?
-
-A computer is an electronic device that processes data, following a set of instructions known as software. It operates on binary code, using a series of 0s and 1s to perform calculations and execute commands. The main components of a computer include:
-
-1. **Hardware**: This consists of the physical components, such as the CPU (central processing unit), memory (RAM), storage devices (HDD or SSD), and input/output devices (keyboard, mouse, monitor).
-   
-2. **Software**: These are the programs and operating systems that instruct the hardware on what tasks to perform. Examples include operating systems like Windows, macOS, and Linux, as well as applications like Microsoft Office and web browsers.
-
-### Types of Computers
-
-Computers come in various forms to cater to different needs:
-
-- **Personal Computers (PCs)**: Designed for individual use, they can be desktops or laptops.
-- **Tablets and Smartphones**: Portable devices that combine computing and telecommunication.
-- **Servers**: Powerful machines designed to host services and manage networks.
-- **Mainframes and Supercomputers**: High-performance computers used for complex computations, mostly in scientific research and large organizations.
-
-### The Impact of Computers on Society
-
-The evolution of computers has led to significant changes in many aspects of life:
-
-1. **Communication**: Computers enable instant messaging, emails, and video conferencing, bridging gaps across distances.
-2. **Education**: Online learning platforms and resources improve access to knowledge and education worldwide.
-3. **Business**: Computers streamline processes, enhance productivity, and support data management and analysis.
-
-In conclusion, understanding computers is fundamental in our increasingly technology-driven society. Their capabilities continue to expand, shaping our future and redefining everyday tasks. As we navigate this digital landscape, being aware of how computers function and their significance will empower us to harness their full potential.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747592138881.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 1),
-	(43, '2025-05-20 19:40:10.6825+00', 'Dogs', '**The Incredible World of Dogs: Our Loyal Companions**
-
-Dogs have been our companions for thousands of years, known for their loyalty, intelligence, and affectionate nature. As one of the first domesticated animals, they have evolved alongside humans, becoming integral to our daily lives. In this blog post, we''ll explore the fascinating world of dogs, their various breeds, their roles in society, and the joy they bring to our lives.
-
-### The Rich History of Dogs
-
-The domestication of dogs dates back to at least 15,000 years, when they were first bred from wolves. Their ability to form close bonds with humans made them ideal companions for hunting and herding. Over the centuries, selective breeding has resulted in the diverse range of dog breeds we see today, each with unique traits and characteristics.
-
-### Understanding Breeds
-
-Dogs come in a myriad of breeds, each with its own personality, size, and energy levels. Some popular breeds include:
-
-- **Labrador Retriever**: Known for their friendly nature and intelligence, they excel as service dogs and family pets.
-- **German Shepherd**: Highly intelligent and versatile, they make excellent working dogs for police and rescue operations.
-- **Bulldog**: Gentle and affectionate, bulldogs have a distinct appearance and are known for their laid-back demeanor.
-- **Poodle**: Available in three sizes (standard, miniature, and toy), poodles are intelligent, trainable, and hypoallergenic.
-
-Each breed has specific needs, so it’s essential for potential dog owners to research and choose a breed that fits their lifestyle.
-
-### The Role of Dogs in Society
-
-Dogs serve various roles in modern society beyond just being pets. They work as:
-
-- **Service Animals**: Assisting individuals with disabilities, particularly guide dogs for the visually impaired.
-- **Therapy Dogs**: Providing comfort and emotional support in hospitals, schools, and nursing homes.
-- **Search and Rescue Dogs**: Alerting authorities during natural disasters and locating missing persons.
-- **Detection Dogs**: Used in law enforcement to detect drugs, explosives, and contraband.
-
-### The Joy of Owning a Dog
-
-Bringing a dog into your home can lead to an immensely rewarding experience. Studies suggest that owning a dog leads to improved mental health, increased physical activity, and enhanced social interactions. Dogs encourage their owners to participate in outdoor activities and create countless opportunities for social connections, whether at the dog park or during training classes.
-
-### Training and Care
-
-Training and socialization are crucial for any dog. Early training can help reinforce good behavior and alleviate potential issues. Basic commands such as sit, stay, and come are essential for building a strong bond between dog and owner, establishing trust and communication.
-
-Caring for a dog involves providing proper nutrition, regular exercise, grooming, and routine veterinary check-ups. Ensuring your dog''s health and well-being is a lifelong responsibility that every dog owner must embrace.
-
-### Conclusion
-
-Dogs bring joy, companionship, and countless benefits into our lives. Their diverse breeds and unique personalities allow them to fit perfectly into varied households, making them beloved family members. Whether you''re considering adopting your first dog or looking to add to your pack, understanding the responsibilities and joy that come with dog ownership is essential. Embrace the bond with your furry friend, and enjoy the unconditional love and loyalty they offer! 
-
-In a world that''s constantly changing, dogs remind us of the simple pleasures in life and the importance of companionship. Through thick and thin, they remain our ever-loyal friends.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747770008865.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 0),
-	(32, '2025-05-18 16:18:37.137307+00', 'AI', '**Understanding Artificial Intelligence: Transforming Our World**
-
-Artificial Intelligence (AI) is revolutionizing various sectors, from healthcare to finance and beyond. At its core, AI refers to the simulation of human intelligence in machines programmed to think and learn like humans. 
-
-### What is AI?
-
-AI comprises several subfields, including machine learning, natural language processing, robotics, and computer vision. Machine learning, a prominent area within AI, enables systems to learn from data patterns without explicit programming. For example, algorithms can predict user preferences on streaming platforms or personalize marketing strategies based on consumer behavior.
-
-### Types of AI
-
-AI can be categorized into two main types: narrow AI and general AI. Narrow AI is designed for specific tasks, such as virtual assistants like Siri or chatbots that provide customer support. In contrast, general AI, which remains theoretical, would possess the ability to perform any intellectual task that a human can do.
-
-### Applications of AI
-
-AI is increasingly integrated into our daily lives. In healthcare, it aids in diagnosing diseases through imaging analysis and predicting patient outcomes. In finance, AI systems detect fraud by analyzing transaction patterns in real-time. Moreover, industries like transportation are seeing the emergence of autonomous vehicles that rely on AI to navigate safely.
-
-### Ethical Considerations
-
-Despite its benefits, the rise of AI also poses ethical challenges. Concerns about job displacement, data privacy, and decision-making transparency require attention as we integrate AI into society. Regulations and ethical frameworks are essential to ensure that AI serves humanity positively and equitably.
-
-### The Future of AI
-
-The future of AI is promising, with ongoing advancements expected to enhance its capabilities exponentially. As AI continues to develop, it will transform industries, create new job opportunities, and fundamentally alter how we interact with technology. The key is to harness its potential responsibly, ensuring that we create innovative solutions while safeguarding the values and rights of individuals.
-
-In summary, AI is more than just a technological trend; it is an integral part of our evolving landscape. Recognizing its implications and fostering a balanced approach will be crucial as we advance into this AI-powered future.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747585114905.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', 8),
-	(29, '2025-05-18 16:16:34.166213+00', 'Dogs', '**All About Dogs: Man''s Best Friend**
-
-Dogs have been cherished companions to humans for thousands of years. As one of the first domesticated animals, dogs have evolved from wild wolves to loyal partners, serving various roles in our lives, from working dogs to beloved pets.
-
-### The Breeds
-
-With over 340 recognized dog breeds worldwide, each breed boasts unique characteristics, temperaments, and appearances. Breeds like the Golden Retriever are known for their friendly demeanor, making them excellent family pets, while German Shepherds are often employed in police work due to their intelligence and courage. Small breeds, such as Chihuahuas, provide companionship, and their size makes them suitable for urban living. Understanding the breed characteristics can significantly impact your experience as a dog owner.
-
-### Health and Care
-
-Proper care for a dog includes regular veterinary check-ups, vaccinations, and a balanced diet tailored to their age, size, and breed. Exercise is also crucial; most dogs require daily walks and playtime to stay healthy and happy. Grooming needs vary by breed, with long-haired dogs needing more frequent brushing.
-
-### Training and Behavior
-
-Training is essential for nurturing a well-behaved dog. Basic commands, socialization, and positive reinforcement lead to a trusting relationship. Training helps reduce behavioral issues and ensures your dog adapts well to various situations. 
-
-### The Joys of Owning a Dog
-
-The bond between humans and dogs is undeniably strong. Dogs provide emotional support, companionship, and even health benefits, such as reducing stress and encouraging physical activity. Their unconditional love and loyalty enrich our lives in ways we often can''t describe.
-
-### Conclusion
-
-Whether you''re considering adopting a dog or already have one, understanding their needs, characteristics, and behaviors will enhance your relationship. Dogs truly are remarkable creatures that bring joy, love, and a sense of purpose into our lives.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747584992279.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', 2),
-	(33, '2025-05-18 16:19:21.595107+00', 'Anime', '**Understanding Anime: A Cultural Phenomenon**
-
-Anime is a style of animation that originated in Japan and has since gained immense popularity worldwide. Characterized by vibrant art, fantastical themes, and colorful characters, anime encompasses a wide variety of genres and appeals to audiences of all ages.
-
-The term "anime" itself is derived from the English word "animation" and refers specifically to the animation techniques that are unique to Japanese culture. Unlike Western animation, which often targets a younger audience, anime spans genres, ranging from action and adventure to romance and horror, allowing for a diverse viewership.
-
-One primary aspect that sets anime apart is its storytelling. Many anime series delve into complex narratives that explore philosophical themes, societal issues, and character development, often drawing upon elements of Japanese folklore and mythology. Series like "Attack on Titan" and "Naruto" not only entertain but also provoke thought and reflection on deeper social constructs.
-
-Visual style is another critical element of anime. Distinctive features such as exaggerated facial expressions, vibrant colors, and intricate backgrounds create a visually engaging experience. Viewers are often captivated by the anime aesthetic, which varies significantly between different series and films.
-
-Anime is not limited to television; it has also made remarkable strides in film. Renowned filmmakers like Hayao Miyazaki have contributed to the global appreciation of anime through masterpieces such as "Spirited Away," which introduces viewers to the beauty and depth of Japanese animation.
-
-The rise of streaming platforms like Crunchyroll and Funimation has further propelled anime into mainstream culture, providing easy access to both classic and new titles. Conventions and communities dedicated to anime have blossomed, fostering friendships and a sense of belonging among fans worldwide.
-
-In conclusion, anime is not just a form of entertainment; it is a rich cultural tapestry that reflects the intricacies of life, art, and storytelling. Whether you are a long-time fan or a curious newcomer, there is always something new to discover in the vibrant world of anime.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747585159213.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', 13),
-	(30, '2025-05-18 16:17:11.466876+00', 'Airplanes', '**All About Airplanes: A Journey Through the Skies**
-
-Airplanes have transformed the way we travel, making global distances feel smaller and connecting people from every corner of the world. They are marvels of engineering, capable of soaring through the skies, and they play a significant role in both commercial aviation and personal leisure.
-
-### History of Airplanes
-
-The journey of airplanes began with pioneers like the Wright brothers. On December 17, 1903, Orville and Wilbur Wright made their first powered flight in Kitty Hawk, North Carolina, successfully ushering in the age of aviation. Over the decades, aircraft design evolved from simple biplanes to the sophisticated jets we see today.
-
-### How Airplanes Work
-
-The basic principles of flight revolve around four forces: lift, weight, thrust, and drag. Lift is generated by the wings, allowing the airplane to rise into the air. Engines provide the necessary thrust to propel the aircraft forward, while weight, caused by gravity, pulls it downward. Finally, drag is the resistance an airplane experiences as it moves through the air.
-
-### Types of Airplanes
-
-Airplanes come in various types, including commercial airliners, cargo planes, military jets, and private aircraft. Commercial airliners are designed to transport passengers and cargo, while cargo planes are optimized for freight. Military jets serve defense purposes and can perform various roles, from surveillance to combat. Additionally, private airplanes cater to individual travelers, providing a more personalized flight experience.
-
-### The Future of Aviation
-
-Looking forward, the future of aviation is set to embrace technological advancements. Innovations such as electric and hybrid planes could revolutionize the industry, making air travel more sustainable. Furthermore, the development of urban air mobility vehicles, like drones and flying taxis, promises to reshape our commuting landscape.
-
-### Conclusion
-
-Airplanes have not only transformed transportation but have also facilitated globalization and cultural exchange. As we look to the future, the aviation industry is poised for exciting innovations that will continue to make the world more connected and accessible. Whether you’re a frequent flyer or someone dreaming of their first flight, the allure of airplanes remains timeless.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747585029154.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', 0),
-	(34, '2025-05-18 16:20:14.966597+00', 'Florida Panthers', '**Florida Panthers: A Rising Force in the NHL**
-
-The Florida Panthers, established in 1993, are a professional ice hockey team based in Sunrise, Florida. They compete in the Atlantic Division of the Eastern Conference in the National Hockey League (NHL). Over the years, the Panthers have built a passionate fan base despite facing challenges typical of expansion teams.
-
-In terms of performance, the Panthers experienced their most significant success in the mid-1990s, when they reached the Stanley Cup Finals in 1996, only to be swept by the Colorado Avalanche. Although they struggled in the following years, the team has shown marked improvement in recent seasons, establishing itself as a contender in the league.
-
-The Panthers play their home games at the BB&T Center, a modern arena that has undergone multiple renovations to enhance the fan experience. The atmosphere during a game is electric, with a committed fan base that engages deeply with the team, particularly during playoff runs.
-
-The team''s logo, featuring a stylized panther ready to pounce, reflects the state’s wildlife and the aggressive style of play the Panthers strive for. Players like Aleksander Barkov and Jonathan Huberdeau have become fan favorites, showcasing skill and determination on the ice.
-
-In recent years, the Panthers have embraced a more aggressive and fast-paced style of play, often characterized by high scoring and tight defense. The hiring of head coach Paul Maurice in 2022 marked a pivotal moment for the franchise, as he brought in experience and a fresh tactical approach to maximize player potential.
-
-Looking ahead, the Florida Panthers are motivated to build on recent successes and are committed to winning their first Stanley Cup. With a solid roster and growing fan support, the Panthers are poised to make a lasting impact in the NHL, ensuring that Florida remains a hotbed for hockey enthusiasm. Whether you’re a long-time fan or a newcomer, the Panthers are an exciting team to follow as they pursue their championship dreams.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747585213078.png', 'user_2wh07JyMENCPXSdRA80R1sjBX20', 0),
-	(39, '2025-05-18 18:13:59.515437+00', 'Chihuahuas', '**The Fascinating World of Chihuahuas**
-
-Chihuahuas are one of the most popular dog breeds, known for their petite size and vibrant personality. Originating from Mexico, these tiny dogs are packed with energy and charm, making them beloved companions for many.
-
-One of the key aspects to note about Chihuahuas is their **lifespan**. On average, these little dogs live between 12 to 20 years, with proper care and a healthy lifestyle significantly influencing their longevity. Factors such as diet, exercise, and regular veterinary check-ups can help them remain healthy and energetic throughout their lives. A well-cared-for Chihuahua can become a loving member of your family for many years.
-
-In terms of **personality**, Chihuahuas are known for their bold and confident demeanor. Despite their small size, they often have larger-than-life personalities, exhibiting traits such as loyalty, playfulness, and intelligence. They can be quite protective of their owners, often forming strong bonds with them. However, this loyalty can sometimes manifest as a tendency to be territorial or wary of strangers. Socialization from an early age is key to nurturing a well-rounded Chihuahua that is comfortable around other pets and people.
-
-Chihuahuas come in a variety of colors and coat types, offering a little something for everyone. Whether you prefer a short-haired or long-haired Chihuahua, each has its unique characteristics and care needs. Regular grooming, a balanced diet, and plenty of exercise are essential to keep your Chihuahua healthy and happy.
-
-In conclusion, Chihuahuas are not just cute little dogs; they pack a lot of personality and charm into their small frames. With a long lifespan and a vibrant disposition, they make wonderful companions for those willing to understand their needs and quirks. If you’re considering adding a Chihuahua to your family, prepare for a loving and spirited companion that will fill your life with joy.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747592037502.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 0),
-	(37, '2025-05-18 18:10:37.193641+00', 'Akihabara', '**Exploring Akihabara: The Electric Town of Tokyo**
-
-Nestled in the heart of Tokyo, Akihabara is a vibrant district known for its unique blend of modern pop culture, technology, and history. Often referred to as "Electric Town," it has become a haven for otaku culture and a paradise for anime, manga, and gaming enthusiasts. 
-
-Originally, Akihabara was famous for its electronics stores, selling everything from appliances to high-end gadgets. While the area still boasts numerous shops dedicated to electronics, it has evolved into a bustling center for otaku culture since the 1990s. Today, the streets are lined with countless shops featuring anime merchandise, manga, and video games. Iconic stores like Animate, Mandarake, and Yodobashi Camera attract visitors from around the globe, eager to explore the latest in technology and fan gear.
-
-One of Akihabara''s most unique aspects is its numerous themed cafes. Maid cafes, where waitresses dress in cute maid costumes, serve food and drinks with a playful twist, providing a distinctly immersive experience. Additionally, themed cafes dedicated to popular franchises, such as cat cafes or video game-inspired venues, offer a chance for fans to engage with their favorite characters in a cozy setting.
-
-The area also hosts many events and pop-up shops, especially surrounding anime and gaming releases. These events often feature exclusive merchandise and appearances from voice actors, drawing considerable crowds. Visitors can immerse themselves in a variety of exhibitions and seasonal events, making each trip to Akihabara a unique experience.
-
-For those looking to delve deeper into Japan''s pop culture, Akihabara is home to several museums and galleries. The Akihabara UDX and the nearby 3331 Arts Chiyoda often showcase art exhibits that explore various aspects of anime, including character design and production art.
-
-Whether you are a die-hard otaku or just a curious traveler, Akihabara is not to be missed. Its eclectic mix of technology, pop culture, and distinct experiences makes it a must-visit destination for anyone exploring Tokyo. So grab your camera, prepare your wallet, and immerse yourself in the electric energy of Akihabara!', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747591832531.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 0),
-	(36, '2025-05-18 18:09:05.203648+00', 'NextJS', '**Exploring Next.js: The Powerful React Framework**
-
-Next.js has emerged as a standout framework for building modern web applications with React. Developed by Vercel, it offers a range of features that simplify the development process while enhancing performance and scalability. Let''s delve into the core aspects that make Next.js a compelling choice for developers.
-
-### What is Next.js?
-
-Next.js is a React-based framework that allows developers to build server-side-rendered (SSR) or static web applications effortlessly. It provides a powerful set of tools that streamline the development process, enabling features like automatic code splitting, optimized loading, and easy integration with APIs.
-
-### Key Features
-
-1. **Server-side Rendering**: Next.js supports server-side rendering out of the box. This means the HTML is generated on the server, providing better SEO and faster initial load times compared to traditional client-side rendering.
-
-2. **Static Site Generation**: With the ability to generate static pages at build time, Next.js allows for the creation of lightning-fast websites. Developers can choose between SSR and static site generation on a per-page basis, granting them flexibility based on project requirements.
-
-3. **File-based Routing**: Next.js utilizes a straightforward file-based routing system. By simply creating files in the `pages` directory, developers can create routes without writing additional configuration.
-
-4. **API Routes**: It’s possible to create API with Next.js, enabling backend features directly within your application. This reduces the complexity of setting up a separate server and allows developers to handle API requests alongside their React components.
-
-5. **Image Optimization**: Next.js comes with built-in image optimization capabilities, automatically serving images in the most efficient format and size, which enhances performance and user experience.
-
-### Advantages of Using Next.js
-
-- **Improved SEO**: By offering SSR and static site generation, Next.js can render pages in a way that is more favorable for search engine indexing.
-- **Faster Performance**: Optimized loading via automatic code splitting and image optimization leads to faster application performance.
-- **Developer Experience**: With features like hot reloading and an easy-to-use routing system, Next.js greatly enhances the developer experience, allowing for efficient prototyping and iteration.
-
-### Conclusion
-
-Next.js has solidified its position as a leading framework in the React ecosystem, offering developers the tools they need to build efficient, scalable, and high-performing web applications. Whether you are starting a new project or updating an existing one, considering Next.js could provide significant benefits in terms of performance and development speed. With its robust features and ease of use, it''s clearly a framework worth exploring.', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747591743491.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 0),
-	(35, '2025-05-18 18:07:58.682711+00', 'GTA 6', '**All You Need to Know About GTA 6**
-
-The anticipation surrounding Grand Theft Auto VI, popularly known as GTA 6, is palpable among gaming enthusiasts. Since the release of GTA V in 2013, fans have eagerly awaited the next installment in Rockstar Games'' iconic franchise, and recent developments have only heightened expectations.
-
-### Release Date and Development
-
-While an official release date for GTA 6 has not been confirmed, Rockstar has teased fans with updates that suggest the game is in active development. Following years of speculation and numerous leaks, the company finally acknowledged that they were working on a new title in early 2022. Recent rumors suggest a potential release in late 2024, but until Rockstar makes an official announcement, it''s mainly conjecture.
-
-### Setting and Characters
-
-One of the most exciting aspects of GTA 6 is its rumored setting. Speculation points towards a fictional version of Vice City, the series'' homage to Miami, along with various other regions. Additionally, sources have hinted at multiple protagonists, similar to the structure found in GTA V. This narrative style allows players to experience the plot from different perspectives, enhancing gameplay and storytelling.
-
-### Gameplay Innovations
-
-GTA 6 promises to bring groundbreaking gameplay improvements. While details remain scarce, fans are hoping for enhanced graphics, more realistic physics, and an expansive open world that encourages exploration and immersion. The addition of new features, including a day-night cycle and dynamic weather, are also expected to elevate the gaming experience.
-
-### Online Component
-
-Given the success of GTA Online, it’s reasonable to assume that GTA 6 will include a robust online component. Rockstar has dedicated substantial resources to expand and support GTA Online, which has continued to thrive years after its initial launch. Players can expect new multiplayer modes, activities, and possibly a reimagined approach to online interactions in the new game.
-
-### Conclusion
-
-GTA 6 presents an exciting opportunity for both new and returning players. With its anticipated release, players are eager to explore the innovative gameplay, engaging stories, and vast new landscapes that Rockstar has in store. As the gaming community buzzes with speculation, only time will tell how GTA 6 will redefine the open-world genre once again. Stay tuned for more updates as the story unfolds!', 'http://127.0.0.1:54321/storage/v1/object/public/aiimage/blog-1747591675296.png', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 5);
+As Samsung continues to evolve, it remains an influential player in shaping our technological landscape. With a commitment to innovation, quality, and sustainability, Samsung is undoubtedly a brand to watch in the coming years, as it continues to push the boundaries of what technology can achieve.', 'https://nfnvvrtdmfxntevegtyn.supabase.co/storage/v1/object/public/aiimage/blog-1749238979619.png', 'user_2y9DxMMv8cVAvRdOURWivAwsTLa', true, 6);
 
 
 --
@@ -994,10 +176,7 @@ GTA 6 presents an exciting opportunity for both new and returning players. With 
 --
 
 INSERT INTO "public"."user_likes" ("id", "created_at", "user_id", "blog_id") VALUES
-	(30, '2025-05-23 22:26:59.708593+00', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 40),
-	(57, '2025-06-02 16:35:15.417236+00', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 41),
-	(62, '2025-06-02 16:47:25.693008+00', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 34),
-	(63, '2025-06-02 18:34:37.267295+00', 'user_2vEFi4KQhcmiBDmsZoUUKs89Cm3', 35);
+	(66, '2025-06-06 19:44:02.096135+00', 'user_2y9DxMMv8cVAvRdOURWivAwsTLa', 67);
 
 
 --
@@ -1078,7 +257,13 @@ INSERT INTO "storage"."objects" ("id", "bucket_id", "name", "owner", "created_at
 	('fb27af00-0a03-46cd-b7d9-28e62ae65b08', 'aiimage', 'blog-1747957127391.png', NULL, '2025-05-22 23:38:50.01357+00', '2025-05-22 23:38:50.01357+00', '2025-05-22 23:38:50.01357+00', '{"eTag": "\"b54fb828c6e02b2f4a4553c7ce01e633\"", "size": 3125416, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-05-22T23:38:50.000Z", "contentLength": 3125416, "httpStatusCode": 200}', 'e5fe22e8-2bec-451f-97e2-95ad60309b79', NULL, '{}'),
 	('9ed93750-db2e-4226-ada8-043a5c461068', 'aiimage', 'blog-1747957147491.png', NULL, '2025-05-22 23:39:10.454344+00', '2025-05-22 23:39:10.454344+00', '2025-05-22 23:39:10.454344+00', '{"eTag": "\"323bc211bff6404e71f23df2e9c587ab\"", "size": 3268589, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-05-22T23:39:11.000Z", "contentLength": 3268589, "httpStatusCode": 200}', '63cc974f-20d2-4bd2-be90-d7854bf743e6', NULL, '{}'),
 	('b15cb1f7-a769-48eb-b78a-919bf852a1c8', 'aiimage', 'blog-1747957204823.png', NULL, '2025-05-22 23:40:08.168591+00', '2025-05-22 23:40:08.168591+00', '2025-05-22 23:40:08.168591+00', '{"eTag": "\"ebe992ff591077046770884eb3d2652a\"", "size": 3630927, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-05-22T23:40:08.000Z", "contentLength": 3630927, "httpStatusCode": 200}', '9657de26-35c4-4bd9-982a-3721bcbd27e1', NULL, '{}'),
-	('85bef42a-916c-429a-bb6b-a1c577459c98', 'aiimage', 'blog-1748882282532.png', NULL, '2025-06-02 16:38:04.765831+00', '2025-06-02 16:38:04.765831+00', '2025-06-02 16:38:04.765831+00', '{"eTag": "\"2b35129980709b7565a14fe61eee65db\"", "size": 2749672, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-06-02T16:38:05.000Z", "contentLength": 2749672, "httpStatusCode": 200}', 'b2e8dcdc-d741-4a16-8cfb-6b969bd15e0e', NULL, '{}');
+	('85bef42a-916c-429a-bb6b-a1c577459c98', 'aiimage', 'blog-1748882282532.png', NULL, '2025-06-02 16:38:04.765831+00', '2025-06-02 16:38:04.765831+00', '2025-06-02 16:38:04.765831+00', '{"eTag": "\"2b35129980709b7565a14fe61eee65db\"", "size": 2749672, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-06-02T16:38:05.000Z", "contentLength": 2749672, "httpStatusCode": 200}', 'b2e8dcdc-d741-4a16-8cfb-6b969bd15e0e', NULL, '{}'),
+	('bbe8688e-624a-43a9-9e6a-4d807821f554', 'aiimage', 'blog-1749238188801.png', NULL, '2025-06-06 19:29:50.765495+00', '2025-06-06 19:29:50.765495+00', '2025-06-06 19:29:50.765495+00', '{"eTag": "\"8cc43dbb7ef08b1e9ebf138b7287c329\"", "size": 2397663, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-06-06T19:29:51.000Z", "contentLength": 2397663, "httpStatusCode": 200}', 'ba153914-d4c3-4e71-8482-c99d167b70f6', NULL, '{}'),
+	('ee843a0c-e06c-4c04-8457-9ac44b4f96a9', 'aiimage', 'blog-1749238383043.png', NULL, '2025-06-06 19:33:05.287622+00', '2025-06-06 19:33:05.287622+00', '2025-06-06 19:33:05.287622+00', '{"eTag": "\"19d99f6e7720383a5005207576a1aa7d\"", "size": 2850784, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-06-06T19:33:06.000Z", "contentLength": 2850784, "httpStatusCode": 200}', 'cbc686c2-6b1c-429d-b27a-3f038777a685', NULL, '{}'),
+	('49304b88-9a4f-41c9-8517-c8644528719e', 'aiimage', 'blog-1749238979619.png', NULL, '2025-06-06 19:43:02.661124+00', '2025-06-06 19:43:02.661124+00', '2025-06-06 19:43:02.661124+00', '{"eTag": "\"d4087ffc06a484067f51eb3583bc4eb4\"", "size": 2795801, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-06-06T19:43:03.000Z", "contentLength": 2795801, "httpStatusCode": 200}', 'c9ce57de-46b2-48af-882c-4c35fee128cd', NULL, '{}'),
+	('c64b00e3-c3e9-4635-b13f-c62a9adc96cb', 'aiimage', 'blog-1749326453218.png', NULL, '2025-06-07 20:00:54.689251+00', '2025-06-07 20:00:54.689251+00', '2025-06-07 20:00:54.689251+00', '{"eTag": "\"9f3957471a790883af9a584e8ff10dd3\"", "size": 3399202, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-06-07T20:00:55.000Z", "contentLength": 3399202, "httpStatusCode": 200}', 'c1523ad5-f0a2-466b-ac68-477fbe55e86f', NULL, '{}'),
+	('f2169b64-5d96-4e12-a6c3-54ce06ae7171', 'aiimage', 'blog-1749329276466.png', NULL, '2025-06-07 20:47:58.16325+00', '2025-06-07 20:47:58.16325+00', '2025-06-07 20:47:58.16325+00', '{"eTag": "\"650190980f8b3b8d63d9b053794e31e1\"", "size": 2996392, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-06-07T20:47:58.000Z", "contentLength": 2996392, "httpStatusCode": 200}', '211918a7-f4c5-4454-8e6d-304aa4a08ab6', NULL, '{}'),
+	('49d160b8-3cac-47b8-9b59-5a5340aec27b', 'aiimage', 'blog-1749423048070.png', NULL, '2025-06-08 22:50:49.969222+00', '2025-06-08 22:50:49.969222+00', '2025-06-08 22:50:49.969222+00', '{"eTag": "\"dc6d7c43f97e40d0d40f2e78f723b990\"", "size": 3280433, "mimetype": "image/png", "cacheControl": "max-age=3600", "lastModified": "2025-06-08T22:50:50.000Z", "contentLength": 3280433, "httpStatusCode": 200}', '40f113b3-4146-421e-be61-12a6884cf581', NULL, '{}');
 
 
 --
@@ -1104,21 +289,14 @@ SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 1, false);
 -- Name: blogs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."blogs_id_seq"', 64, true);
+SELECT pg_catalog.setval('"public"."blogs_id_seq"', 70, true);
 
 
 --
 -- Name: likes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
--- SELECT pg_catalog.setval('"public"."likes_id_seq"', 65, true);
-
-
---
--- Name: shared-blogs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('"public"."shared-blogs_id_seq"', 2, true);
+-- SELECT pg_catalog.setval('"public"."likes_id_seq"', 66, true);
 
 
 --

@@ -1,25 +1,30 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import Markdown from 'react-markdown'
-import { getBlogById, isBlogShared } from '@/utils/supabase'
-import { ChevronLeft } from 'lucide-react'
-import { currentUser } from '@clerk/nextjs/server'
-import { ShareButtons } from '@/components/ShareButtons'
-import { DeleteButton } from '@/components/DeleteButton'
+import Link from 'next/link';
+import Image from 'next/image';
+import Markdown from 'react-markdown';
+import React from 'react';
+import { getBlogById, isBlogShared } from '@/utils/supabase';
+import { ChevronLeft } from 'lucide-react';
+import { currentUser } from '@clerk/nextjs/server';
+import { ShareButtons } from '@/components/ShareButtons';
+import { DeleteButton } from '@/components/DeleteButton';
+import { getTranslations } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 
-export default async function User_Blog({ params }: { params: { id: string } }) {
+export default async function UserBlog({ params }: { params: Promise<{ id: string }> }) {
+  const t = await getTranslations('NonuserBlog/UserBlog')
   const user = await currentUser()
   if (!user) {
     return <div>User not authenticated</div>;
   }
 
-  const blogId = Number(await params.id);
+  const resolvedParams = await params;
+  const blogId = Number(resolvedParams.id);
   // Fetch blog data
   const currentBlog = await getBlogById(blogId, user.id);
 
   if (!currentBlog.content || !currentBlog.image_url) {
-    return <div>Blog not found</div>;
+    return notFound();
   }
 
   return (
@@ -30,7 +35,7 @@ export default async function User_Blog({ params }: { params: { id: string } }) 
           className='ml-2 inline-flex items-center text-sm font-light text-gray'
         >
           <ChevronLeft strokeWidth={1} size={20} />
-          <span>Go Back</span>
+          <span>{t('Go Back')}</span>
         </Link>
         <div className='flex flex-row gap-1'>
           <ShareButtons blog={currentBlog} isShared={!!(await isBlogShared(blogId))} userId={user.id} />
