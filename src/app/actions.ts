@@ -19,11 +19,10 @@ export async function createCompletion(topic: string, keywords: string, length: 
     messages: [
       {
         role: 'user',
-        content: `Create a blog post about the following topic: ${topic}. The blog should properly explain the topic 
-                  and include any information that a blog post about the topic would have. These are the keywords that 
-                  should be included and discussed(ignore if empty): ${keywords}. The length provided, ${length}, 
-                  indicates how long the blog post should be: "Short" should be at or under 300 words, "Medium" should be between 
-                  301 words and 600 words, "Long" should be between 601 words and 1000 words. Return the blog post in a markdown format with only the title being in bold letters.`,
+        content: `Write an SEO-optimized blog post about the following topic: ${topic}. The blog should clearly explain the topic and include relevant information, context,
+                  and insights typical of a high-quality blog post. If any keywords are provided, be sure to incorporate and discuss them naturally: ${keywords} (ignore if empty).
+                  The desired length is: ${length}. Use the following guidelines: Short: ≤ 300 words; Medium: 301 to 600 words; Long: 601 to 1000 words
+                  Format the response in Markdown, and make only the blog title bold. Do not include any extra text before or after the post.`,
       }
     ],
   });
