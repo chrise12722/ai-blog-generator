@@ -14,8 +14,9 @@ import { changeLanguage } from "../actions";
 export default async function Home({
   params,
 }: {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params;
   const t = await getTranslations('Home');
   const user = await currentUser();
   const blogs = await getAllSharedBlogs({ limit: 3 });
@@ -26,7 +27,7 @@ export default async function Home({
         <div className="sm:flex sm:flex-row sm:justify-between ">
           <h1 className='font-bold text-4xl'>NeuroBlog</h1>
           <form className='mt-1' action={changeLanguage}>
-            <select className="cursor-pointer border border-black mr-2" name="locale" defaultValue={params.locale}>
+            <select className="cursor-pointer border border-black mr-2" name="locale" defaultValue={locale}>
               <option value="en">English</option>
               <option value="es">Español</option>
               <option value="fr">Français</option>
