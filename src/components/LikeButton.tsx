@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
-import { handleLike, handleUnlike } from '@/app/actions';
 import { useTranslations } from 'next-intl';
+import { handleLike, handleUnlike } from '@/app/actions';
 
 interface LikeButtonProps {
   blogId: number;

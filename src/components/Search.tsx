@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDebounce } from 'use-debounce'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 
 export const Search = ({ search }: { search?: string }) => {
   const t = useTranslations('Search')

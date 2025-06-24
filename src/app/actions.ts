@@ -5,6 +5,7 @@ import { currentUser } from '@clerk/nextjs/server'
 import { ChatCompletion } from 'openai/resources/chat/completions';
 import { BlogStructure } from '@/interfaces';
 import { incrementLikes, decrementLikes, isBlogLiked, viewLikes } from '@/utils/supabase';
+import { redirect } from 'next/navigation';
 
 export async function createCompletion(topic: string, keywords: string, length: string){
   const user = await currentUser();
@@ -134,4 +135,11 @@ export async function checkIfLiked(blogId: number, user_id: string) {
 export async function getLikes(blogId: number) {
   const result = await viewLikes(blogId);
   return result;
+}
+
+export async function changeLanguage( formData: FormData) {
+  const locale = formData.get('locale') as string;
+  const pathname = formData.get('pathname') as string;
+  redirect(`/${locale}${pathname}`);
+
 }

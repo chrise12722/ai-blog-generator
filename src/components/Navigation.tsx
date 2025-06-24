@@ -1,6 +1,6 @@
 'use client'
-import Image from 'next/image';
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { SignInButton, UserButton, SignedIn, SignedOut } from '@clerk/nextjs';
 import { useTranslations } from "next-intl";

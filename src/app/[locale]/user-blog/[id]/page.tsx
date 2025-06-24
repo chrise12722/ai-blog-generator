@@ -1,15 +1,14 @@
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Markdown from 'react-markdown';
-import React from 'react';
-import { getBlogById, isBlogShared } from '@/utils/supabase';
+import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
 import { ChevronLeft } from 'lucide-react';
 import { currentUser } from '@clerk/nextjs/server';
+import { getBlogById, isBlogShared } from '@/utils/supabase';
 import { ShareButtons } from '@/components/ShareButtons';
 import { DeleteButton } from '@/components/DeleteButton';
-import { getTranslations } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-
 
 export default async function UserBlog({ params }: { params: Promise<{ id: string }> }) {
   const t = await getTranslations('NonuserBlog/UserBlog')

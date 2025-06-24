@@ -1,9 +1,9 @@
 'use client'
 import React from "react";
-import { deleteBlog } from "@/app/actions";
 import { useRouter } from "next/navigation";
 import { toast } from 'sonner';
 import { useTranslations } from "next-intl";
+import { deleteBlog } from "@/app/actions";
 
 interface DeleteButtonProps {
   blogId: number;

@@ -1,13 +1,13 @@
 import React from "react";
-import "../globals.css";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Navigation } from "../../components/Navigation";
-import { ClerkProvider } from "@clerk/nextjs";
-import { Toaster } from "@/components/ui/sonner"
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '../../../i18n/routing';
+import { Geist, Geist_Mono } from "next/font/google";
+import { Navigation } from "../../components/Navigation";
+import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/sonner";
+import "../globals.css";
 
 
 const geistSans = Geist({

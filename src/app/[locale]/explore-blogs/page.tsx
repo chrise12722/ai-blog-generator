@@ -2,14 +2,15 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { currentUser } from '@clerk/nextjs/server';
+import { getTranslations } from 'next-intl/server';
 import { Search } from '@/components/Search';
 import { LikeStructure } from '@/interfaces';
 import { formatDate } from '@/utils/utils';
 import { LikeButton } from '@/components/LikeButton';
 import { Card, CardContent } from '@/components/ui/card';
 import { getAllSharedBlogs } from '@/utils/supabase';
-import { currentUser } from '@clerk/nextjs/server';
-import { getTranslations } from 'next-intl/server';
+
 
 export default async function ExploreBlogs({
   searchParams,
