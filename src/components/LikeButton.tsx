@@ -18,9 +18,11 @@ export const LikeButton = ({ blogId, userId, liked, likes }: LikeButtonProps) =>
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleLikeClick = async () => {
+  const handleLikeClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     if (isLoading) return;
 
+    event.stopPropagation();
+    event.preventDefault();
     setIsLoading(true)
     try {
       if (liked) {
