@@ -36,6 +36,7 @@ export async function getSharedBlogById(id: number) {
       user_id,
       is_shared,
       likes,
+      username,
       user_likes (
         id,
         user_id,
@@ -139,6 +140,7 @@ export async function getAllSharedBlogs({
         user_id,
         is_shared,
         likes,
+        username,
         user_likes(
           id,
           user_id,

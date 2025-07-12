@@ -63,7 +63,7 @@ export async function createCompletion(topic: string, keywords: string, length: 
   // Create a new blog post in supabase
   const { data: blog, error: blogError } = await supabase
     .from('blogs')
-    .insert([{ title: topic, content: response, image_url: permanentimage_url, user_id: user.id }])
+    .insert([{ title: topic, content: response, image_url: permanentimage_url, user_id: user.id, username: user.username }])
     .select()
 
   if (blogError) {
