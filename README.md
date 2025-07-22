@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NeuroBlog
 
-## Getting Started
+**NeuroBlog** is a full stack, AI-powered blogging platform where users can generate blogs with images, manage, and share their generated blogs. Built with modern technologies like **Next.js**, **Typescript**, **Supabase**.
 
-First, run the development server:
+## 🚀 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Link to live project: https://ai-blog-generator-chi.vercel.app/
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+https://github.com/user-attachments/assets/0bd8ef39-223d-4ce1-97b4-6c75ebea77f0
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+https://github.com/user-attachments/assets/7b9ce645-99a5-49c8-8c38-994f8eefab6b
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔨 Tech Stack
 
-## Deploy on Vercel
+| Category         | Technology                         |
+|------------------|-------------------------------------|
+| **Frontend**         | Next.js, React, TypeScript, TailwindCSS |
+| **Authentication**   | Clerk                               |
+| **Database**         | Supabase                            |
+| **AI Integration**   | OpenAI API                          |
+| **UI Components**    | shadcn/ui                           |
+| **Hosting**          | Vercel                              |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⭐️ Key Features
+
+- AI-powered blog and image generation using OpenAI API
+
+- Full user authentication using Clerk
+
+- Internationalization support using next-intl
+
+- Mobile-first, responsive UI built with Tailwind CSS
+
+- Create, share, delete, and save blogs to your personal dashboard
+
+- Share blogs publicly and like other users' blogs
+
+- Search and pagination for shared blogs
+
+- Row-Level Security with Supabase to protect user data
+
+- Real Time UI updates using server actions
+
+## 💡Purpose of Project
+
+Neuroblog simulates a real-world SaaS product with:
+
+- Full authentication and authorization flows
+
+- Secure multi-user database access
+
+- API usage and integration
+
+- UX-focused design and responsiveness
+
+- Advanced frontend techniques with Next.js App Router
+
+- Attention to internationalization and accessibility
+
+## 🏁 Getting Started
+1. Download the repo `git clone https://github.com/chrise12722/ai-blog-generator.git`
+2. Change the directory `cd AI-Blog-Generator`
+3. Install the dependency `npm install`
+4. Start a development server `npm run dev`
+5. Open your browser and visit http://localhost.3000 to see NeuroBlog live
