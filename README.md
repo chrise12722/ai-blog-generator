@@ -63,7 +63,7 @@ Neuroblog simulates a real-world SaaS product with:
 - Attention to internationalization and accessibility
 
 ## 🏁 Getting Started
-1. Download the repo `git clone https://github.com/chrise12722/ai-blog-generator.git`
+1. Download the repo `git clone https://github.com/chrise12722/neuroblog.git`
 2. Change the directory `cd AI-Blog-Generator`
 3. Install the dependency `npm install`
 4. Start a development server `npm run dev`
